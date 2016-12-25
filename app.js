@@ -1,6 +1,7 @@
+//require('./otherfile.js')
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components'
+import App from './components/App.jsx'
 
 
 ReactDOM.render(<App />, document.getElementById('app')
