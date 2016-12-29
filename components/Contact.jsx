@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class Profile extends React.Component {
+class Contact extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -10,10 +10,10 @@ class Profile extends React.Component {
   render () {
     return (
       <div>
-        TEST
+        HELP AND CONTACT INFO
       </div>
     );
   }
 }
 
-export default Profile;
+export default Contact;

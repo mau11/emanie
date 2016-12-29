@@ -1,9 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-let Browse = () => (
-  <div id="browse">Browse Patterns on the page
-  </div>
-);
+class Browse extends React.Component {
+
+  rendor () {
+    return (
+      <div>Browse Patterns on the page
+      </div>
+    );
+  }
+}
 
 export default Browse;
+/*
+This page will render after submitting content in the search bar.
+*/
