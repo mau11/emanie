@@ -1,5 +1,5 @@
 module.exports = {
-  entry: ["./app.js"],
+  entry: ["./public/app.js"],
   output: {
     filename: "./public/bundle.js"
   },
@@ -26,5 +26,8 @@ module.exports = {
  },
  resolve: {
    extensions: ['', '.js', '.es6']
- },
+ }/*,
+ devServer: {
+  historyApiFallback: true
+ }*/
 }

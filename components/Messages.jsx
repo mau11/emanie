@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class Profile extends React.Component {
+class Messages extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -10,10 +10,11 @@ class Profile extends React.Component {
   render () {
     return (
       <div>
-        PROFILE PAGE
+        USER'S MESSAGES
       </div>
     );
   }
 }
 
-export default Profile;
+export default Messages;
+
