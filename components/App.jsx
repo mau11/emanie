@@ -11,7 +11,9 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <Nav /> TEST
+        <Nav />
+        <h2>Welcome to Emanie!</h2>
+        <h4><i>A community for crafters....</i></h4>
       </div>
     );
   }
