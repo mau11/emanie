@@ -52,7 +52,6 @@ class Nav extends React.Component {
         </div>
       </nav>
       <div>
-        {this.props.children}
       </div>
       </div>
     );
