@@ -2,26 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 export default class Browse extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      search: null
-    };
+  constructor(props) {
+    super(props);
+    this.state = {};
   }
 
-  updateSearch() {
-    this.setState({search});
-  }
-
-  rendor () {
+  render () {
     return (
-      <div>Browse Patterns on the page
-        <input onChange={this.updateSearch.bind(this)} value={this.state.search}/>
+      <div>
+        Browse users
       </div>
     );
   }
 }
-
-/*
-This page will render after submitting content in the search bar.
-*/

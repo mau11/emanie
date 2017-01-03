@@ -8,6 +8,9 @@ import Messages from '../pages/Messages.jsx';
 import PatGen from '../pages/PatGen.jsx';
 import Profile from '../pages/Profile.jsx';
 import Report from '../pages/Report.jsx';
+import Search from '../pages/Search.jsx';
+import Update from '../pages/Update.jsx';
+
 import { IndexLink, Link } from 'react-router';
 
 
@@ -33,9 +36,16 @@ export default class Nav extends React.Component {
         </div>
         <div id="navbarCollapse" className="collapse navbar-collapse">
           <ul className="nav navbar-nav">
-            <li><Link to="profile">myEmanie</Link></li>
+            <li className="dropdown">
+              <a data-toggle="dropdown" className="dropdown-toggle" href="#">myEmanie <b className="caret"></b></a>
+              <ul role="menu" className="dropdown-menu">
+                <li><Link to="profile">View Profile</Link></li>
+                <li><Link to="update">Update Profile</Link></li>
+              </ul>
+            </li>
             <li><Link to="messages">Messages</Link></li>
             <li><Link to="patgen">PatGen</Link></li>
+            <li><Link to="browse">Browse</Link></li>
             <li className="dropdown">
               <a data-toggle="dropdown" className="dropdown-toggle" href="#">More <b className="caret"></b></a>
               <ul role="menu" className="dropdown-menu">
@@ -56,8 +66,6 @@ export default class Nav extends React.Component {
           </ul>
         </div>
       </nav>
-      <div>
-      </div>
       </div>
     );
   }
