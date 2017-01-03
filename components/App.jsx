@@ -13,7 +13,7 @@ class App extends React.Component {
       <div>
         <Nav />
         <h2>Welcome to Emanie!</h2>
-        <h4><i>A community for crafters....</i></h4>
+        <h4><i>A community for crafters...</i></h4>
       </div>
     );
   }

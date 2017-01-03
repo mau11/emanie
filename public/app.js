@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 
+import Layout from '../components/Layout.jsx';
 import App from '../components/App.jsx';
 import Nav from '../components/Nav.jsx';
 import Profile from '../components/Profile.jsx';
@@ -12,10 +13,10 @@ import About from '../components/About.jsx';
 import Report from '../components/Report.jsx';
 import Contact from '../components/Contact.jsx';
 
-ReactDOM.render((
+/*ReactDOM.render((
   <Router history={ browserHistory }>
-    <Route path="*" component={ App }>
-      <IndexRoute component = { Nav } />
+    <Route path="/" component={ App }>
+     <IndexRoute component = { Nav } />
       <Route path="profile" component={ Profile } />
       <Route path="patgen" component={ PatGen } />
       <Route path="messages" component={ Messages } />
@@ -24,4 +25,6 @@ ReactDOM.render((
       <Route path="contact" component={ Contact } />
     </Route>
   </Router>
-), document.getElementById('app'));
+), document.getElementById('app'));*/
+
+ReactDOM.render(<Profile />, document.getElementById('app'));

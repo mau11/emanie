@@ -11,6 +11,10 @@ import { IndexLink, Link } from 'react-router';
 
 
 class Nav extends React.Component {
+    constructor() {
+    super();
+    this.state = {};
+  }
 
   render() {
 

@@ -3,11 +3,21 @@ import ReactDOM from 'react-dom';
 import Nav from './Nav.jsx';
 
 class Profile extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
-
+      checked: false
     };
+  }
+
+  handleCheckbox() {
+    if(this.state.checked === false){
+      this.setState({checked: true});
+      return true;
+    } else {
+      this.setState({checked: false});
+      return false;
+    }
   }
 
   handleUpdate(e) {
@@ -29,8 +39,7 @@ class Profile extends React.Component {
           <form>
             <div className="form-group">
               <label htmlFor="profilePic">Profile Image</label>
-              <input type="file" className="form-control-file" id="profilePic" aria-describedby="fileHelp"/>
-              <small id="fileHelp" className="form-text text-muted">Select a profile image to upload.</small>
+              <input type="file" className="form-control-file" id="profilePic"/>
             </div>
             <div className="form-group">
               <label htmlFor="displayName">Display Name:</label>
@@ -46,11 +55,11 @@ class Profile extends React.Component {
             </div>
             <div className="form-check">
               <label className="form-check-label">
-                <input type="checkbox" className="form-check-input"/>
+                <input type="checkbox" className="form-check-input" onClick={this.handleCheckbox.bind(this)}/>
                 I confirm that I have reviewed my changes.
               </label>
             </div>
-            <button type="submit" className="btn btn-inverse" onClick={this.handleUpdate}>Update Profile</button>
+            <button type="submit" className="btn btn-inverse" onClick={this.handleUpdate.bind(this)}>Update Profile</button>
           </form>
         </div>
       </div>
