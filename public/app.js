@@ -1,22 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router';
+import { Router, Route, hashHistory, browserHistory, IndexRoute } from 'react-router';
 
-import Layout from '../components/Layout.jsx';
+
+import About from '../pages/About.jsx';
 import App from '../components/App.jsx';
+import Browse from '../pages/Browse.jsx';
+import Contact from '../pages/Contact.jsx';
+import Layout from '../components/Layout.jsx';
+import Messages from '../pages/Messages.jsx';
 import Nav from '../components/Nav.jsx';
-import Profile from '../components/Profile.jsx';
-import Browse from '../components/Browse.jsx';
-import PatGen from '../components/PatGen.jsx';
-import Messages from '../components/Messages.jsx';
-import About from '../components/About.jsx';
-import Report from '../components/Report.jsx';
-import Contact from '../components/Contact.jsx';
+import PatGen from '../pages/PatGen.jsx';
+import Profile from '../pages/Profile.jsx';
+import Report from '../pages/Report.jsx';
 
-/*ReactDOM.render((
-  <Router history={ browserHistory }>
-    <Route path="/" component={ App }>
-     <IndexRoute component = { Nav } />
+
+ReactDOM.render(
+  <Router history={ hashHistory }>
+    <Route path="/" component={ Layout }>
+      <IndexRoute component={ App } />
       <Route path="profile" component={ Profile } />
       <Route path="patgen" component={ PatGen } />
       <Route path="messages" component={ Messages } />
@@ -24,7 +26,5 @@ import Contact from '../components/Contact.jsx';
       <Route path="report" component={ Report } />
       <Route path="contact" component={ Contact } />
     </Route>
-  </Router>
-), document.getElementById('app'));*/
-
-ReactDOM.render(<Profile />, document.getElementById('app'));
+  </Router>,
+  document.getElementById('app'));

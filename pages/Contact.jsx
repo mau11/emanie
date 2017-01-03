@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class Contact extends React.Component {
+export default class Contact extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -15,5 +15,3 @@ class Contact extends React.Component {
     );
   }
 }
-
-export default Contact;

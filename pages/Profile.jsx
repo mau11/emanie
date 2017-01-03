@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Nav from './Nav.jsx';
 
-class Profile extends React.Component {
+export default class Profile extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -31,7 +30,6 @@ class Profile extends React.Component {
   render () {
     return (
       <div>
-      <Nav />
         PROFILE PAGE
         <div>
           <h4>Update Profile below
@@ -66,5 +64,3 @@ class Profile extends React.Component {
     );
   }
 }
-
-export default Profile;

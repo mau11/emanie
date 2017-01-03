@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class Messages extends React.Component {
+export default class Report extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -10,11 +10,9 @@ class Messages extends React.Component {
   render () {
     return (
       <div>
-        USER'S MESSAGES
+        REPORT ISSUES WITH SITE OR THROUGH GITHUB
       </div>
     );
   }
 }
-
-export default Messages;
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class PatGen extends React.Component {
+export default class About extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -10,10 +10,9 @@ class PatGen extends React.Component {
   render () {
     return (
       <div>
-        PATTERN GENERATOR
+        ABOUT EMANIE
       </div>
     );
   }
 }
 
-export default PatGen;

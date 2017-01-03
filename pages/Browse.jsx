@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class Browse extends React.Component {
+export default class Browse extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -22,7 +22,6 @@ class Browse extends React.Component {
   }
 }
 
-export default Browse;
 /*
 This page will render after submitting content in the search bar.
 */

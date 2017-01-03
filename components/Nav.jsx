@@ -1,16 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Profile from './Profile.jsx';
-import Messages from './Messages.jsx';
-import PatGen from './PatGen.jsx';
-import About from './About.jsx';
-import Report from './Report.jsx';
-import Contact from './Contact.jsx';
-import Browse from './Browse.jsx';
+
+import About from '../pages/About.jsx';
+import Browse from '../pages/Browse.jsx';
+import Contact from '../pages/Contact.jsx';
+import Messages from '../pages/Messages.jsx';
+import PatGen from '../pages/PatGen.jsx';
+import Profile from '../pages/Profile.jsx';
+import Report from '../pages/Report.jsx';
 import { IndexLink, Link } from 'react-router';
 
 
-class Nav extends React.Component {
+export default class Nav extends React.Component {
     constructor() {
     super();
     this.state = {};
@@ -32,16 +33,16 @@ class Nav extends React.Component {
         </div>
         <div id="navbarCollapse" className="collapse navbar-collapse">
           <ul className="nav navbar-nav">
-            <li><Link to="/profile">myEmanie</Link></li>
-            <li><Link to="/messages">Messages</Link></li>
-            <li><Link to="/patgen">PatGen</Link></li>
+            <li><Link to="profile">myEmanie</Link></li>
+            <li><Link to="messages">Messages</Link></li>
+            <li><Link to="patgen">PatGen</Link></li>
             <li className="dropdown">
               <a data-toggle="dropdown" className="dropdown-toggle" href="#">More <b className="caret"></b></a>
               <ul role="menu" className="dropdown-menu">
-                <li><Link to="/about">About Emanie</Link></li>
-                <li><Link to="/report">Report Issues</Link></li>
+                <li><Link to="about">About Emanie</Link></li>
+                <li><Link to="report">Report Issues</Link></li>
                 <li className="divider"></li>
-                <li><Link to="/contact">Contact Us</Link></li>
+                <li><Link to="contact">Contact Us</Link></li>
               </ul>
             </li>
           </ul>
@@ -51,7 +52,7 @@ class Nav extends React.Component {
             </div>
           </form>
           <ul className="nav navbar-nav navbar-right">
-            <li><Link to="/login">Login</Link></li>
+            <li><Link to="login">Login</Link></li>
           </ul>
         </div>
       </nav>
@@ -61,5 +62,3 @@ class Nav extends React.Component {
     );
   }
 }
-
-export default Nav;
