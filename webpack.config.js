@@ -1,3 +1,5 @@
+//var path = require('path');
+
 module.exports = {
   entry: ["./public/routes.js"],
   output: {
@@ -15,19 +17,25 @@ module.exports = {
    ],
    loaders: [
      {
-       test: [/|.js$/, /\.es6$/],
+       test: [/|.js$/, /\.es6$/,/\.json$/],
        exclude: /node_modules/,
        loader: 'babel-loader',
        query: {
          presets: ['react', 'es2015']
        }
-     }
+     },
+     {
+        test: /\.json$/,
+        loader: 'json-loader'
+      }
    ]
  },
  resolve: {
    extensions: ['', '.js', '.es6']
- }/*,
- devServer: {
-  historyApiFallback: true
- }*/
+ },
+ node: {
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
+  }
 }

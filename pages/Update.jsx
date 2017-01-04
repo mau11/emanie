@@ -1,55 +1,103 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Profile from './Profile.jsx';
 
 export default class Update extends React.Component {
   constructor() {
     super();
     this.state = {
-      checked: false
+      checked: false,
+      displayName: null,
+      craftName: null,
+      bio: null
     };
   }
 
+  getProfileData() {
+    var user = [];
+    return fetch('/update', {method: 'POST'})
+      .then((response) => response.json())
+      .then((responseJson) => {
+        console.log(responseJson)
+        return responseJson;
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+
   handleCheckbox() {
-    if(this.state.checked === false){
-      this.setState({checked: true});
-      return true;
-    } else {
+    if(this.state.checked){
       this.setState({checked: false});
       return false;
+    } else {
+      this.setState({checked: true});
+      return true;
     }
+  }
+
+  updatProfileData() {
+    var newDisplayName = $('#display').val();
+    var newCraftName = $('#craft').val();
+    var newBio = $('#blurb').val();
+    this.setState({
+      displayName: newDisplayName,
+      craftName: newCraftName,
+      bio: newBio
+    }, function(){
+      console.log(this.state.displayName);
+    });
   }
 
   handleUpdate(e) {
     e.preventDefault();
-    console.log('CLICK');
+    this.getProfileData();
+    if(this.state.checked === true){
+      console.log('CLICK');
+      this.updatProfileData();
+    } else {
+      alert('Please confirm changes.');
+    }
   }
 
-  getProfileData() {
+  onDisplay(e) {
+    this.setState({
+      displayName: e.target.value
+    });
+  }
+  onCraft(e) {
+    this.setState({
+      craftName: e.target.value
+    });
+  }
+  onBio(e) {
+    this.setState({
+      bio: e.target.value
+    });
   }
 
   render () {
     return (
       <div>
-        PROFILE PAGE
         <div>
           <h4>Update Profile below
           </h4>
-          <form>
+          <form action="/updateForm" method="post">
             <div className="form-group">
-              <label htmlFor="profilePic">Profile Image</label>
-              <input type="file" className="form-control-file" id="profilePic"/>
+              <label htmlFor="pic">Profile Image</label>
+              <input type="file" className="form-control-file" id="pic" />
             </div>
             <div className="form-group">
-              <label htmlFor="displayName">Display Name:</label>
-              <input type="email" className="form-control" id="displayName" placeholder="WILL DISPLAY CURRENT NAME"/>
+              <label htmlFor="display">Display Name:</label>
+              <input type="text" className="form-control" id="display" placeholder="Enter new display name" onChange={this.onDisplay.bind(this)}/>
             </div>
             <div className="form-group">
-              <label htmlFor="craftName">Favorite Craft:</label>
-              <input type="email" className="form-control" id="craftName"placeholder="Crochet, Knitting, Sewing, Everything!"/>
+              <label htmlFor="craft">Favorite Craft:</label>
+              <input type="text" className="form-control" id="craft" placeholder="Crochet, Knitting, Sewing...Everything!" name="craftName" onChange={this.onCraft.bind(this)}/>
             </div>
             <div className="form-group">
-              <label htmlFor="bio">Bio:</label>
-              <textarea className="form-control" id="bio" rows="3"></textarea>
+              <label htmlFor="blurb">Bio:</label>
+              <textarea className="form-control" id="blurb" rows="3" name="bio" onChange={this.onBio.bind(this)}></textarea>
             </div>
             <div className="form-check">
               <label className="form-check-label">
@@ -59,6 +107,9 @@ export default class Update extends React.Component {
             </div>
             <button type="submit" className="btn btn-inverse" onClick={this.handleUpdate.bind(this)}>Update Profile</button>
           </form>
+          <br />
+          <p>Profile preview:</p>
+          <Profile displayName={this.state.displayName} craftName={this.state.craftName} bio={this.state.bio} />
         </div>
       </div>
     );

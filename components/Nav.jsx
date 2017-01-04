@@ -15,7 +15,7 @@ import { IndexLink, Link } from 'react-router';
 
 
 export default class Nav extends React.Component {
-    constructor() {
+  constructor() {
     super();
     this.state = {};
   }
@@ -45,7 +45,7 @@ export default class Nav extends React.Component {
             </li>
             <li><Link to="messages">Messages</Link></li>
             <li><Link to="patgen">PatGen</Link></li>
-            <li><Link to="browse">Browse</Link></li>
+            <li><Link to="browse">Browse Users</Link></li>
             <li className="dropdown">
               <a data-toggle="dropdown" className="dropdown-toggle" href="#">More <b className="caret"></b></a>
               <ul role="menu" className="dropdown-menu">
