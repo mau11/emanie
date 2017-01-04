@@ -73089,10 +73089,6 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _Update = __webpack_require__(654);
-
-	var _Update2 = _interopRequireDefault(_Update);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -73107,22 +73103,57 @@
 	  function Profile() {
 	    _classCallCheck(this, Profile);
 
-	    return _possibleConstructorReturn(this, (Profile.__proto__ || Object.getPrototypeOf(Profile)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (Profile.__proto__ || Object.getPrototypeOf(Profile)).call(this));
+
+	    _this.state = {
+	      checked: false,
+	      displayName: null,
+	      craftName: null,
+	      bio: null,
+	      id: 1
+	    };
+	    return _this;
 	  }
 
+	  // Verify user id after login
+
+
 	  _createClass(Profile, [{
+	    key: 'checkId',
+	    value: function checkId() {}
+
+	    // Retrieve profile information from database
+
+	  }, {
+	    key: 'getProfileData',
+	    value: function getProfileData() {
+	      var _this2 = this;
+
+	      return fetch('/update', { method: 'POST' }).then(function (response) {
+	        return response.json();
+	      }).then(function (users) {
+	        for (var i = 0; i < users.length; i++) {
+	          for (var key in users[i]) {
+	            if (_this2.state.id === users[i].id) {
+	              _this2.setState({ displayName: users[i].displayName });
+	              _this2.setState({ craftName: users[i].craftName });
+	              _this2.setState({ bio: users[i].bio });
+	            }
+	          }
+	        }
+	      }).catch(function (error) {
+	        console.error(error);
+	      });
+	    }
+	  }, {
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      this.getProfileData();
+	    }
+	  }, {
 	    key: 'render',
-
-	    /*  constructor() {
-	        super();
-	        this.state = {};
-	      }*/
-
 	    value: function render() {
-	      var displayName = this.props.displayName;
-	      var craftName = this.props.craftName;
-	      var bio = this.props.bio;
-	      return _react2.default.createElement("div", null, _react2.default.createElement("h3", null, "Display Name: ", displayName), _react2.default.createElement("h4", null, "Favorite Craft: ", craftName), _react2.default.createElement("h4", null, "Bio: ", bio), _react2.default.createElement("h4", null));
+	      return _react2.default.createElement("div", null, _react2.default.createElement("h3", null, "Display Name: ", this.state.displayName), _react2.default.createElement("h4", null, "Favorite Craft: ", this.state.craftName), _react2.default.createElement("h4", null, "Bio: ", this.state.bio), _react2.default.createElement("h4", null));
 	    }
 	  }]);
 
@@ -73299,12 +73330,20 @@
 	  _createClass(Update, [{
 	    key: 'getProfileData',
 	    value: function getProfileData() {
-	      var user = [];
+	      var _this2 = this;
+
 	      return fetch('/update', { method: 'POST' }).then(function (response) {
 	        return response.json();
-	      }).then(function (responseJson) {
-	        console.log(responseJson);
-	        return responseJson;
+	      }).then(function (users) {
+	        console.log(users);
+	        for (var i = 0; i < users.length; i++) {
+	          for (var key in users[i]) {
+	            _this2.setState({ displayName: users[i].displayName });
+	            _this2.setState({ craftName: users[i].craftName });
+	            _this2.setState({ bio: users[i].bio });
+	          }
+	        }
+	        console.log(_this2.state.displayName);
 	      }).catch(function (error) {
 	        console.error(error);
 	      });
@@ -73323,16 +73362,16 @@
 	  }, {
 	    key: 'updatProfileData',
 	    value: function updatProfileData() {
-	      var newDisplayName = $('#display').val();
+	      /*var newDisplayName = $('#display').val();
 	      var newCraftName = $('#craft').val();
 	      var newBio = $('#blurb').val();
 	      this.setState({
 	        displayName: newDisplayName,
 	        craftName: newCraftName,
 	        bio: newBio
-	      }, function () {
+	      }, function(){
 	        console.log(this.state.displayName);
-	      });
+	      });*/
 	    }
 	  }, {
 	    key: 'handleUpdate',
@@ -73370,7 +73409,7 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement("div", null, _react2.default.createElement("div", null, _react2.default.createElement("h4", null, "Update Profile below"), _react2.default.createElement("form", { action: "/updateForm", method: "post" }, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "pic" }, "Profile Image"), _react2.default.createElement("input", { type: "file", className: "form-control-file", id: "pic" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "display" }, "Display Name:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "display", placeholder: "Enter new display name", onChange: this.onDisplay.bind(this) })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "craft" }, "Favorite Craft:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "craft", placeholder: "Crochet, Knitting, Sewing...Everything!", name: "craftName", onChange: this.onCraft.bind(this) })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "blurb" }, "Bio:"), _react2.default.createElement("textarea", { className: "form-control", id: "blurb", rows: "3", name: "bio", onChange: this.onBio.bind(this) })), _react2.default.createElement("div", { className: "form-check" }, _react2.default.createElement("label", { className: "form-check-label" }, _react2.default.createElement("input", { type: "checkbox", className: "form-check-input", onClick: this.handleCheckbox.bind(this) }), "I confirm that I have reviewed my changes.")), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse", onClick: this.handleUpdate.bind(this) }, "Update Profile")), _react2.default.createElement("br", null), _react2.default.createElement("p", null, "Profile preview:"), _react2.default.createElement(_Profile2.default, { displayName: this.state.displayName, craftName: this.state.craftName, bio: this.state.bio })));
+	      return _react2.default.createElement("div", null, _react2.default.createElement("div", null, _react2.default.createElement("h4", null, "Update Profile below"), _react2.default.createElement("form", { action: "/updateForm", method: "post" }, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "pic" }, "Profile Image"), _react2.default.createElement("input", { type: "file", className: "form-control-file", id: "pic" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "display" }, "Display Name:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "display", placeholder: "Enter new display name", onChange: this.onDisplay.bind(this) })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "craft" }, "Favorite Craft:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "craft", placeholder: "Crochet, Knitting, Sewing...Everything!", name: "craftName", onChange: this.onCraft.bind(this) })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "blurb" }, "Bio:"), _react2.default.createElement("textarea", { className: "form-control", id: "blurb", rows: "3", name: "bio", onChange: this.onBio.bind(this) })), _react2.default.createElement("div", { className: "form-check" }, _react2.default.createElement("label", { className: "form-check-label" }, _react2.default.createElement("input", { type: "checkbox", className: "form-check-input", onClick: this.handleCheckbox.bind(this) }), "I confirm that I have reviewed my changes.")), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse", onClick: this.handleUpdate.bind(this) }, "Update Profile")), _react2.default.createElement("br", null), _react2.default.createElement("p", null, "Preview:"), _react2.default.createElement("div", null, _react2.default.createElement("h3", null, "Display Name: ", this.state.displayName), _react2.default.createElement("h4", null, "Favorite Craft: ", this.state.craftName), _react2.default.createElement("h4", null, "Bio: ", this.state.bio))));
 	    }
 	  }]);
 

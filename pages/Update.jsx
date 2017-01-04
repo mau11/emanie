@@ -14,16 +14,23 @@ export default class Update extends React.Component {
   }
 
   getProfileData() {
-    var user = [];
     return fetch('/update', {method: 'POST'})
       .then((response) => response.json())
-      .then((responseJson) => {
-        console.log(responseJson)
-        return responseJson;
+      .then((users) => {
+        console.log(users);
+        for(var i = 0; i < users.length; i++){
+          for(var key in users[i]){
+            this.setState({displayName: users[i].displayName});
+            this.setState({craftName: users[i].craftName});
+            this.setState({bio: users[i].bio});
+          }
+        }
+        console.log(this.state.displayName);
       })
       .catch((error) => {
         console.error(error);
       });
+
   }
 
   handleCheckbox() {
@@ -37,7 +44,7 @@ export default class Update extends React.Component {
   }
 
   updatProfileData() {
-    var newDisplayName = $('#display').val();
+    /*var newDisplayName = $('#display').val();
     var newCraftName = $('#craft').val();
     var newBio = $('#blurb').val();
     this.setState({
@@ -46,7 +53,7 @@ export default class Update extends React.Component {
       bio: newBio
     }, function(){
       console.log(this.state.displayName);
-    });
+    });*/
   }
 
   handleUpdate(e) {
@@ -65,11 +72,13 @@ export default class Update extends React.Component {
       displayName: e.target.value
     });
   }
+
   onCraft(e) {
     this.setState({
       craftName: e.target.value
     });
   }
+
   onBio(e) {
     this.setState({
       bio: e.target.value
@@ -108,8 +117,12 @@ export default class Update extends React.Component {
             <button type="submit" className="btn btn-inverse" onClick={this.handleUpdate.bind(this)}>Update Profile</button>
           </form>
           <br />
-          <p>Profile preview:</p>
-          <Profile displayName={this.state.displayName} craftName={this.state.craftName} bio={this.state.bio} />
+          <p>Preview:</p>
+          <div>
+            <h3>Display Name: {this.state.displayName}</h3>
+            <h4>Favorite Craft: {this.state.craftName}</h4>
+            <h4>Bio: {this.state.bio}</h4>
+          </div>
         </div>
       </div>
     );
