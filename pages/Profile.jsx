@@ -20,7 +20,7 @@ export default class Profile extends React.Component {
 
   // Retrieve profile information from database
   getProfileData() {
-    return fetch('/update', {method: 'POST'})
+    return fetch('/update', {method: 'GET'})
       .then((response) => response.json())
       .then((users) => {
         for(var i = 0; i < users.length; i++){

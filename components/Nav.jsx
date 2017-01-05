@@ -61,14 +61,15 @@ export default class Nav extends React.Component {
           <form role="search" className="navbar-form navbar-left">
             <div className="form-group">
               <input type="text" placeholder="Search Patterns" className="form-control" />
+              <button type="submit" className="btn btn-inverse">Search</button>
             </div>
           </form>
-          <ul className="nav navbar-nav navbar-right">
+          {/*<ul className="nav navbar-nav navbar-right">
             <li><Link to="login">Login</Link></li>
           </ul>
           <ul className="nav navbar-nav navbar-right">
             <li><Link to="logout">Logout</Link></li>
-          </ul>
+          </ul>*/}
         </div>
       </nav>
       </div>

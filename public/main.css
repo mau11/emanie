@@ -1,4 +1,10 @@
 /*HTML TAGS*/
+body {
+  background-color: #F5F5F5;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 footer {
   position: absolute;
   right: 0;
@@ -15,6 +21,8 @@ h2, h5, h6 {
 
 
 /*CLASSES*/
+
+
 .mainTitle{
   text-align: center;
 }

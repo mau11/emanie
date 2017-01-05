@@ -31,7 +31,7 @@ app.get('/', function (req, res){
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Create new table if one does not exist
+// Create new tables if they do not exist
 var newTable = 'CREATE TABLE IF NOT EXISTS profiles (id int(11) NOT NULL AUTO_INCREMENT, name varchar(20), displayName varchar(20) UNIQUE, craftName varchar(20), bio varchar(150), PRIMARY KEY (id)) ENGINE=InnoDB  DEFAULT CHARSET=utf8';
 connection.query(newTable, function(err, rows){
   if(err){
@@ -47,32 +47,19 @@ connection.query(newTable, function(err, rows){
   }
 });
 
+
+
+
 // CRUD ROUTES & SQL:
 // POST (Create) --> INSERT
 app.post('/update', function(req, res){
-  var displayName;
-  var craftName;
-  var bio;
-  connection.query('SELECT * FROM profiles', function(err, rows){
+  console.log('TEST', req.body);
+  /*var sql3 = mysql.format("UPDATE profiles SET displayName = ? WHERE id = ?", [req]);
+  connection.query(sql3, function(err, rows){
     if(err){
       throw err;
     }
-    for(var i = 0; i < rows.length; i++) {
-      for(var key in rows[i]){
-        displayName = rows[i].displayName;
-        craftName = rows[i].craftName;
-        bio = rows[i].bio;
-      }
-    }
-    res.send(rows);
-    console.log('REQ FROM CLIENT', rows);
-    var sql3 = mysql.format("UPDATE profiles SET displayName = ? WHERE id = 2", [rows[1]]);
-    connection.query(sql3, function(err, rows){
-      if(err){
-        throw err;
-      }
-    });
-  })
+  });*/
 });
 
 

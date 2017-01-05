@@ -10,23 +10,44 @@ export default class Update extends React.Component {
       displayName: null,
       craftName: null,
       bio: null,
-      id: 1
+      id: 1,
+      allUsers: null
     };
   }
 
   // Gets all data in db
-  getProfileData() {
+  getProfileData(cb) {
+    var test;
     return fetch('/update', {method: 'GET'})
       .then((response) => response.json())
       .then((users) => {
+        console.log('FROM SERVER', users);
         for(var i = 0; i < users.length; i++){
           for(var key in users[i]){
             if(this.state.id === users[i].id){
               this.setState({displayName: users[i].displayName});
+              if($('#display').val()){
+                var dis = $('#display').val();
+                this.setState({displayName: dis});
+              }
               this.setState({craftName: users[i].craftName});
+              if($('#craft').val()){
+                var newCraftName = $('#craft').val();
+                this.setState({craftName:newCraftName});
+              }
               this.setState({bio: users[i].bio});
+              if($('#blurb').val()){
+                var newBio = $('#blurb').val();
+                this.setState({bio: newBio});
+              }
             }
           }
+          users[i].displayName = this.state.displayName;
+          users[i].craftName = this.state.craftName;
+          users[i].bio = this.state.bio;
+          this.setState({allUsers: users});
+          test = users;
+          cb(test);
         }
       })
       .catch((error) => {
@@ -44,58 +65,32 @@ export default class Update extends React.Component {
     }
   }
 
-  updateProfileData() {
-    console.log('running');
-    // Create new table if does not exist
-    fetch('/updates/', {method: 'POST'})
-      .then((response) => console.log(response))
-      .then((info) => {
-        console.log('INFO', info);
-      })
-    // Check if user is already in table
-    // Save new data to db
-    fetch('/update', {method: 'PUT'})
-      .then((response) => console.log('PUT', response))
-      .then((users) => {
-        console.log(users);
-        for(var a = 0; a < users.length; a++){
-          console.log('hiiiiiiiii');
-          for(var key2 in users[a]){
-            console.log('hi');
-            if(this.state.id === users[a].id){
-              console.log('TEXT TYPED', $('#display').val());
-              if($('#display').val()){
-                var dis = $('#display').val();
-                this.setState({displayName: dis});
-              }
-              if($('#craft').val()){
-                var newCraftName = $('#craft').val();
-                this.setState({craftName:newCraftName});
-              }
-              if($('#blurb').val()){
-                var newBio = $('#blurb').val();
-                this.setState({bio: newBio});
-              }
-              users[a].displayName = this.state.displayName;
-              users[a].craftName = this.state.craftName;
-              users[a].bio = this.state.bio;
-            }
-          }
+  updateProfileData(param) {
+/*    console.log('running', param);
+    $(document).ready(function(){
+      $.ajax({
+        url: '/update',
+        type: 'POST',
+        data: JSON.stringify(param),
+        contentType: "application/json",
+        dataType:'json',
+        success: function(results){
+          console.log('Data sent!');
+          console.log(JSON.stringify(results));
+        },
+        error: function(err) {
+          console.error('NOT SENT', err.toString());
         }
-        //call getProfileData again to update page
-        this.getProfileData();
-        console.log(this.state.displayName);
-      })
-      .catch((error) => {
-        console.error(error);
       });
+    })*/
   }
 
   handleUpdate(e) {
     e.preventDefault();
     if(this.state.checked === true){
+      this.getProfileData(this.updateProfileData);
       console.log('CLICK');
-      this.updateProfileData();
+      //this.updateProfileData();
     } else {
       alert('Please confirm changes.');
     }
@@ -120,15 +115,18 @@ export default class Update extends React.Component {
     });
   }
 
+
   render () {
+
     return (
       <div>
+      <h3>Edit Profile</h3>
         <div className="container">
           <div className="row">
             <div className="col-sm-6">
               <div>
-                <h5>Update Profile below
-                </h5>
+                <h3>Update Profile below
+                </h3>
                 <form action="/updateForm" method="post">
                   <div className="form-group">
                     <label htmlFor="pic">Profile Image</label>
@@ -169,3 +167,4 @@ export default class Update extends React.Component {
     );
   }
 }
+

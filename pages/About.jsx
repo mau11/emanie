@@ -10,7 +10,7 @@ export default class About extends React.Component {
   render () {
     return (
       <div>
-        ABOUT EMANIE
+        <h3>ABOUT EMANIE</h3>
       </div>
     );
   }

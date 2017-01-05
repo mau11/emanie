@@ -53956,7 +53956,7 @@
 	  _createClass(About, [{
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement("div", null, "ABOUT EMANIE");
+	      return _react2.default.createElement("div", null, _react2.default.createElement("h3", null, "ABOUT EMANIE"));
 	    }
 	  }]);
 
@@ -54037,6 +54037,8 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
+	var _reactRouter = __webpack_require__(179);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -54060,7 +54062,7 @@
 	  _createClass(Browse, [{
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement("div", null, "Browse users");
+	      return _react2.default.createElement("div", { className: "" }, _react2.default.createElement("h3", null, "Browse Users"), _react2.default.createElement("div", { className: "col-sm-12" }, _react2.default.createElement("div", { className: "col-sm-12" }, _react2.default.createElement("h1", null)), _react2.default.createElement("div", { className: "col-sm-3" }, _react2.default.createElement("div", null, _react2.default.createElement(_reactRouter.Link, { to: "" }, _react2.default.createElement("img", { className: "defaultIcon", src: "../img/defaultIcon.png" })), "USER", _react2.default.createElement("div", { className: "" }))), _react2.default.createElement("div", { className: "col-sm-3" }, _react2.default.createElement("div", null, _react2.default.createElement(_reactRouter.Link, { to: "" }, _react2.default.createElement("img", { className: "defaultIcon", src: "../img/defaultIcon.png" })), "USER", _react2.default.createElement("div", { className: "" }))), _react2.default.createElement("div", { className: "col-sm-3" }, _react2.default.createElement("div", null, _react2.default.createElement(_reactRouter.Link, { to: "" }, _react2.default.createElement("img", { className: "defaultIcon", src: "../img/defaultIcon.png" })), "USER", _react2.default.createElement("div", { className: "" }))), _react2.default.createElement("div", { className: "col-sm-3" }, _react2.default.createElement("div", null, _react2.default.createElement(_reactRouter.Link, { to: "" }, _react2.default.createElement("img", { className: "defaultIcon", src: "../img/defaultIcon.png" })), "USER", _react2.default.createElement("div", { className: "" }))), _react2.default.createElement("div", { className: "col-sm-3" }, _react2.default.createElement("div", null, _react2.default.createElement(_reactRouter.Link, { to: "" }, _react2.default.createElement("img", { className: "defaultIcon", src: "../img/defaultIcon.png" })), "USER", _react2.default.createElement("div", { className: "" })))));
 	    }
 	  }]);
 
@@ -72968,7 +72970,14 @@
 	    key: 'render',
 	    value: function render() {
 
-	      return _react2.default.createElement("div", null, _react2.default.createElement("nav", { role: "navigation", className: "navbar navbar-inverse" }, _react2.default.createElement("div", { className: "navbar-header" }, _react2.default.createElement("button", { type: "button", "data-target": "#navbarCollapse", "data-toggle": "collapse", className: "navbar-toggle" }, _react2.default.createElement("span", { className: "sr-only" }, "Toggle navigation"), _react2.default.createElement("span", { className: "icon-bar" }), _react2.default.createElement("span", { className: "icon-bar" }), _react2.default.createElement("span", { className: "icon-bar" })), _react2.default.createElement(_reactRouter.IndexLink, { to: "/", className: "navbar-brand" }, "Home")), _react2.default.createElement("div", { id: "navbarCollapse", className: "collapse navbar-collapse" }, _react2.default.createElement("ul", { className: "nav navbar-nav" }, _react2.default.createElement("li", { className: "dropdown" }, _react2.default.createElement("a", { "data-toggle": "dropdown", className: "dropdown-toggle", href: "#" }, "myEmanie ", _react2.default.createElement("b", { className: "caret" })), _react2.default.createElement("ul", { role: "menu", className: "dropdown-menu" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "profile" }, "View Profile")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "update" }, "Update Profile")))), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "messages" }, "Messages")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "patgen" }, "PatGen")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "browse" }, "Browse Users")), _react2.default.createElement("li", { className: "dropdown" }, _react2.default.createElement("a", { "data-toggle": "dropdown", className: "dropdown-toggle", href: "#" }, "More ", _react2.default.createElement("b", { className: "caret" })), _react2.default.createElement("ul", { role: "menu", className: "dropdown-menu" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "about" }, "About Emanie")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "report" }, "Report Issues")), _react2.default.createElement("li", { className: "divider" }), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "contact" }, "Contact Us"))))), _react2.default.createElement("form", { role: "search", className: "navbar-form navbar-left" }, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("input", { type: "text", placeholder: "Search Patterns", className: "form-control" }))), _react2.default.createElement("ul", { className: "nav navbar-nav navbar-right" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "login" }, "Login"))), _react2.default.createElement("ul", { className: "nav navbar-nav navbar-right" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "logout" }, "Logout"))))));
+	      return _react2.default.createElement("div", null, _react2.default.createElement("nav", { role: "navigation", className: "navbar navbar-inverse" }, _react2.default.createElement("div", { className: "navbar-header" }, _react2.default.createElement("button", { type: "button", "data-target": "#navbarCollapse", "data-toggle": "collapse", className: "navbar-toggle" }, _react2.default.createElement("span", { className: "sr-only" }, "Toggle navigation"), _react2.default.createElement("span", { className: "icon-bar" }), _react2.default.createElement("span", { className: "icon-bar" }), _react2.default.createElement("span", { className: "icon-bar" })), _react2.default.createElement(_reactRouter.IndexLink, { to: "/", className: "navbar-brand" }, "Home")), _react2.default.createElement("div", { id: "navbarCollapse", className: "collapse navbar-collapse" }, _react2.default.createElement("ul", { className: "nav navbar-nav" }, _react2.default.createElement("li", { className: "dropdown" }, _react2.default.createElement("a", { "data-toggle": "dropdown", className: "dropdown-toggle", href: "#" }, "myEmanie ", _react2.default.createElement("b", { className: "caret" })), _react2.default.createElement("ul", { role: "menu", className: "dropdown-menu" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "profile" }, "View Profile")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "update" }, "Update Profile")))), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "messages" }, "Messages")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "patgen" }, "PatGen")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "browse" }, "Browse Users")), _react2.default.createElement("li", { className: "dropdown" }, _react2.default.createElement("a", { "data-toggle": "dropdown", className: "dropdown-toggle", href: "#" }, "More ", _react2.default.createElement("b", { className: "caret" })), _react2.default.createElement("ul", { role: "menu", className: "dropdown-menu" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "about" }, "About Emanie")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "report" }, "Report Issues")), _react2.default.createElement("li", { className: "divider" }), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "contact" }, "Contact Us"))))), _react2.default.createElement("form", { role: "search", className: "navbar-form navbar-left" }, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("input", { type: "text", placeholder: "Search Patterns", className: "form-control" }), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse" }, "Search")))
+	      /*<ul className="nav navbar-nav navbar-right">
+	        <li><Link to="login">Login</Link></li>
+	      </ul>
+	      <ul className="nav navbar-nav navbar-right">
+	        <li><Link to="logout">Logout</Link></li>
+	      </ul>*/
+	      )));
 	    }
 	  }]);
 
@@ -73171,6 +73180,8 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
+	var _reactRouter = __webpack_require__(179);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -73194,7 +73205,42 @@
 	  _createClass(PatGen, [{
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement("div", null, "PATTERN GENERATOR");
+	      return _react2.default.createElement("div", null,
+	      /*<h3>View Patterns</h3>
+	        <div className="col-sm-12">
+	          <div className="col-sm-12">
+	            <h1></h1>
+	          </div>
+	          <div className="col-sm-4">
+	            <div>
+	              <Link to="">
+	                <img className="defaultPatIcon" src="../img/defaultPatIcon.png" />
+	              </Link>Pattern
+	              <div className="defaultPatIcon">
+	              </div>
+	            </div>
+	          </div>
+	          <div className="col-sm-4">
+	            <div>
+	              <Link to="">
+	                <img className="defaultPatIcon" src="../img/defaultPatIcon.png" />
+	              </Link>Pattern
+	              <div className="defaultPatIcon">
+	              </div>
+	            </div>
+	          </div>
+	          <div className="col-sm-4">
+	            <div>
+	              <Link to="">
+	                <img className="defaultPatIcon" src="../img/defaultPatIcon.png" />
+	              </Link>Pattern
+	              <div className="defaultPatIcon">
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	        <hr/>*/
+	      _react2.default.createElement("h3", null, "Pattern Generator"), _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("div", { className: "row" }, _react2.default.createElement("div", { className: "col-sm-6" }, _react2.default.createElement("div", null, _react2.default.createElement("h4", null, "Add a New Pattern"), _react2.default.createElement("form", { action: "/patternForm", method: "post" }, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "pic" }, "Import PDF"), _react2.default.createElement("input", { type: "file", className: "form-control-file", id: "pic", name: "picName" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "display" }, "Pattern Name:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "display", placeholder: "Enter pattern name", onChange: "", name: "display" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "craft" }, "Craft:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "craft", placeholder: "Crochet, Knitting, Sewing...Everything!", name: "craft", onChange: "" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "craft" }, "Supplies:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "craft", placeholder: "Hooks, Needles, Yarn, Gauge...", name: "craft", onChange: "" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "blurb" }, "Notes/Details:"), _react2.default.createElement("textarea", { className: "form-control", id: "bio", rows: "2", name: "bio", onChange: "" })), _react2.default.createElement("div", { className: "form-check" }, _react2.default.createElement("label", { className: "form-check-label" }, _react2.default.createElement("input", { type: "checkbox", className: "form-check-input", onClick: "" }), " I confirm that I have reviewed my changes.")), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse", onClick: "" }, "Add Pattern")))), _react2.default.createElement("div", { className: "col-sm-6" }, _react2.default.createElement("h4", null, "Generate Custom Patterns"), _react2.default.createElement("div", null, _react2.default.createElement("h3", null, "Display Name: "), _react2.default.createElement("h4", null, "Favorite Craft: "), _react2.default.createElement("h4", null, "Bio: "))))));
 	    }
 	  }]);
 
@@ -73263,7 +73309,7 @@
 	    value: function getProfileData() {
 	      var _this2 = this;
 
-	      return fetch('/update', { method: 'POST' }).then(function (response) {
+	      return fetch('/update', { method: 'GET' }).then(function (response) {
 	        return response.json();
 	      }).then(function (users) {
 	        for (var i = 0; i < users.length; i++) {
@@ -73457,7 +73503,8 @@
 	      displayName: null,
 	      craftName: null,
 	      bio: null,
-	      id: 1
+	      id: 1,
+	      allUsers: null
 	    };
 	    return _this;
 	  }
@@ -73467,20 +73514,40 @@
 
 	  _createClass(Update, [{
 	    key: 'getProfileData',
-	    value: function getProfileData() {
+	    value: function getProfileData(cb) {
 	      var _this2 = this;
 
+	      var test;
 	      return fetch('/update', { method: 'GET' }).then(function (response) {
 	        return response.json();
 	      }).then(function (users) {
+	        console.log('FROM SERVER', users);
 	        for (var i = 0; i < users.length; i++) {
 	          for (var key in users[i]) {
 	            if (_this2.state.id === users[i].id) {
 	              _this2.setState({ displayName: users[i].displayName });
+	              if ($('#display').val()) {
+	                var dis = $('#display').val();
+	                _this2.setState({ displayName: dis });
+	              }
 	              _this2.setState({ craftName: users[i].craftName });
+	              if ($('#craft').val()) {
+	                var newCraftName = $('#craft').val();
+	                _this2.setState({ craftName: newCraftName });
+	              }
 	              _this2.setState({ bio: users[i].bio });
+	              if ($('#blurb').val()) {
+	                var newBio = $('#blurb').val();
+	                _this2.setState({ bio: newBio });
+	              }
 	            }
 	          }
+	          users[i].displayName = _this2.state.displayName;
+	          users[i].craftName = _this2.state.craftName;
+	          users[i].bio = _this2.state.bio;
+	          _this2.setState({ allUsers: users });
+	          test = users;
+	          cb(test);
 	        }
 	      }).catch(function (error) {
 	        console.error(error);
@@ -73499,60 +73566,33 @@
 	    }
 	  }, {
 	    key: 'updateProfileData',
-	    value: function updateProfileData() {
-	      var _this3 = this;
-
-	      console.log('running');
-	      // Create new table if does not exist
-	      fetch('/updates/', { method: 'POST' }).then(function (response) {
-	        return console.log(response);
-	      }).then(function (info) {
-	        console.log('INFO', info);
-	      });
-	      // Check if user is already in table
-	      // Save new data to db
-	      fetch('/update', { method: 'PUT' }).then(function (response) {
-	        return console.log('PUT', response);
-	      }).then(function (users) {
-	        console.log(users);
-	        for (var a = 0; a < users.length; a++) {
-	          console.log('hiiiiiiiii');
-	          for (var key2 in users[a]) {
-	            console.log('hi');
-	            if (_this3.state.id === users[a].id) {
-	              console.log('TEXT TYPED', $('#display').val());
-	              if ($('#display').val()) {
-	                var dis = $('#display').val();
-	                _this3.setState({ displayName: dis });
+	    value: function updateProfileData(param) {
+	      /*    console.log('running', param);
+	          $(document).ready(function(){
+	            $.ajax({
+	              url: '/update',
+	              type: 'POST',
+	              data: JSON.stringify(param),
+	              contentType: "application/json",
+	              dataType:'json',
+	              success: function(results){
+	                console.log('Data sent!');
+	                console.log(JSON.stringify(results));
+	              },
+	              error: function(err) {
+	                console.error('NOT SENT', err.toString());
 	              }
-	              if ($('#craft').val()) {
-	                var newCraftName = $('#craft').val();
-	                _this3.setState({ craftName: newCraftName });
-	              }
-	              if ($('#blurb').val()) {
-	                var newBio = $('#blurb').val();
-	                _this3.setState({ bio: newBio });
-	              }
-	              users[a].displayName = _this3.state.displayName;
-	              users[a].craftName = _this3.state.craftName;
-	              users[a].bio = _this3.state.bio;
-	            }
-	          }
-	        }
-	        //call getProfileData again to update page
-	        _this3.getProfileData();
-	        console.log(_this3.state.displayName);
-	      }).catch(function (error) {
-	        console.error(error);
-	      });
+	            });
+	          })*/
 	    }
 	  }, {
 	    key: 'handleUpdate',
 	    value: function handleUpdate(e) {
 	      e.preventDefault();
 	      if (this.state.checked === true) {
+	        this.getProfileData(this.updateProfileData);
 	        console.log('CLICK');
-	        this.updateProfileData();
+	        //this.updateProfileData();
 	      } else {
 	        alert('Please confirm changes.');
 	      }
@@ -73584,7 +73624,8 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement("div", null, _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("div", { className: "row" }, _react2.default.createElement("div", { className: "col-sm-6" }, _react2.default.createElement("div", null, _react2.default.createElement("h5", null, "Update Profile below"), _react2.default.createElement("form", { action: "/updateForm", method: "post" }, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "pic" }, "Profile Image"), _react2.default.createElement("input", { type: "file", className: "form-control-file", id: "pic", name: "picName" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "display" }, "Display Name:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "display", placeholder: "Enter new display name", onChange: this.onDisplay.bind(this), name: "display" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "craft" }, "Favorite Craft:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "craft", placeholder: "Crochet, Knitting, Sewing...Everything!", name: "craft", onChange: this.onCraft.bind(this) })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "blurb" }, "Bio:"), _react2.default.createElement("textarea", { className: "form-control", id: "bio", rows: "3", name: "bio", onChange: this.onBio.bind(this) })), _react2.default.createElement("div", { className: "form-check" }, _react2.default.createElement("label", { className: "form-check-label" }, _react2.default.createElement("input", { type: "checkbox", className: "form-check-input", onClick: this.handleCheckbox.bind(this) }), " I confirm that I have reviewed my changes.")), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse", onClick: this.handleUpdate.bind(this) }, "Update Profile")))), _react2.default.createElement("div", { className: "col-sm-6" }, _react2.default.createElement("h5", null, _react2.default.createElement("i", null, "Preview:")), _react2.default.createElement("div", null, _react2.default.createElement("h3", null, "Display Name: ", this.state.displayName), _react2.default.createElement("h4", null, "Favorite Craft: ", this.state.craftName), _react2.default.createElement("h4", null, "Bio: ", this.state.bio))))));
+
+	      return _react2.default.createElement("div", null, _react2.default.createElement("h3", null, "Edit Profile"), _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("div", { className: "row" }, _react2.default.createElement("div", { className: "col-sm-6" }, _react2.default.createElement("div", null, _react2.default.createElement("h3", null, "Update Profile below"), _react2.default.createElement("form", { action: "/updateForm", method: "post" }, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "pic" }, "Profile Image"), _react2.default.createElement("input", { type: "file", className: "form-control-file", id: "pic", name: "picName" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "display" }, "Display Name:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "display", placeholder: "Enter new display name", onChange: this.onDisplay.bind(this), name: "display" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "craft" }, "Favorite Craft:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "craft", placeholder: "Crochet, Knitting, Sewing...Everything!", name: "craft", onChange: this.onCraft.bind(this) })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "blurb" }, "Bio:"), _react2.default.createElement("textarea", { className: "form-control", id: "bio", rows: "3", name: "bio", onChange: this.onBio.bind(this) })), _react2.default.createElement("div", { className: "form-check" }, _react2.default.createElement("label", { className: "form-check-label" }, _react2.default.createElement("input", { type: "checkbox", className: "form-check-input", onClick: this.handleCheckbox.bind(this) }), " I confirm that I have reviewed my changes.")), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse", onClick: this.handleUpdate.bind(this) }, "Update Profile")))), _react2.default.createElement("div", { className: "col-sm-6" }, _react2.default.createElement("h5", null, _react2.default.createElement("i", null, "Preview:")), _react2.default.createElement("div", null, _react2.default.createElement("h3", null, "Display Name: ", this.state.displayName), _react2.default.createElement("h4", null, "Favorite Craft: ", this.state.craftName), _react2.default.createElement("h4", null, "Bio: ", this.state.bio))))));
 	    }
 	  }]);
 
