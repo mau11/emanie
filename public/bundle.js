@@ -87,15 +87,19 @@
 
 	var _Container2 = _interopRequireDefault(_Container);
 
-	var _Layout = __webpack_require__(781);
+	var _Layout = __webpack_require__(657);
 
 	var _Layout2 = _interopRequireDefault(_Layout);
 
-	var _Login = __webpack_require__(783);
+	var _Login = __webpack_require__(649);
 
 	var _Login2 = _interopRequireDefault(_Login);
 
-	var _Messages = __webpack_require__(649);
+	var _Logout = __webpack_require__(650);
+
+	var _Logout2 = _interopRequireDefault(_Logout);
+
+	var _Messages = __webpack_require__(651);
 
 	var _Messages2 = _interopRequireDefault(_Messages);
 
@@ -103,23 +107,23 @@
 
 	var _Nav2 = _interopRequireDefault(_Nav);
 
-	var _PatGen = __webpack_require__(650);
+	var _PatGen = __webpack_require__(652);
 
 	var _PatGen2 = _interopRequireDefault(_PatGen);
 
-	var _Profile = __webpack_require__(651);
+	var _Profile = __webpack_require__(653);
 
 	var _Profile2 = _interopRequireDefault(_Profile);
 
-	var _Report = __webpack_require__(652);
+	var _Report = __webpack_require__(654);
 
 	var _Report2 = _interopRequireDefault(_Report);
 
-	var _Search = __webpack_require__(653);
+	var _Search = __webpack_require__(655);
 
 	var _Search2 = _interopRequireDefault(_Search);
 
-	var _Update = __webpack_require__(654);
+	var _Update = __webpack_require__(656);
 
 	var _Update2 = _interopRequireDefault(_Update);
 
@@ -134,7 +138,7 @@
 	  }
 	};
 
-	_reactDom2.default.render(_react2.default.createElement(_reactRouter.Router, { history: _reactRouter.hashHistory }, _react2.default.createElement(_reactRouter.Route, { path: "/", component: _Container2.default, auth: auth }, _react2.default.createElement(_reactRouter.IndexRoute, { component: _App2.default, auth: auth }), _react2.default.createElement(_reactRouter.Route, { path: "profile", component: _Profile2.default, onEnter: requireAuth }), _react2.default.createElement(_reactRouter.Route, { path: "update", component: _Update2.default, onEnter: requireAuth }), _react2.default.createElement(_reactRouter.Route, { path: "browse", component: _Browse2.default, onEnter: requireAuth }), _react2.default.createElement(_reactRouter.Route, { path: "messages", component: _Messages2.default, onEnter: requireAuth }), _react2.default.createElement(_reactRouter.Route, { path: "patgen", component: _PatGen2.default, onEnter: requireAuth }), _react2.default.createElement(_reactRouter.Route, { path: "about", component: _About2.default, auth: auth }), _react2.default.createElement(_reactRouter.Route, { path: "report", component: _Report2.default, auth: auth }), _react2.default.createElement(_reactRouter.Route, { path: "contact", component: _Contact2.default, auth: auth }), _react2.default.createElement(_reactRouter.Route, { path: "search", component: _Search2.default, onEnter: requireAuth }), _react2.default.createElement(_reactRouter.Route, { path: "login", component: _Login2.default, auth: auth }))), document.getElementById('app'));
+	_reactDom2.default.render(_react2.default.createElement(_reactRouter.Router, { history: _reactRouter.hashHistory }, _react2.default.createElement(_reactRouter.Route, { path: "/", component: _Container2.default, auth: auth }, _react2.default.createElement(_reactRouter.IndexRoute, { component: _App2.default, auth: auth }), _react2.default.createElement(_reactRouter.Route, { path: "profile", component: _Profile2.default, onEnter: requireAuth }), _react2.default.createElement(_reactRouter.Route, { path: "update", component: _Update2.default, onEnter: requireAuth }), _react2.default.createElement(_reactRouter.Route, { path: "browse", component: _Browse2.default, onEnter: requireAuth }), _react2.default.createElement(_reactRouter.Route, { path: "messages", component: _Messages2.default, onEnter: requireAuth }), _react2.default.createElement(_reactRouter.Route, { path: "patgen", component: _PatGen2.default, onEnter: requireAuth }), _react2.default.createElement(_reactRouter.Route, { path: "about", component: _About2.default, auth: auth }), _react2.default.createElement(_reactRouter.Route, { path: "report", component: _Report2.default, auth: auth }), _react2.default.createElement(_reactRouter.Route, { path: "contact", component: _Contact2.default, auth: auth }), _react2.default.createElement(_reactRouter.Route, { path: "search", component: _Search2.default, onEnter: requireAuth }), _react2.default.createElement(_reactRouter.Route, { path: "login", component: _Login2.default, auth: auth }), _react2.default.createElement(_reactRouter.Route, { path: "logout", component: _Logout2.default, auth: auth }))), document.getElementById('app'));
 
 /***/ },
 /* 2 */
@@ -54004,7 +54008,7 @@
 	  _createClass(App, [{
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement("div", null, _react2.default.createElement("h2", null, "Welcome to Emanie!"), _react2.default.createElement("h4", null, _react2.default.createElement("i", null, "A community for crafters...")));
+	      return _react2.default.createElement("div", null, _react2.default.createElement("h2", null, "Welcome to Emanie!"), _react2.default.createElement("h5", null, _react2.default.createElement("i", null, "A community for crafters to store and share their passion.")));
 	    }
 	  }]);
 
@@ -72906,27 +72910,35 @@
 
 	var _Contact2 = _interopRequireDefault(_Contact);
 
-	var _Messages = __webpack_require__(649);
+	var _Login = __webpack_require__(649);
+
+	var _Login2 = _interopRequireDefault(_Login);
+
+	var _Logout = __webpack_require__(650);
+
+	var _Logout2 = _interopRequireDefault(_Logout);
+
+	var _Messages = __webpack_require__(651);
 
 	var _Messages2 = _interopRequireDefault(_Messages);
 
-	var _PatGen = __webpack_require__(650);
+	var _PatGen = __webpack_require__(652);
 
 	var _PatGen2 = _interopRequireDefault(_PatGen);
 
-	var _Profile = __webpack_require__(651);
+	var _Profile = __webpack_require__(653);
 
 	var _Profile2 = _interopRequireDefault(_Profile);
 
-	var _Report = __webpack_require__(652);
+	var _Report = __webpack_require__(654);
 
 	var _Report2 = _interopRequireDefault(_Report);
 
-	var _Search = __webpack_require__(653);
+	var _Search = __webpack_require__(655);
 
 	var _Search2 = _interopRequireDefault(_Search);
 
-	var _Update = __webpack_require__(654);
+	var _Update = __webpack_require__(656);
 
 	var _Update2 = _interopRequireDefault(_Update);
 
@@ -72956,7 +72968,7 @@
 	    key: 'render',
 	    value: function render() {
 
-	      return _react2.default.createElement("div", null, _react2.default.createElement("nav", { role: "navigation", className: "navbar navbar-inverse" }, _react2.default.createElement("div", { className: "navbar-header" }, _react2.default.createElement("button", { type: "button", "data-target": "#navbarCollapse", "data-toggle": "collapse", className: "navbar-toggle" }, _react2.default.createElement("span", { className: "sr-only" }, "Toggle navigation"), _react2.default.createElement("span", { className: "icon-bar" }), _react2.default.createElement("span", { className: "icon-bar" }), _react2.default.createElement("span", { className: "icon-bar" })), _react2.default.createElement(_reactRouter.IndexLink, { to: "/", className: "navbar-brand" }, "Home")), _react2.default.createElement("div", { id: "navbarCollapse", className: "collapse navbar-collapse" }, _react2.default.createElement("ul", { className: "nav navbar-nav" }, _react2.default.createElement("li", { className: "dropdown" }, _react2.default.createElement("a", { "data-toggle": "dropdown", className: "dropdown-toggle", href: "#" }, "myEmanie ", _react2.default.createElement("b", { className: "caret" })), _react2.default.createElement("ul", { role: "menu", className: "dropdown-menu" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "profile" }, "View Profile")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "update" }, "Update Profile")))), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "messages" }, "Messages")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "patgen" }, "PatGen")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "browse" }, "Browse Users")), _react2.default.createElement("li", { className: "dropdown" }, _react2.default.createElement("a", { "data-toggle": "dropdown", className: "dropdown-toggle", href: "#" }, "More ", _react2.default.createElement("b", { className: "caret" })), _react2.default.createElement("ul", { role: "menu", className: "dropdown-menu" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "about" }, "About Emanie")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "report" }, "Report Issues")), _react2.default.createElement("li", { className: "divider" }), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "contact" }, "Contact Us"))))), _react2.default.createElement("form", { role: "search", className: "navbar-form navbar-left" }, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("input", { type: "text", placeholder: "Search Patterns", className: "form-control" }))), _react2.default.createElement("ul", { className: "nav navbar-nav navbar-right" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "login" }, "Login"))))));
+	      return _react2.default.createElement("div", null, _react2.default.createElement("nav", { role: "navigation", className: "navbar navbar-inverse" }, _react2.default.createElement("div", { className: "navbar-header" }, _react2.default.createElement("button", { type: "button", "data-target": "#navbarCollapse", "data-toggle": "collapse", className: "navbar-toggle" }, _react2.default.createElement("span", { className: "sr-only" }, "Toggle navigation"), _react2.default.createElement("span", { className: "icon-bar" }), _react2.default.createElement("span", { className: "icon-bar" }), _react2.default.createElement("span", { className: "icon-bar" })), _react2.default.createElement(_reactRouter.IndexLink, { to: "/", className: "navbar-brand" }, "Home")), _react2.default.createElement("div", { id: "navbarCollapse", className: "collapse navbar-collapse" }, _react2.default.createElement("ul", { className: "nav navbar-nav" }, _react2.default.createElement("li", { className: "dropdown" }, _react2.default.createElement("a", { "data-toggle": "dropdown", className: "dropdown-toggle", href: "#" }, "myEmanie ", _react2.default.createElement("b", { className: "caret" })), _react2.default.createElement("ul", { role: "menu", className: "dropdown-menu" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "profile" }, "View Profile")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "update" }, "Update Profile")))), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "messages" }, "Messages")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "patgen" }, "PatGen")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "browse" }, "Browse Users")), _react2.default.createElement("li", { className: "dropdown" }, _react2.default.createElement("a", { "data-toggle": "dropdown", className: "dropdown-toggle", href: "#" }, "More ", _react2.default.createElement("b", { className: "caret" })), _react2.default.createElement("ul", { role: "menu", className: "dropdown-menu" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "about" }, "About Emanie")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "report" }, "Report Issues")), _react2.default.createElement("li", { className: "divider" }), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "contact" }, "Contact Us"))))), _react2.default.createElement("form", { role: "search", className: "navbar-form navbar-left" }, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("input", { type: "text", placeholder: "Search Patterns", className: "form-control" }))), _react2.default.createElement("ul", { className: "nav navbar-nav navbar-right" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "login" }, "Login"))), _react2.default.createElement("ul", { className: "nav navbar-nav navbar-right" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "logout" }, "Logout"))))));
 	    }
 	  }]);
 
@@ -72967,6 +72979,128 @@
 
 /***/ },
 /* 649 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactBootstrap = __webpack_require__(398);
+
+	var _AuthService = __webpack_require__(234);
+
+	var _AuthService2 = _interopRequireDefault(_AuthService);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Login = function (_React$Component) {
+	  _inherits(Login, _React$Component);
+
+	  function Login() {
+	    _classCallCheck(this, Login);
+
+	    return _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).apply(this, arguments));
+	  }
+
+	  _createClass(Login, [{
+	    key: 'render',
+	    value: function render() {
+	      var auth = this.props.auth;
+
+	      return _react2.default.createElement("div", { className: "root" }, _react2.default.createElement("h2", null, "Login"), _react2.default.createElement(_reactBootstrap.ButtonToolbar, { className: "toolbar" }, _react2.default.createElement(_reactBootstrap.Button, { bsStyle: "primary", onClick: auth.login.bind(this) }, "Login")));
+	    }
+	  }], [{
+	    key: 'propTypes',
+	    value: function propTypes() {
+	      return {
+	        location: _react.PropTypes.object,
+	        auth: _react.PropTypes.instanceOf(_AuthService2.default)
+	      };
+	    }
+	  }]);
+
+	  return Login;
+	}(_react2.default.Component);
+
+	exports.default = Login;
+
+/***/ },
+/* 650 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactBootstrap = __webpack_require__(398);
+
+	var _AuthService = __webpack_require__(234);
+
+	var _AuthService2 = _interopRequireDefault(_AuthService);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Logout = function (_React$Component) {
+	  _inherits(Logout, _React$Component);
+
+	  function Logout() {
+	    _classCallCheck(this, Logout);
+
+	    return _possibleConstructorReturn(this, (Logout.__proto__ || Object.getPrototypeOf(Logout)).apply(this, arguments));
+	  }
+
+	  _createClass(Logout, [{
+	    key: 'render',
+	    value: function render() {
+	      var auth = this.props.auth;
+
+	      return _react2.default.createElement("div", { className: "root" }, _react2.default.createElement("h2", null, "Logout"), _react2.default.createElement(_reactBootstrap.ButtonToolbar, { className: "toolbar" }, _react2.default.createElement(_reactBootstrap.Button, { bsStyle: "primary", onClick: auth.login.bind(this) }, "Login")));
+	    }
+	  }], [{
+	    key: 'propTypes',
+	    value: function propTypes() {
+	      return {
+	        location: _react.PropTypes.object,
+	        auth: _react.PropTypes.instanceOf(_AuthService2.default)
+	      };
+	    }
+	  }]);
+
+	  return Logout;
+	}(_react2.default.Component);
+
+	exports.default = Logout;
+
+/***/ },
+/* 651 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -73018,7 +73152,7 @@
 	exports.default = Messages;
 
 /***/ },
-/* 650 */
+/* 652 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -73070,7 +73204,7 @@
 	exports.default = PatGen;
 
 /***/ },
-/* 651 */
+/* 653 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -73163,7 +73297,7 @@
 	exports.default = Profile;
 
 /***/ },
-/* 652 */
+/* 654 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -73215,7 +73349,7 @@
 	exports.default = Report;
 
 /***/ },
-/* 653 */
+/* 655 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -73279,7 +73413,7 @@
 	exports.default = Search;
 
 /***/ },
-/* 654 */
+/* 656 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -73298,7 +73432,7 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _Profile = __webpack_require__(651);
+	var _Profile = __webpack_require__(653);
 
 	var _Profile2 = _interopRequireDefault(_Profile);
 
@@ -73322,28 +73456,32 @@
 	      checked: false,
 	      displayName: null,
 	      craftName: null,
-	      bio: null
+	      bio: null,
+	      id: 1
 	    };
 	    return _this;
 	  }
+
+	  // Gets all data in db
+
 
 	  _createClass(Update, [{
 	    key: 'getProfileData',
 	    value: function getProfileData() {
 	      var _this2 = this;
 
-	      return fetch('/update', { method: 'POST' }).then(function (response) {
+	      return fetch('/update', { method: 'GET' }).then(function (response) {
 	        return response.json();
 	      }).then(function (users) {
-	        console.log(users);
 	        for (var i = 0; i < users.length; i++) {
 	          for (var key in users[i]) {
-	            _this2.setState({ displayName: users[i].displayName });
-	            _this2.setState({ craftName: users[i].craftName });
-	            _this2.setState({ bio: users[i].bio });
+	            if (_this2.state.id === users[i].id) {
+	              _this2.setState({ displayName: users[i].displayName });
+	              _this2.setState({ craftName: users[i].craftName });
+	              _this2.setState({ bio: users[i].bio });
+	            }
 	          }
 	        }
-	        console.log(_this2.state.displayName);
 	      }).catch(function (error) {
 	        console.error(error);
 	      });
@@ -73360,31 +73498,68 @@
 	      }
 	    }
 	  }, {
-	    key: 'updatProfileData',
-	    value: function updatProfileData() {
-	      /*var newDisplayName = $('#display').val();
-	      var newCraftName = $('#craft').val();
-	      var newBio = $('#blurb').val();
-	      this.setState({
-	        displayName: newDisplayName,
-	        craftName: newCraftName,
-	        bio: newBio
-	      }, function(){
-	        console.log(this.state.displayName);
-	      });*/
+	    key: 'updateProfileData',
+	    value: function updateProfileData() {
+	      var _this3 = this;
+
+	      console.log('running');
+	      // Create new table if does not exist
+	      fetch('/updates/', { method: 'POST' }).then(function (response) {
+	        return console.log(response);
+	      }).then(function (info) {
+	        console.log('INFO', info);
+	      });
+	      // Check if user is already in table
+	      // Save new data to db
+	      fetch('/update', { method: 'PUT' }).then(function (response) {
+	        return console.log('PUT', response);
+	      }).then(function (users) {
+	        console.log(users);
+	        for (var a = 0; a < users.length; a++) {
+	          console.log('hiiiiiiiii');
+	          for (var key2 in users[a]) {
+	            console.log('hi');
+	            if (_this3.state.id === users[a].id) {
+	              console.log('TEXT TYPED', $('#display').val());
+	              if ($('#display').val()) {
+	                var dis = $('#display').val();
+	                _this3.setState({ displayName: dis });
+	              }
+	              if ($('#craft').val()) {
+	                var newCraftName = $('#craft').val();
+	                _this3.setState({ craftName: newCraftName });
+	              }
+	              if ($('#blurb').val()) {
+	                var newBio = $('#blurb').val();
+	                _this3.setState({ bio: newBio });
+	              }
+	              users[a].displayName = _this3.state.displayName;
+	              users[a].craftName = _this3.state.craftName;
+	              users[a].bio = _this3.state.bio;
+	            }
+	          }
+	        }
+	        //call getProfileData again to update page
+	        _this3.getProfileData();
+	        console.log(_this3.state.displayName);
+	      }).catch(function (error) {
+	        console.error(error);
+	      });
 	    }
 	  }, {
 	    key: 'handleUpdate',
 	    value: function handleUpdate(e) {
 	      e.preventDefault();
-	      this.getProfileData();
 	      if (this.state.checked === true) {
 	        console.log('CLICK');
-	        this.updatProfileData();
+	        this.updateProfileData();
 	      } else {
 	        alert('Please confirm changes.');
 	      }
 	    }
+
+	    // Allows user to preview changes as they type
+
 	  }, {
 	    key: 'onDisplay',
 	    value: function onDisplay(e) {
@@ -73409,7 +73584,7 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement("div", null, _react2.default.createElement("div", null, _react2.default.createElement("h4", null, "Update Profile below"), _react2.default.createElement("form", { action: "/updateForm", method: "post" }, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "pic" }, "Profile Image"), _react2.default.createElement("input", { type: "file", className: "form-control-file", id: "pic" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "display" }, "Display Name:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "display", placeholder: "Enter new display name", onChange: this.onDisplay.bind(this) })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "craft" }, "Favorite Craft:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "craft", placeholder: "Crochet, Knitting, Sewing...Everything!", name: "craftName", onChange: this.onCraft.bind(this) })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "blurb" }, "Bio:"), _react2.default.createElement("textarea", { className: "form-control", id: "blurb", rows: "3", name: "bio", onChange: this.onBio.bind(this) })), _react2.default.createElement("div", { className: "form-check" }, _react2.default.createElement("label", { className: "form-check-label" }, _react2.default.createElement("input", { type: "checkbox", className: "form-check-input", onClick: this.handleCheckbox.bind(this) }), "I confirm that I have reviewed my changes.")), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse", onClick: this.handleUpdate.bind(this) }, "Update Profile")), _react2.default.createElement("br", null), _react2.default.createElement("p", null, "Preview:"), _react2.default.createElement("div", null, _react2.default.createElement("h3", null, "Display Name: ", this.state.displayName), _react2.default.createElement("h4", null, "Favorite Craft: ", this.state.craftName), _react2.default.createElement("h4", null, "Bio: ", this.state.bio))));
+	      return _react2.default.createElement("div", null, _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("div", { className: "row" }, _react2.default.createElement("div", { className: "col-sm-6" }, _react2.default.createElement("div", null, _react2.default.createElement("h5", null, "Update Profile below"), _react2.default.createElement("form", { action: "/updateForm", method: "post" }, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "pic" }, "Profile Image"), _react2.default.createElement("input", { type: "file", className: "form-control-file", id: "pic", name: "picName" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "display" }, "Display Name:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "display", placeholder: "Enter new display name", onChange: this.onDisplay.bind(this), name: "display" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "craft" }, "Favorite Craft:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "craft", placeholder: "Crochet, Knitting, Sewing...Everything!", name: "craft", onChange: this.onCraft.bind(this) })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "blurb" }, "Bio:"), _react2.default.createElement("textarea", { className: "form-control", id: "bio", rows: "3", name: "bio", onChange: this.onBio.bind(this) })), _react2.default.createElement("div", { className: "form-check" }, _react2.default.createElement("label", { className: "form-check-label" }, _react2.default.createElement("input", { type: "checkbox", className: "form-check-input", onClick: this.handleCheckbox.bind(this) }), " I confirm that I have reviewed my changes.")), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse", onClick: this.handleUpdate.bind(this) }, "Update Profile")))), _react2.default.createElement("div", { className: "col-sm-6" }, _react2.default.createElement("h5", null, _react2.default.createElement("i", null, "Preview:")), _react2.default.createElement("div", null, _react2.default.createElement("h3", null, "Display Name: ", this.state.displayName), _react2.default.createElement("h4", null, "Favorite Craft: ", this.state.craftName), _react2.default.createElement("h4", null, "Bio: ", this.state.bio))))));
 	    }
 	  }]);
 
@@ -73419,133 +73594,7 @@
 	exports.default = Update;
 
 /***/ },
-/* 655 */,
-/* 656 */,
-/* 657 */,
-/* 658 */,
-/* 659 */,
-/* 660 */,
-/* 661 */,
-/* 662 */,
-/* 663 */,
-/* 664 */,
-/* 665 */,
-/* 666 */,
-/* 667 */,
-/* 668 */,
-/* 669 */,
-/* 670 */,
-/* 671 */,
-/* 672 */,
-/* 673 */,
-/* 674 */,
-/* 675 */,
-/* 676 */,
-/* 677 */,
-/* 678 */,
-/* 679 */,
-/* 680 */,
-/* 681 */,
-/* 682 */,
-/* 683 */,
-/* 684 */,
-/* 685 */,
-/* 686 */,
-/* 687 */,
-/* 688 */,
-/* 689 */,
-/* 690 */,
-/* 691 */,
-/* 692 */,
-/* 693 */,
-/* 694 */,
-/* 695 */,
-/* 696 */,
-/* 697 */,
-/* 698 */,
-/* 699 */,
-/* 700 */,
-/* 701 */,
-/* 702 */,
-/* 703 */,
-/* 704 */,
-/* 705 */,
-/* 706 */,
-/* 707 */,
-/* 708 */,
-/* 709 */,
-/* 710 */,
-/* 711 */,
-/* 712 */,
-/* 713 */,
-/* 714 */,
-/* 715 */,
-/* 716 */,
-/* 717 */,
-/* 718 */,
-/* 719 */,
-/* 720 */,
-/* 721 */,
-/* 722 */,
-/* 723 */,
-/* 724 */,
-/* 725 */,
-/* 726 */,
-/* 727 */,
-/* 728 */,
-/* 729 */,
-/* 730 */,
-/* 731 */,
-/* 732 */,
-/* 733 */,
-/* 734 */,
-/* 735 */,
-/* 736 */,
-/* 737 */,
-/* 738 */,
-/* 739 */,
-/* 740 */,
-/* 741 */,
-/* 742 */,
-/* 743 */,
-/* 744 */,
-/* 745 */,
-/* 746 */,
-/* 747 */,
-/* 748 */,
-/* 749 */,
-/* 750 */,
-/* 751 */,
-/* 752 */,
-/* 753 */,
-/* 754 */,
-/* 755 */,
-/* 756 */,
-/* 757 */,
-/* 758 */,
-/* 759 */,
-/* 760 */,
-/* 761 */,
-/* 762 */,
-/* 763 */,
-/* 764 */,
-/* 765 */,
-/* 766 */,
-/* 767 */,
-/* 768 */,
-/* 769 */,
-/* 770 */,
-/* 771 */,
-/* 772 */,
-/* 773 */,
-/* 774 */,
-/* 775 */,
-/* 776 */,
-/* 777 */,
-/* 778 */,
-/* 779 */,
-/* 780 */,
-/* 781 */
+/* 657 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -73564,7 +73613,7 @@
 
 	var _Nav2 = _interopRequireDefault(_Nav);
 
-	var _Footer = __webpack_require__(782);
+	var _Footer = __webpack_require__(658);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
@@ -73600,7 +73649,7 @@
 	exports.default = Layout;
 
 /***/ },
-/* 782 */
+/* 658 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -73643,67 +73692,6 @@
 	}(_react2.default.Component);
 
 	exports.default = Footer;
-
-/***/ },
-/* 783 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactBootstrap = __webpack_require__(398);
-
-	var _AuthService = __webpack_require__(234);
-
-	var _AuthService2 = _interopRequireDefault(_AuthService);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Login = function (_React$Component) {
-	  _inherits(Login, _React$Component);
-
-	  function Login() {
-	    _classCallCheck(this, Login);
-
-	    return _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).apply(this, arguments));
-	  }
-
-	  _createClass(Login, [{
-	    key: 'render',
-	    value: function render() {
-	      var auth = this.props.auth;
-
-	      return _react2.default.createElement("div", { className: "root" }, _react2.default.createElement("h2", null, "Login"), _react2.default.createElement(_reactBootstrap.ButtonToolbar, { className: "toolbar" }, _react2.default.createElement(_reactBootstrap.Button, { bsStyle: "primary", onClick: auth.login.bind(this) }, "Login")));
-	    }
-	  }], [{
-	    key: 'propTypes',
-	    value: function propTypes() {
-	      return {
-	        location: _react.PropTypes.object,
-	        auth: _react.PropTypes.instanceOf(_AuthService2.default)
-	      };
-	    }
-	  }]);
-
-	  return Login;
-	}(_react2.default.Component);
-
-	exports.default = Login;
 
 /***/ }
 /******/ ]);

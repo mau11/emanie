@@ -1,3 +1,4 @@
+/*HTML TAGS*/
 footer {
   position: absolute;
   right: 0;
@@ -5,6 +6,16 @@ footer {
   left: 0;
   padding: 1rem;
   background-color: black;
+  text-align: center;
+}
+
+h2, h5, h6 {
+  text-align: center;
+}
+
+
+/*CLASSES*/
+.mainTitle{
   text-align: center;
 }
 
@@ -16,6 +27,5 @@ footer {
   display: inline-block;
 }
 
-.mainTitle{
-  text-align: center;
-}
+
+/*IDs*/

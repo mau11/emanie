@@ -11,6 +11,7 @@ import Contact from '../pages/Contact.jsx';
 import Container from '../components/Container.js';
 import Layout from '../components/Layout.jsx';
 import Login from '../pages/Login.jsx';
+import Logout from '../pages/Logout.jsx';
 import Messages from '../pages/Messages.jsx';
 import Nav from '../components/Nav.jsx';
 import PatGen from '../pages/PatGen.jsx';
@@ -42,6 +43,7 @@ ReactDOM.render(
       <Route path="contact" component={ Contact } auth={auth}/>
       <Route path="search" component={ Search } onEnter={requireAuth}/>
       <Route path="login" component={ Login } auth={auth}/>
+      <Route path="logout" component={ Logout } auth={auth}/>
     </Route>
   </Router>,
   document.getElementById('app'));

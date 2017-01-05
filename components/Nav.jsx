@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import About from '../pages/About.jsx';
 import Browse from '../pages/Browse.jsx';
 import Contact from '../pages/Contact.jsx';
+import Login from '../pages/Login.jsx';
+import Logout from '../pages/Logout.jsx';
 import Messages from '../pages/Messages.jsx';
 import PatGen from '../pages/PatGen.jsx';
 import Profile from '../pages/Profile.jsx';
@@ -63,6 +65,9 @@ export default class Nav extends React.Component {
           </form>
           <ul className="nav navbar-nav navbar-right">
             <li><Link to="login">Login</Link></li>
+          </ul>
+          <ul className="nav navbar-nav navbar-right">
+            <li><Link to="logout">Logout</Link></li>
           </ul>
         </div>
       </nav>
