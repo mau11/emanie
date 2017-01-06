@@ -25,7 +25,7 @@ export default class Profile extends React.Component {
       .then((users) => {
         for(var i = 0; i < users.length; i++){
           for(var key in users[i]){
-            if(this.state.id === users[i].id){
+            if('knit/crochet' === users[i].craftName){
               this.setState({displayName: users[i].displayName});
               this.setState({craftName: users[i].craftName});
               this.setState({bio: users[i].bio});
@@ -38,14 +38,14 @@ export default class Profile extends React.Component {
       });
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.getProfileData();
   }
 
   render () {
     return (
       <div>
-      <h3>Display Name: {this.state.displayName}</h3>
+      <h3 onClick={this.getProfileData.bind(this)}>Display Name: {this.state.displayName}</h3>
       <h4>Favorite Craft: {this.state.craftName}</h4>
       <h4>Bio: {this.state.bio}</h4>
       <h4></h4>

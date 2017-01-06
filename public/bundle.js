@@ -54008,7 +54008,7 @@
 	  _createClass(App, [{
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement("div", null, _react2.default.createElement("h2", null, "Welcome to Emanie!"), _react2.default.createElement("h5", null, _react2.default.createElement("i", null, "A community for crafters to store and share their passion.")));
+	      return _react2.default.createElement("div", null, _react2.default.createElement("h2", null, "Welcome to Emanie!"), _react2.default.createElement("hr", null), _react2.default.createElement("h5", null, _react2.default.createElement("i", null, "A community for knitter and crocheters to store and share their crafts.")));
 	    }
 	  }]);
 
@@ -73030,7 +73030,7 @@
 	    value: function render() {
 	      var auth = this.props.auth;
 
-	      return _react2.default.createElement("div", { className: "root" }, _react2.default.createElement("h2", null, "Login"), _react2.default.createElement(_reactBootstrap.ButtonToolbar, { className: "toolbar" }, _react2.default.createElement(_reactBootstrap.Button, { bsStyle: "primary", onClick: auth.login.bind(this) }, "Login")));
+	      return _react2.default.createElement("div", { className: "root" }, _react2.default.createElement("h3", null, "Click below to Sign up or Login"), _react2.default.createElement(_reactBootstrap.ButtonToolbar, { className: "toolbar" }, _react2.default.createElement(_reactBootstrap.Button, { bsStyle: "primary", onClick: auth.login.bind(this) }, "Login")));
 	    }
 	  }], [{
 	    key: 'propTypes',
@@ -73240,7 +73240,7 @@
 	          </div>
 	        </div>
 	        <hr/>*/
-	      _react2.default.createElement("h3", null, "Pattern Generator"), _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("div", { className: "row" }, _react2.default.createElement("div", { className: "col-sm-6" }, _react2.default.createElement("div", null, _react2.default.createElement("h4", null, "Add a New Pattern"), _react2.default.createElement("form", { action: "/patternForm", method: "post" }, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "pic" }, "Import PDF"), _react2.default.createElement("input", { type: "file", className: "form-control-file", id: "pic", name: "picName" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "display" }, "Pattern Name:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "display", placeholder: "Enter pattern name", onChange: "", name: "display" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "craft" }, "Craft:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "craft", placeholder: "Crochet, Knitting, Sewing...Everything!", name: "craft", onChange: "" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "craft" }, "Supplies:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "craft", placeholder: "Hooks, Needles, Yarn, Gauge...", name: "craft", onChange: "" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "blurb" }, "Notes/Details:"), _react2.default.createElement("textarea", { className: "form-control", id: "bio", rows: "2", name: "bio", onChange: "" })), _react2.default.createElement("div", { className: "form-check" }, _react2.default.createElement("label", { className: "form-check-label" }, _react2.default.createElement("input", { type: "checkbox", className: "form-check-input", onClick: "" }), " I confirm that I have reviewed my changes.")), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse", onClick: "" }, "Add Pattern")))), _react2.default.createElement("div", { className: "col-sm-6" }, _react2.default.createElement("h4", null, "Generate Custom Patterns"), _react2.default.createElement("div", null, _react2.default.createElement("h3", null, "Display Name: "), _react2.default.createElement("h4", null, "Favorite Craft: "), _react2.default.createElement("h4", null, "Bio: "))))));
+	      _react2.default.createElement("h3", null, "Pattern Generator"), _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("div", { className: "row" }, _react2.default.createElement("div", { className: "col-sm-6" }, _react2.default.createElement("div", null, _react2.default.createElement("h4", null, "Add a New Pattern"), _react2.default.createElement("form", null, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "pic" }, "Import PDF"), _react2.default.createElement("input", { type: "file", className: "form-control-file", id: "pic", name: "picName" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "display" }, "Pattern Name:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "display", placeholder: "Enter pattern name", onChange: "", name: "display" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "craft" }, "Craft:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "craft", placeholder: "Crochet, Knitting, Sewing...Everything!", name: "craft", onChange: "" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "craft" }, "Supplies:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "craft", placeholder: "Hooks, Needles, Yarn, Gauge...", name: "craft", onChange: "" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "blurb" }, "Notes/Details:"), _react2.default.createElement("textarea", { className: "form-control", id: "bio", rows: "2", name: "bio", onChange: "" })), _react2.default.createElement("div", { className: "form-check" }, _react2.default.createElement("label", { className: "form-check-label" }, _react2.default.createElement("input", { type: "checkbox", className: "form-check-input", onClick: "" }), " I confirm that I have reviewed my changes.")), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse" }, "Add Pattern")))), _react2.default.createElement("div", { className: "col-sm-6" }, _react2.default.createElement("h4", null, "Generator:"), _react2.default.createElement("div", null, _react2.default.createElement("h3", null), _react2.default.createElement("h4", null, " "), _react2.default.createElement("h4", null))))));
 	    }
 	  }]);
 
@@ -73314,7 +73314,7 @@
 	      }).then(function (users) {
 	        for (var i = 0; i < users.length; i++) {
 	          for (var key in users[i]) {
-	            if (_this2.state.id === users[i].id) {
+	            if ('knit/crochet' === users[i].craftName) {
 	              _this2.setState({ displayName: users[i].displayName });
 	              _this2.setState({ craftName: users[i].craftName });
 	              _this2.setState({ bio: users[i].bio });
@@ -73326,14 +73326,14 @@
 	      });
 	    }
 	  }, {
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
+	    key: 'componentWillMount',
+	    value: function componentWillMount() {
 	      this.getProfileData();
 	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement("div", null, _react2.default.createElement("h3", null, "Display Name: ", this.state.displayName), _react2.default.createElement("h4", null, "Favorite Craft: ", this.state.craftName), _react2.default.createElement("h4", null, "Bio: ", this.state.bio), _react2.default.createElement("h4", null));
+	      return _react2.default.createElement("div", null, _react2.default.createElement("h3", { onClick: this.getProfileData.bind(this) }, "Display Name: ", this.state.displayName), _react2.default.createElement("h4", null, "Favorite Craft: ", this.state.craftName), _react2.default.createElement("h4", null, "Bio: ", this.state.bio), _react2.default.createElement("h4", null));
 	    }
 	  }]);
 
@@ -73567,23 +73567,32 @@
 	  }, {
 	    key: 'updateProfileData',
 	    value: function updateProfileData(param) {
+	      fetch('/update', {
+	        method: 'POST',
+	        headers: {
+	          'Accept': 'application/json',
+	          'Content-Type': 'application/json'
+	        },
+	        body: JSON.stringify(param)
+	      });
+	      this.getProfileData().bind(this);
 	      /*    console.log('running', param);
-	          $(document).ready(function(){
-	            $.ajax({
-	              url: '/update',
-	              type: 'POST',
-	              data: JSON.stringify(param),
-	              contentType: "application/json",
-	              dataType:'json',
-	              success: function(results){
-	                console.log('Data sent!');
-	                console.log(JSON.stringify(results));
-	              },
-	              error: function(err) {
-	                console.error('NOT SENT', err.toString());
-	              }
-	            });
-	          })*/
+	        $(document).ready(function(){
+	          $.ajax({
+	            url: '/update',
+	            type: 'POST',
+	            data: JSON.stringify(param),
+	            contentType: "application/json",
+	            dataType:'json',
+	            success: function(results){
+	              console.log('Data sent!');
+	              console.log(JSON.stringify(results));
+	            },
+	            error: function(err) {
+	              console.error('NOT SENT', err.toString());
+	            }
+	          });
+	        })*/
 	    }
 	  }, {
 	    key: 'handleUpdate',

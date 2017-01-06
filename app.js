@@ -54,12 +54,18 @@ connection.query(newTable, function(err, rows){
 // POST (Create) --> INSERT
 app.post('/update', function(req, res){
   console.log('TEST', req.body);
-  /*var sql3 = mysql.format("UPDATE profiles SET displayName = ? WHERE id = ?", [req]);
+  var addTo = [];
+  req.forEach(function(val){
+    addTo.push(req[val]);
+  });
+  var sql3 = mysql.format("UPDATE profiles SET displayName = ? WHERE id = 1", addTo);
   connection.query(sql3, function(err, rows){
+    console.log('QUERIES:', req.body.displayName);
     if(err){
       throw err;
     }
-  });*/
+    res.send('Update, Complete');
+  });
 });
 
 
@@ -71,10 +77,11 @@ app.get('/update', function (req, res){
       throw err;
     }
     for(var i = 0; i < rows.length; i++) {
-      console.log(rows[i]);
+      //console.log('SERVER', rows[i]);
       allUsers.push(rows[i]);
     }
     res.send(allUsers);
+    console.log('***Data from DB sent!***');
   });
 });
 

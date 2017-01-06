@@ -15,7 +15,7 @@ export default class Login extends React.Component {
     const { auth } = this.props;
     return (
       <div className="root">
-        <h2>Login</h2>
+        <h3>Click below to Sign up or Login</h3>
         <ButtonToolbar className="toolbar">
           <Button bsStyle="primary" onClick={auth.login.bind(this)}>Login</Button>
         </ButtonToolbar>

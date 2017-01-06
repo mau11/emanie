@@ -66,7 +66,16 @@ export default class Update extends React.Component {
   }
 
   updateProfileData(param) {
-/*    console.log('running', param);
+    fetch('/update', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(param)
+    });
+    this.getProfileData().bind(this);
+  /*    console.log('running', param);
     $(document).ready(function(){
       $.ajax({
         url: '/update',

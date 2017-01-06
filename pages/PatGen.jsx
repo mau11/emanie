@@ -52,7 +52,7 @@ export default class PatGen extends React.Component {
               <div>
                 <h4>Add a New Pattern
                 </h4>
-                <form action="/patternForm" method="post">
+                <form>
                   <div className="form-group">
                     <label htmlFor="pic">Import PDF</label>
                     <input type="file" className="form-control-file" id="pic" name="picName"/>
@@ -78,16 +78,16 @@ export default class PatGen extends React.Component {
                       <input type="checkbox" className="form-check-input" onClick=""/> I confirm that I have reviewed my changes.
                     </label>
                   </div>
-                  <button type="submit" className="btn btn-inverse" onClick="">Add Pattern</button>
+                  <button type="submit" className="btn btn-inverse">Add Pattern</button>
                 </form>
               </div>
             </div>
             <div className="col-sm-6">
-            <h4>Generate Custom Patterns</h4>
+            <h4>Generator:</h4>
             <div>
-              <h3>Display Name: </h3>
-              <h4>Favorite Craft: </h4>
-              <h4>Bio: </h4>
+              <h3></h3>
+              <h4> </h4>
+              <h4></h4>
             </div>
             </div>
           </div>
