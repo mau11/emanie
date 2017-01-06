@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "test": "test",
+    "client": "node node_modules/nightwatch/bin/nightwatch",
+    "test": "mocha serverTests/test/serverTests.js",
     "start": "webpack-dev-server --inline --hot",
     "dev": "webpack-dev-server --content-base public --inline --hot"
   },
@@ -29,7 +30,11 @@
     "jshint-loader": "^0.8.3",
     "json-loader": "^0.5.4",
     "mocha": "^3.2.0",
-    "node-libs-browser": "^2.0.0"
+    "nightwatch": "^0.9.12",
+    "node-libs-browser": "^2.0.0",
+    "selenium-standalone": "^5.9.0",
+    "should": "^11.1.2",
+    "supertest": "^2.0.1"
   },
   "dependencies": {
     "auth0-lock": "^10.8.0",

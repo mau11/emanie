@@ -2,3 +2,4 @@ node_modules
 .elasticbeanstalk/
 .jshintrc
 ./public/bundle.js
+npm-debug.log
