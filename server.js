@@ -5,10 +5,15 @@ var path = require('path');
 var mysql = require('mysql');
 var port = 8000;
 
-// middleware
+// Middleware
 app.use(express.static('./public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+// Default express route for app
+app.get('/', function (req, res){
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 // Set up db connection
 var connection = mysql.createConnection({
@@ -26,18 +31,17 @@ connection.connect(function(err){
   console.log('Success, connected as id ' + connection.threadId);
 });
 
-// Default express route for app
-app.get('/', function (req, res){
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
 
 // Create new tables if they do not exist
-var newTable = 'CREATE TABLE IF NOT EXISTS profiles (id int(11) NOT NULL AUTO_INCREMENT, name varchar(20), displayName varchar(20) UNIQUE, craftName varchar(20), bio varchar(150), PRIMARY KEY (id)) ENGINE=InnoDB  DEFAULT CHARSET=utf8';
-connection.query(newTable, function(err, rows){
+var newProfilesTable = 'CREATE TABLE IF NOT EXISTS profiles (id int(11) NOT NULL AUTO_INCREMENT, user varchar(20), email varchar(50), displayName varchar(20) UNIQUE, craftName varchar(20), pattCt varchar(3), bio varchar(150), authId varchar(20), PRIMARY KEY (id)) ENGINE=InnoDB  DEFAULT CHARSET=utf8';
+
+var newPatternsTable = 'CREATE TABLE IF NOT EXISTS patterns (id int(11) NOT NULL AUTO_INCREMENT, user varchar(20), pattCt varchar(3), pName varchar(20), craft varchar(20), supplies varchar(50), gauge varchar(150), authId varchar(20), notes varchar(200), PRIMARY KEY (id)) ENGINE=InnoDB  DEFAULT CHARSET=utf8';
+
+connection.query(newProfilesTable, function(err, rows){
   if(err){
     throw err;
   } else {
-    // add some test data to table (optional)
+    // Add some test data to table (optional)
     var addTestData = "INSERT IGNORE INTO profiles (displayName, craftName, bio) VALUES ('Mau', 'knit/crochet', 'Welcome to my site! I am a long time designer and crafter with a love of computer programming, travel and world languages'), ('Tester', 'testing', 'I am just a test')";
     connection.query(addTestData, function(error, rows){
       if(error){
@@ -53,10 +57,11 @@ connection.query(newTable, function(err, rows){
 // CRUD ROUTES & SQL:
 // POST (Create) --> INSERT
 app.post('/update', function(req, res){
-  console.log('TEST', req.body);
+  console.log('FROM CLIENT INPUT', req.body);
   var addTo = [];
-  req.forEach(function(val){
-    addTo.push(req[val]);
+  var bod = req.body;
+  bod.forEach(function(val){
+    addTo.push(bod[val]);
   });
   var sql3 = mysql.format("UPDATE profiles SET displayName = ? WHERE id = 1", addTo);
   connection.query(sql3, function(err, rows){
@@ -85,6 +90,14 @@ app.get('/update', function (req, res){
   });
 });
 
+app.get('/callback', function(req, res){
+  console.log('***USER INFO***', req.user);
+  if(!req.user){
+    //throw new Error('user null');
+    //console.log('ERROR')
+  }
+  //res.redirect('/');
+});
 
 // PUT (Update) --> UPDATE
 /*app.put('/update/', function (req, res){

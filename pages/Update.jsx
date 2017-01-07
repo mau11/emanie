@@ -47,6 +47,7 @@ export default class Update extends React.Component {
           users[i].bio = this.state.bio;
           this.setState({allUsers: users});
           test = users;
+          console.log('TO SERVER modified', users);
           cb(test);
         }
       })
@@ -66,6 +67,7 @@ export default class Update extends React.Component {
   }
 
   updateProfileData(param) {
+    console.log('PARAM', param);
     fetch('/update', {
       method: 'POST',
       headers: {
@@ -74,7 +76,7 @@ export default class Update extends React.Component {
       },
       body: JSON.stringify(param)
     });
-    this.getProfileData().bind(this);
+    this.getProfileData(function(val){console.log('SENT UPDATED TO DB:', val);}).bind(this);
   /*    console.log('running', param);
     $(document).ready(function(){
       $.ajax({

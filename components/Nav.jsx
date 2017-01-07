@@ -46,7 +46,7 @@ export default class Nav extends React.Component {
               </ul>
             </li>
             <li><Link to="messages">Messages</Link></li>
-            <li><Link to="patgen">PatGen</Link></li>
+            <li><Link to="patgen">Pattern</Link></li>
             <li><Link to="browse">Browse Users</Link></li>
             <li className="dropdown">
               <a data-toggle="dropdown" className="dropdown-toggle" href="#">More <b className="caret"></b></a>

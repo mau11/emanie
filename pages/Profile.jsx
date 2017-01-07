@@ -9,14 +9,17 @@ export default class Profile extends React.Component {
       displayName: null,
       craftName: null,
       bio: null,
-      id: 1
+      id: null,
+      authoID: null
     };
   }
 
-  // Verify user id after login
-  checkId() {
+  //
 
-  }
+  // Verify user id after login
+ /* checkId() {
+    fetch('/update', {method: 'GET'} );
+  }*/
 
   // Retrieve profile information from database
   getProfileData() {

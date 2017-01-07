@@ -45,33 +45,37 @@ export default class PatGen extends React.Component {
           </div>
         </div>
         <hr/>*/}
-        <h3>Pattern Generator</h3>
+        <h3>Patterns</h3>
         <div className="container">
           <div className="row">
-            <div className="col-sm-6">
+            <div className="col-sm-8">
               <div>
                 <h4>Add a New Pattern
                 </h4>
                 <form>
-                  <div className="form-group">
+                  {/*<div className="form-group">
                     <label htmlFor="pic">Import PDF</label>
                     <input type="file" className="form-control-file" id="pic" name="picName"/>
-                  </div>
+                  </div>*/}
                   <div className="form-group">
                     <label htmlFor="display">Pattern Name:</label>
-                    <input type="text" className="form-control" id="display" placeholder="Enter pattern name" onChange="" name="display"/>
+                    <input type="text" className="form-control" id="display" placeholder="Enter pattern name"  name="display"/>
                   </div>
                   <div className="form-group">
                     <label htmlFor="craft">Craft:</label>
-                    <input type="text" className="form-control" id="craft" placeholder="Crochet, Knitting, Sewing...Everything!" name="craft" onChange="" />
+                    <input type="text" className="form-control" id="craft" placeholder="Crochet, Knitting, Sewing, etc" name="craft"  />
                   </div>
                   <div className="form-group">
                     <label htmlFor="craft">Supplies:</label>
-                    <input type="text" className="form-control" id="craft" placeholder="Hooks, Needles, Yarn, Gauge..." name="craft" onChange="" />
+                    <input type="text" className="form-control" id="craft" placeholder="" name="craft"  />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="craft">Gauge:</label>
+                    <input type="text" className="form-control" id="craft" placeholder="Hooks, Needles, Yarn, Gauge..." name="craft"  />
                   </div>
                   <div className="form-group">
                     <label htmlFor="blurb">Notes/Details:</label>
-                    <textarea className="form-control" id="bio" rows="2" name="bio" onChange=""></textarea>
+                    <textarea className="form-control" id="bio" rows="2" name="bio" ></textarea>
                   </div>
                   <div className="form-check">
                     <label className="form-check-label">
@@ -82,8 +86,8 @@ export default class PatGen extends React.Component {
                 </form>
               </div>
             </div>
-            <div className="col-sm-6">
-            <h4>Generator:</h4>
+            <div className="col-sm-4">
+            <h4></h4>
             <div>
               <h3></h3>
               <h4> </h4>
