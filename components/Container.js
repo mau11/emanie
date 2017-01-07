@@ -14,7 +14,7 @@ export default class Container extends React.Component {
     return (
       <div>
         <h1>Emanie</h1>
-          <Nav />
+          <Nav auth={this.props.route.auth} location={this.props}/>
           {children}
       </div>
     );

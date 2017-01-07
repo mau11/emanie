@@ -1,5 +1,5 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
+import React, { PropTypes as T } from 'react';
 
 import About from '../pages/About.jsx';
 import Browse from '../pages/Browse.jsx';
@@ -19,7 +19,14 @@ import { IndexLink, Link } from 'react-router';
 export default class Nav extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      hidden: true
+    };
+  }
+
+  logout() {
+    this.props.auth.logout();
+    //$('#togLogout').hide();
   }
 
   render() {
@@ -46,7 +53,14 @@ export default class Nav extends React.Component {
               </ul>
             </li>
             <li><Link to="messages">Messages</Link></li>
-            <li><Link to="patgen">Pattern</Link></li>
+            <li className="dropdown">
+              <a data-toggle="dropdown" className="dropdown-toggle" href="#">Patterns <b className="caret"></b></a>
+              <ul role="menu" className="dropdown-menu">
+                <li><Link to="">View All</Link></li>
+                <li><Link to="">Add New</Link></li>
+                <li><Link to="">PatGen</Link></li>
+              </ul>
+            </li>
             <li><Link to="browse">Browse Users</Link></li>
             <li className="dropdown">
               <a data-toggle="dropdown" className="dropdown-toggle" href="#">More <b className="caret"></b></a>
@@ -64,12 +78,12 @@ export default class Nav extends React.Component {
               <button type="submit" className="btn btn-inverse">Search</button>
             </div>
           </form>
-          {/*<ul className="nav navbar-nav navbar-right">
+          <ul className="nav navbar-nav navbar-right" id="togLogin">
             <li><Link to="login">Login</Link></li>
           </ul>
-          <ul className="nav navbar-nav navbar-right">
-            <li><Link to="logout">Logout</Link></li>
-          </ul>*/}
+          <ul className="nav navbar-nav navbar-right" id="togLogout">
+            <li><Link to="logout" onClick={this.logout.bind(this)}>Logout</Link></li>
+          </ul>
         </div>
       </nav>
       </div>

@@ -31,7 +31,6 @@ connection.connect(function(err){
   console.log('Success, connected as id ' + connection.threadId);
 });
 
-
 // Create new tables if they do not exist
 var newProfilesTable = 'CREATE TABLE IF NOT EXISTS profiles (id int(11) NOT NULL AUTO_INCREMENT, user varchar(20), email varchar(50), displayName varchar(20) UNIQUE, craftName varchar(20), pattCt varchar(3), bio varchar(150), authId varchar(20), PRIMARY KEY (id)) ENGINE=InnoDB  DEFAULT CHARSET=utf8';
 
@@ -50,8 +49,6 @@ connection.query(newProfilesTable, function(err, rows){
     });
   }
 });
-
-
 
 
 // CRUD ROUTES & SQL:
@@ -91,12 +88,12 @@ app.get('/update', function (req, res){
 });
 
 app.get('/callback', function(req, res){
-  console.log('***USER INFO***', req.user);
+  console.log('***USER INFO***', req);
   if(!req.user){
-    //throw new Error('user null');
-    //console.log('ERROR')
+    throw new Error('user null');
+    console.log('***ERROR');
   }
-  //res.redirect('/');
+  res.redirect('/');
 });
 
 // PUT (Update) --> UPDATE

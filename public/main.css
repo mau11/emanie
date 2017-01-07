@@ -21,9 +21,15 @@ h2, h5, h6 {
 
 
 /*CLASSES*/
-
-
+.avatarPics {
+  height: 100px;
+  width: 100px;
+}
 .mainTitle{
+  text-align: center;
+}
+
+.profileView {
   text-align: center;
 }
 

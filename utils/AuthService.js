@@ -26,6 +26,7 @@ export default class AuthService {
   login() {
     // Call the show method to display the widget.
     this.lock.show();
+    //$('#togLogin').hide();
   }
 
   loggedIn() {
@@ -36,7 +37,6 @@ export default class AuthService {
   setToken(idToken) {
     // Saves user token to local storage
     localStorage.setItem('id_token', idToken);
-    console.log('TOKEN FROM SETTOKEN', idToken);
   }
 
   getToken() {
