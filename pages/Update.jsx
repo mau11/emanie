@@ -153,7 +153,7 @@ export default class Update extends React.Component {
                   </div>
                   <div className="form-group">
                     <label htmlFor="blurb">Bio:</label>
-                    <textarea className="form-control" id="bio" rows="3" name="bio" onChange={this.onBio.bind(this)}></textarea>
+                    <textarea className="form-control" id="blurb" rows="3" name="bio" onChange={this.onBio.bind(this)}></textarea>
                   </div>
                   <div className="form-check">
                     <label className="form-check-label">

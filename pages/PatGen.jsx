@@ -11,40 +11,6 @@ export default class PatGen extends React.Component {
   render () {
     return (
       <div>
-      {/*<h3>View Patterns</h3>
-        <div className="col-sm-12">
-          <div className="col-sm-12">
-            <h1></h1>
-          </div>
-          <div className="col-sm-4">
-            <div>
-              <Link to="">
-                <img className="defaultPatIcon" src="../img/defaultPatIcon.png" />
-              </Link>Pattern
-              <div className="defaultPatIcon">
-              </div>
-            </div>
-          </div>
-          <div className="col-sm-4">
-            <div>
-              <Link to="">
-                <img className="defaultPatIcon" src="../img/defaultPatIcon.png" />
-              </Link>Pattern
-              <div className="defaultPatIcon">
-              </div>
-            </div>
-          </div>
-          <div className="col-sm-4">
-            <div>
-              <Link to="">
-                <img className="defaultPatIcon" src="../img/defaultPatIcon.png" />
-              </Link>Pattern
-              <div className="defaultPatIcon">
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr/>*/}
         <h3>Patterns</h3>
         <div className="container">
           <div className="row">
@@ -53,29 +19,29 @@ export default class PatGen extends React.Component {
                 <h4>Add a New Pattern
                 </h4>
                 <form>
-                  {/*<div className="form-group">
-                    <label htmlFor="pic">Import PDF</label>
-                    <input type="file" className="form-control-file" id="pic" name="picName"/>
-                  </div>*/}
                   <div className="form-group">
-                    <label htmlFor="display">Pattern Name:</label>
-                    <input type="text" className="form-control" id="display" placeholder="Enter pattern name"  name="display"/>
+                    <label htmlFor="patFile">Import PDF</label>
+                    <input type="file" className="form-control-file" id="patFile" name="pattPdf"/>
                   </div>
                   <div className="form-group">
-                    <label htmlFor="craft">Craft:</label>
-                    <input type="text" className="form-control" id="craft" placeholder="Crochet, Knitting, Sewing, etc" name="craft"  />
+                    <label htmlFor="patt">Pattern Name:</label>
+                    <input type="text" className="form-control" id="patt" placeholder="Enter pattern name"  name="pattName"/>
                   </div>
                   <div className="form-group">
-                    <label htmlFor="craft">Supplies:</label>
-                    <input type="text" className="form-control" id="craft" placeholder="" name="craft"  />
+                    <label htmlFor="patCra">Craft:</label>
+                    <input type="text" className="form-control" id="patCra" placeholder="Crochet, Knitting, Sewing, etc" name="pattCraft"  />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="craft">Gauge:</label>
-                    <input type="text" className="form-control" id="craft" placeholder="Hooks, Needles, Yarn, Gauge..." name="craft"  />
+                    <label htmlFor="supp">Supplies:</label>
+                    <input type="text" className="form-control" id="supp" placeholder="Hooks, Needles, Sizes, etc" name="suppName"  />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="blurb">Notes/Details:</label>
-                    <textarea className="form-control" id="bio" rows="2" name="bio" ></textarea>
+                    <label htmlFor="gau">Gauge:</label>
+                    <input type="text" className="form-control" id="gau" placeholder="Hooks, Needles, Yarn, Gauge..." name="gauge"  />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="notes">Notes/Details:</label>
+                    <textarea className="form-control" id="notes" rows="2" name="notesDetails" ></textarea>
                   </div>
                   <div className="form-check">
                     <label className="form-check-label">
@@ -85,14 +51,6 @@ export default class PatGen extends React.Component {
                   <button type="submit" className="btn btn-inverse">Add Pattern</button>
                 </form>
               </div>
-            </div>
-            <div className="col-sm-4">
-            <h4></h4>
-            <div>
-              <h3></h3>
-              <h4> </h4>
-              <h4></h4>
-            </div>
             </div>
           </div>
         </div>

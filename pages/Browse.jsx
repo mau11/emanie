@@ -9,6 +9,7 @@ export default class Browse extends React.Component {
   }
 
   render () {
+    let avatarSrc ='https://cdn.pixabay.com/photo/2016/08/31/11/54/user-1633249_1280.png';
     return (
       <div className="">
       <h3>Browse Users</h3>
@@ -19,7 +20,7 @@ export default class Browse extends React.Component {
           <div className="col-sm-3">
             <div>
               <Link to="">
-                <img className="defaultIcon" src="../img/defaultIcon.png" />
+                <img className="avatarPics" src={avatarSrc} />
               </Link>USER
               <div className=""></div>
             </div>
@@ -27,7 +28,7 @@ export default class Browse extends React.Component {
           <div className="col-sm-3">
             <div>
               <Link to="">
-                <img className="defaultIcon" src="../img/defaultIcon.png" />
+                <img className="avatarPics" src={avatarSrc} />
               </Link>USER
               <div className=""></div>
             </div>
@@ -35,7 +36,7 @@ export default class Browse extends React.Component {
           <div className="col-sm-3">
             <div>
               <Link to="">
-                <img className="defaultIcon" src="../img/defaultIcon.png" />
+                <img className="avatarPics" src={avatarSrc} />
               </Link>USER
               <div className=""></div>
             </div>
@@ -43,7 +44,7 @@ export default class Browse extends React.Component {
           <div className="col-sm-3">
             <div>
               <Link to="">
-                <img className="defaultIcon" src="../img/defaultIcon.png" />
+                <img className="avatarPics" src={avatarSrc} />
               </Link>USER
               <div className=""></div>
             </div>
@@ -51,7 +52,7 @@ export default class Browse extends React.Component {
           <div className="col-sm-3">
             <div>
               <Link to="">
-                <img className="defaultIcon" src="../img/defaultIcon.png" />
+                <img className="avatarPics" src={avatarSrc} />
               </Link>USER
               <div className=""></div>
             </div>
