@@ -25,6 +25,10 @@ h2, h5, h6 {
   height: 100px;
   width: 100px;
 }
+.avatarSmPics {
+  height: 60px;
+  width: 60px;
+}
 .mainTitle{
   text-align: center;
 }

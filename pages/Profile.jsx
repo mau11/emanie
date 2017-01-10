@@ -43,10 +43,10 @@ export default class Profile extends React.Component {
     var emailAndId = [];
     for(var key in obj){
       if(key === 'email_verified' && obj[key] === true){
-        this.setState({email: obj['email']}, function(){ emailAndId.push(this.state.email);
+        this.setState({email: obj.email}, function(){ emailAndId.push(this.state.email);
         });
       }
-      if(obj['user_id'].indexOf('google') !== -1){
+      if(obj.user_id.indexOf('google') !== -1){
         if(key === 'identities'){
           this.setState({authID: obj[key][0].user_id}, function(){
             emailAndId.push(this.state.authID);

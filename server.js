@@ -36,15 +36,7 @@ var newProfilesTable = 'CREATE TABLE IF NOT EXISTS profiles (id int(11) NOT NULL
 connection.query(newProfilesTable, function(err, rows){
   if(err){
     throw err;
-  }/*else {
-    // Add some test data to table (optional)
-    var addTestData = "INSERT IGNORE INTO profiles (displayName, craftName, bio) VALUES ('Mau', 'knit/crochet', 'Welcome to my site! I am a long time designer and crafter with a love of computer programming, travel and world languages'), ('Tester', 'testing', 'I am just a test')";
-    connection.query(addTestData, function(error, rows){
-      if(error){
-        throw error;
-      }
-    });
-  }*/
+  }
 });
 
 // Create patterns table if it does not exist
@@ -56,7 +48,6 @@ connection.query(newProfilesTable, function(err, rows){
 });
 
 // CRUD ROUTES & SQL:
-// POST (Create) --> INSERT
 // Adds only new users' email & id to profiles table
 app.post('/addNew', function(req, res){
   console.log('FROM CLIENT ADD NEW', req.body);
@@ -77,63 +68,64 @@ app.post('/update', function(req, res){
   var add1, add2, add3, add4;
   var sql1, sql2, sql3, sql4;
   var bod = req.body;
-  for(var i = 0; i < bod.length; i++){
-    for(var key in bod){
-      console.log('ALL---->\n', bod);
-      if(bod[i]['pic'] !== '../img/defaultIcon.png'){
-        add1 = (bod[i]['pic']);
-        sql1 = mysql.format("UPDATE profiles SET pic = ? WHERE authId = '"+req.body[0].authId+"'", add1);
-        connection.query(sql1, function(err, rows){
-          if(err){
-            throw err;
-          }
-          res.send('PIC UPDATED!');
-        })
-      };
-      if(bod[i]['displayName'] !== null){
-        add2 = (bod[i]['displayName']);
-        sql2 = mysql.format("UPDATE profiles SET displayName = ? WHERE authId = '"+req.body[0].authId+"'", add2);
-        connection.query(sql2, function(err, rows){
-          if(err){
-            throw err;
-          }
-          res.send('DISPLAY NAME UPDATED!');
-        })
-      };
-      if(bod[i]['craftName'] !== null){
-        add3 = (bod[i]['craftName']);
-        sql3 = mysql.format("UPDATE profiles SET craftName = ? WHERE authId = '"+req.body[0].authId+"'", add3);
-        connection.query(sql3, function(err, rows){
-          if(err){
-            throw err;
-          }
-          res.send('CRAFT NAME UPDATED!');
-        })
-      };
-      if(bod[i]['bio'] !== null){
-        add4 = (bod[i]['bio']);
-        sql4 = mysql.format("UPDATE profiles SET bio = ? WHERE authId = '"+req.body[0].authId+"'", add4);
-        connection.query(sql4, function(err, rows){
-          if(err){
-            throw err;
-          }
-          res.send('BIO UPDATED!');
-        })
-      };
-    }
+  console.log('ALL---->\n', bod);
+  if(bod.pic !== '../img/defaultIcon.png'){
+    add1 = (bod.pic);
+    sql1 = "UPDATE profiles SET pic = '"+add1+"' WHERE email = '"+req.body.email+"'";
+    connection.query(sql1, function(err, rows){
+      if(err){
+        throw err;
+      } else {
+        console.log('PIC UPDATED!', add1);
+      }
+    });
   }
+  if(bod.displayName !== null){
+    add2 = (bod.displayName);
+    sql2 = "UPDATE profiles SET displayName = '"+add2+"' WHERE email = '"+req.body.email+"'";
+    connection.query(sql2, function(err, rows){
+      if(err){
+        throw err;
+      } else {
+        console.log('DISPLAY NAME UPDATED!', add2);
+      }
+    });
+  }
+  if(bod.craftName !== null){
+    add3 = (bod.craftName);
+    sql3 = "UPDATE profiles SET craftName = '"+add3+"' WHERE email = '"+req.body.email+"'";
+    connection.query(sql3, function(err, rows){
+      if(err){
+        throw err;
+      } else {
+        console.log('CRAFT NAME UPDATED!', add3);
+      }
+    });
+  }
+  if(bod.bio!== null){
+    add4 = (bod.bio);
+    sql4 = "UPDATE profiles SET bio = '"+add4+"' WHERE email = '"+req.body.email+"'";
+    connection.query(sql4, function(err, rows){
+      if(err){
+        throw err;
+      } else {
+        console.log('BIO UPDATED!', add4);
+      }
+    });
+  }
+  res.send('COMPLETE');
 });
 
-
-// GET (Read) --> SELECT
+// Get single user's profile information
 app.get('/update', function (req, res){
+  //console.log('UPDATE', res);
   var allUsers = [];
-  connection.query('SELECT * FROM profiles', function(err, rows){
+  connection.query("SELECT email, displayName, pic, craftName, pattCt, bio FROM profiles", function(err, rows){
     if(err){
       throw err;
     }
     for(var i = 0; i < rows.length; i++) {
-      //console.log('SERVER', rows[i]);
+      console.log('SERVER', rows[i]);
       allUsers.push(rows[i]);
     }
     res.send(allUsers);
@@ -144,8 +136,8 @@ app.get('/update', function (req, res){
 app.get('/callback', function(req, res){
   console.log('***USER INFO***', req);
   if(!req.user){
-    throw new Error('user null');
     console.log('***ERROR');
+    throw new Error('user null');
   }
   res.redirect('/');
 });

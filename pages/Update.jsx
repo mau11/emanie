@@ -22,7 +22,6 @@ export default class Update extends React.Component {
       email: null,
       pic: '../img/defaultIcon.png',
       prompt: null,
-
       checked: false,
       allUsers: null
     };
@@ -38,10 +37,10 @@ export default class Update extends React.Component {
     var emailAndId = [];
     for(var key in obj){
       if(key === 'email_verified' && obj[key] === true){
-        this.setState({email: obj['email']}, function(){ emailAndId.push(this.state.email);
+        this.setState({email: obj.email}, function(){ emailAndId.push(this.state.email);
         });
       }
-      if(obj['user_id'].indexOf('google') !== -1){
+      if(obj.user_id.indexOf('google') !== -1){
         if(key === 'identities'){
           this.setState({authID: obj[key][0].user_id}, function(){
             emailAndId.push(this.state.authID);
@@ -67,13 +66,16 @@ export default class Update extends React.Component {
   //  Get user's data from DB
   getProfileData(cb) {
     var test;
+    var holder;
     fetch('/update', {method: 'GET'})
       .then((response) => response.json())
       .then((users) => {
         console.log('FROM SERVER', users);
         for(var i = 0; i < users.length; i++){
           for(var key in users[i]){
-            if(this.state.id === users[i].id){
+            if(this.state.email === users[i].email){
+            //console.log('EMAIL--->', users[i].email);
+              holder = i;
               this.setState({displayName: users[i].displayName});
               if($('#display').val()){
                 var dis = $('#display').val();
@@ -89,18 +91,27 @@ export default class Update extends React.Component {
                 var newBio = $('#blurb').val();
                 this.setState({bio: newBio});
               }
+              this.setState({pic: users[i].pic});
+              if($('#pic').val()){
+                var newBio = $('#pic').val();
+                this.setState({pic: newBio});
+              }
             }
           }
-          users[i].displayName = this.state.displayName;
-          users[i].craftName = this.state.craftName;
-          users[i].bio = this.state.bio;
-          users[i].pattCt = this.state.pattCt;
-          this.setState({allUsers: users});
-          test = users;
-          console.log('TO SERVER modified', users);
-          cb(test);
+          //users[i].pic = this.state.pic;
+          if(holder !== undefined){
+            //console.log('HOLD---->', holder);
+            users[holder].displayName = this.state.displayName;
+            users[holder].craftName = this.state.craftName;
+            users[holder].bio = this.state.bio;
+            users[holder].pattCt = this.state.pattCt;
+            this.setState({allUsers: users});
+            test = users[holder];
+            console.log('TO SERVER modified', users);
+            cb(test);
+          }
         }
-      })
+      });
   }
 
   handleCheckbox() {
@@ -123,13 +134,14 @@ export default class Update extends React.Component {
       },
       body: JSON.stringify(param)
     });
+    console.log('sending');
     //this.getProfileData(function(val){console.log('SENT UPDATED TO DB:', val);}).bind(this);
   }
 
   handleUpdate(e) {
     e.preventDefault();
     if(this.state.checked === true){
-      this.getProfileData(this.updateProfileData);
+      this.getProfileData(this.updateProfileData, this.state.authID);
       console.log('CLICK');
       //this.updateProfileData();
     } else {
@@ -158,6 +170,7 @@ export default class Update extends React.Component {
 
 
   render () {
+      const avatarSrc = this.state.pic;
     return (
       <div>
       <h3>Edit Profile</h3>
@@ -167,17 +180,27 @@ export default class Update extends React.Component {
               <div>
                 <h3>Update Profile below
                 </h3>
-                <form action="/updateForm" method="post">
-                  <div className="form-group">
-                    <label htmlFor="pic">Profile Image</label>
-                    <input type="file" className="form-control-file" id="pic" name="picName"/>
+                <form /*action="/updateForm" method="post"*/>
+                <div className="form-group">
+                  <div className="col-xs-3" >
+                    <img src={avatarSrc} className="avatarSmPics"/>
+                    <input type="radio"/>
+                  </div>
+                  </div>
+                  <div className="col-xs-3" >
+                    <img src={avatarSrc} className="avatarSmPics"/>
+                    <input type="radio"/>
+                  </div>
+                  <div className="col-xs-3" >
+                    <img src={avatarSrc} className="avatarSmPics"/>
+                    <input type="radio" value="Default"/>
                   </div>
                   <div className="form-group">
                     <label htmlFor="display">Display Name:</label>
                     <input type="text" className="form-control" id="display" placeholder="Enter new display name" onChange={this.onDisplay.bind(this)} name="display"/>
                   </div>
                   <div className="form-group">
-                    <label htmlFor="craft">Favorite Craft:</label>
+                    <label htmlFor="craft">Favorite Craft(s):</label>
                     <input type="text" className="form-control" id="craft" placeholder="Crochet, Knitting, Sewing...Everything!" name="craft" onChange={this.onCraft.bind(this)} />
                   </div>
                   <div className="form-group">
@@ -195,13 +218,15 @@ export default class Update extends React.Component {
             </div>
             <div className="col-sm-6">
             <h5><i>Preview:</i></h5>
-            <div>
-              <h3>Display Name: {this.state.displayName}</h3>
-              <h4>Favorite Craft: {this.state.craftName}</h4>
-              <h4>Pattern Count: {this.state.pattCt}</h4>
+            <div className="mainTitle">
+              <img className="avatarPics" src={avatarSrc} />
+              <h3>{this.state.displayName}</h3>
+              <h4>Favorite Craft(s): {this.state.craftName}</h4>
+              <h4>Patterns: {this.state.pattCt}</h4>
               <h4>Bio: {this.state.bio}</h4>
             </div>
             </div>
+
           </div>
         </div>
       </div>
