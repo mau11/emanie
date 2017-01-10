@@ -22,9 +22,17 @@ import Update from '../pages/Update.jsx';
 
 const auth = new AuthService('S068sKA2j8Jn3mYTZJSbMQf5siOn1iJn', 'mau11.auth0.com');
 
-// validate authentication for private routes
+// onEnter callback to validate authentication in private routes
 const requireAuth = (nextState, replace) => {
   if (!auth.loggedIn()) {
+    replace({ pathname: '/login' });
+  }
+};
+
+// OnEnter for callback url to parse access_token
+const parseAuthHash = (nextState, replace) => {
+  if (nextState.location.hash) {
+    auth.parseHash(nextState.location.hash);
     replace({ pathname: '/login' });
   }
 };
@@ -43,6 +51,7 @@ ReactDOM.render(
       <Route path="contact" component={ Contact } auth={auth}/>
       <Route path="search" component={ Search } onEnter={requireAuth}/>
       <Route path="login" component={ Login } auth={auth}/>
+      <Route path="login" onEnter={parseAuthHash}/>
       <Route path="logout" component={ Logout } auth={auth}/>
     </Route>
   </Router>,

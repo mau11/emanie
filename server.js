@@ -31,15 +31,12 @@ connection.connect(function(err){
   console.log('Success, connected as id ' + connection.threadId);
 });
 
-// Create new tables if they do not exist
-var newProfilesTable = 'CREATE TABLE IF NOT EXISTS profiles (id int(11) NOT NULL AUTO_INCREMENT, user varchar(20), email varchar(50), displayName varchar(20) UNIQUE, craftName varchar(20), pattCt varchar(3), bio varchar(150), authId varchar(20), PRIMARY KEY (id)) ENGINE=InnoDB  DEFAULT CHARSET=utf8';
-
-var newPatternsTable = 'CREATE TABLE IF NOT EXISTS patterns (id int(11) NOT NULL AUTO_INCREMENT, user varchar(20), pattCt varchar(3), pName varchar(20), craft varchar(20), supplies varchar(50), gauge varchar(150), authId varchar(20), notes varchar(200), PRIMARY KEY (id)) ENGINE=InnoDB  DEFAULT CHARSET=utf8';
-
+// Create profiles table if it does not exist
+var newProfilesTable = 'CREATE TABLE IF NOT EXISTS profiles (id int(11) NOT NULL AUTO_INCREMENT, email varchar(50) UNIQUE, displayName varchar(20), pic varchar(50), craftName varchar(20), pattCt varchar(3), bio varchar(150), authId varchar(30) UNIQUE, PRIMARY KEY (id)) ENGINE=InnoDB  DEFAULT CHARSET=utf8';
 connection.query(newProfilesTable, function(err, rows){
   if(err){
     throw err;
-  } else {
+  }/*else {
     // Add some test data to table (optional)
     var addTestData = "INSERT IGNORE INTO profiles (displayName, craftName, bio) VALUES ('Mau', 'knit/crochet', 'Welcome to my site! I am a long time designer and crafter with a love of computer programming, travel and world languages'), ('Tester', 'testing', 'I am just a test')";
     connection.query(addTestData, function(error, rows){
@@ -47,27 +44,84 @@ connection.query(newProfilesTable, function(err, rows){
         throw error;
       }
     });
+  }*/
+});
+
+// Create patterns table if it does not exist
+var newPatternsTable = 'CREATE TABLE IF NOT EXISTS patterns (id int(11) NOT NULL AUTO_INCREMENT, user varchar(20), pattCt varchar(3), pName varchar(20), craft varchar(20), supplies varchar(50), gauge varchar(150), authId varchar(20), notes varchar(200), PRIMARY KEY (id)) ENGINE=InnoDB  DEFAULT CHARSET=utf8';
+connection.query(newProfilesTable, function(err, rows){
+  if(err){
+    throw err;
   }
 });
 
-
 // CRUD ROUTES & SQL:
 // POST (Create) --> INSERT
-app.post('/update', function(req, res){
-  console.log('FROM CLIENT INPUT', req.body);
-  var addTo = [];
-  var bod = req.body;
-  bod.forEach(function(val){
-    addTo.push(bod[val]);
-  });
-  var sql3 = mysql.format("UPDATE profiles SET displayName = ? WHERE id = 1", addTo);
-  connection.query(sql3, function(err, rows){
-    console.log('QUERIES:', req.body.displayName);
+// Adds only new users' email & id to profiles table
+app.post('/addNew', function(req, res){
+  console.log('FROM CLIENT ADD NEW', req.body);
+  if(req.body.length === 2){
+    var addInitialInfo = "INSERT IGNORE INTO profiles (email, authId) VALUES ('"+req.body[0]+"'"+","+"'"+req.body[1]+"')";
+   connection.query(addInitialInfo, function(err, rows){
     if(err){
       throw err;
     }
-    res.send('Update, Complete');
-  });
+    console.log(req.body);
+   });
+  }
+});
+
+// Update user's info in DB
+app.post('/update', function(req, res){
+  console.log('FROM CLIENT INPUT', req.body);
+  var add1, add2, add3, add4;
+  var sql1, sql2, sql3, sql4;
+  var bod = req.body;
+  for(var i = 0; i < bod.length; i++){
+    for(var key in bod){
+      console.log('ALL---->\n', bod);
+      if(bod[i]['pic'] !== '../img/defaultIcon.png'){
+        add1 = (bod[i]['pic']);
+        sql1 = mysql.format("UPDATE profiles SET pic = ? WHERE authId = '"+req.body[0].authId+"'", add1);
+        connection.query(sql1, function(err, rows){
+          if(err){
+            throw err;
+          }
+          res.send('PIC UPDATED!');
+        })
+      };
+      if(bod[i]['displayName'] !== null){
+        add2 = (bod[i]['displayName']);
+        sql2 = mysql.format("UPDATE profiles SET displayName = ? WHERE authId = '"+req.body[0].authId+"'", add2);
+        connection.query(sql2, function(err, rows){
+          if(err){
+            throw err;
+          }
+          res.send('DISPLAY NAME UPDATED!');
+        })
+      };
+      if(bod[i]['craftName'] !== null){
+        add3 = (bod[i]['craftName']);
+        sql3 = mysql.format("UPDATE profiles SET craftName = ? WHERE authId = '"+req.body[0].authId+"'", add3);
+        connection.query(sql3, function(err, rows){
+          if(err){
+            throw err;
+          }
+          res.send('CRAFT NAME UPDATED!');
+        })
+      };
+      if(bod[i]['bio'] !== null){
+        add4 = (bod[i]['bio']);
+        sql4 = mysql.format("UPDATE profiles SET bio = ? WHERE authId = '"+req.body[0].authId+"'", add4);
+        connection.query(sql4, function(err, rows){
+          if(err){
+            throw err;
+          }
+          res.send('BIO UPDATED!');
+        })
+      };
+    }
+  }
 });
 
 

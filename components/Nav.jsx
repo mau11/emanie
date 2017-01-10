@@ -14,23 +14,33 @@ import Search from '../pages/Search.jsx';
 import Update from '../pages/Update.jsx';
 
 import { IndexLink, Link } from 'react-router';
+import AuthService from '../utils/AuthService';
 
 
 export default class Nav extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      hidden: true
+  static contextTypes() {
+    return {
+      router: T.object
     };
+  }
+
+  static propTypes() {
+    return {
+      auth: T.instanceOf(AuthService)
+    };
+  }
+
+  constructor(props, context) {
+    super(props, context);
+    this.state = {};
   }
 
   logout() {
     this.props.auth.logout();
-    //$('#togLogout').hide();
   }
 
   render() {
-
+    const { auth } = this.props;
     return (
       <div>
       <nav role="navigation" className="navbar navbar-inverse">
@@ -57,7 +67,7 @@ export default class Nav extends React.Component {
               <a data-toggle="dropdown" className="dropdown-toggle" href="#">Patterns <b className="caret"></b></a>
               <ul role="menu" className="dropdown-menu">
                 <li><Link to="">View All</Link></li>
-                <li><Link to="">Add New</Link></li>
+                <li><Link to="patgen">Add New</Link></li>
                 <li><Link to="">PatGen</Link></li>
               </ul>
             </li>
@@ -78,11 +88,12 @@ export default class Nav extends React.Component {
               <button type="submit" className="btn btn-inverse">Search</button>
             </div>
           </form>
-          <ul className="nav navbar-nav navbar-right" id="togLogin">
-            <li><Link to="login">Login</Link></li>
+          <ul className="nav navbar-nav navbar-right" id="togLogin" onClick={auth.login.bind(this)}>
+            <li><Link to="">Login</Link></li>
           </ul>
           <ul className="nav navbar-nav navbar-right" id="togLogout">
-            <li><Link to="logout" onClick={this.logout.bind(this)}>Logout</Link></li>
+            <li><Link to="logout" onClick={this.logout.bind(this)}>Logout</Link>
+            </li>
           </ul>
         </div>
       </nav>

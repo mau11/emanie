@@ -1,24 +1,73 @@
-import React from 'react';
+import React, { PropTypes as T } from 'react';
 import ReactDOM from 'react-dom';
-import Profile from './Profile.jsx';
+//import Profile from './Profile.jsx';
+import AuthService from '../utils/AuthService';
 
 export default class Update extends React.Component {
-  constructor() {
-    super();
+  static propTypes() {
+    return {
+      auth: T.instanceOf(AuthService),
+      profile: T.object
+    };
+  }
+  constructor(props) {
+    super(props);
     this.state = {
-      checked: false,
       displayName: null,
       craftName: null,
+      pattCt: 0,
       bio: null,
-      id: 1,
+      profile: props.auth.getProfile(),
+      authID: null,
+      email: null,
+      pic: '../img/defaultIcon.png',
+      prompt: null,
+
+      checked: false,
       allUsers: null
     };
   }
 
-  // Gets all data in db
+  componentWillMount() {
+    this.getAuthData();
+  }
+
+  // Get auth0 ID from logged in user and add to state
+  getAuthData() {
+    var obj = this.state.profile;
+    var emailAndId = [];
+    for(var key in obj){
+      if(key === 'email_verified' && obj[key] === true){
+        this.setState({email: obj['email']}, function(){ emailAndId.push(this.state.email);
+        });
+      }
+      if(obj['user_id'].indexOf('google') !== -1){
+        if(key === 'identities'){
+          this.setState({authID: obj[key][0].user_id}, function(){
+            emailAndId.push(this.state.authID);
+            this.sendFirstInfo(emailAndId);
+          });
+        }
+      }
+    }
+  }
+
+  // Add user's email and id to DB
+  sendFirstInfo(arr) {
+    fetch('/addNew', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(arr)
+    });
+  }
+
+  //  Get user's data from DB
   getProfileData(cb) {
     var test;
-    return fetch('/update', {method: 'GET'})
+    fetch('/update', {method: 'GET'})
       .then((response) => response.json())
       .then((users) => {
         console.log('FROM SERVER', users);
@@ -45,15 +94,13 @@ export default class Update extends React.Component {
           users[i].displayName = this.state.displayName;
           users[i].craftName = this.state.craftName;
           users[i].bio = this.state.bio;
+          users[i].pattCt = this.state.pattCt;
           this.setState({allUsers: users});
           test = users;
           console.log('TO SERVER modified', users);
           cb(test);
         }
       })
-      .catch((error) => {
-        console.error(error);
-      });
   }
 
   handleCheckbox() {
@@ -76,24 +123,7 @@ export default class Update extends React.Component {
       },
       body: JSON.stringify(param)
     });
-    this.getProfileData(function(val){console.log('SENT UPDATED TO DB:', val);}).bind(this);
-  /*    console.log('running', param);
-    $(document).ready(function(){
-      $.ajax({
-        url: '/update',
-        type: 'POST',
-        data: JSON.stringify(param),
-        contentType: "application/json",
-        dataType:'json',
-        success: function(results){
-          console.log('Data sent!');
-          console.log(JSON.stringify(results));
-        },
-        error: function(err) {
-          console.error('NOT SENT', err.toString());
-        }
-      });
-    })*/
+    //this.getProfileData(function(val){console.log('SENT UPDATED TO DB:', val);}).bind(this);
   }
 
   handleUpdate(e) {
@@ -128,7 +158,6 @@ export default class Update extends React.Component {
 
 
   render () {
-
     return (
       <div>
       <h3>Edit Profile</h3>
@@ -169,6 +198,7 @@ export default class Update extends React.Component {
             <div>
               <h3>Display Name: {this.state.displayName}</h3>
               <h4>Favorite Craft: {this.state.craftName}</h4>
+              <h4>Pattern Count: {this.state.pattCt}</h4>
               <h4>Bio: {this.state.bio}</h4>
             </div>
             </div>
