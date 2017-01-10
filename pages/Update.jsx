@@ -63,7 +63,7 @@ export default class Update extends React.Component {
     });
   }
 
-  //  Get user's data from DB
+  // Get user's info from DB
   getProfileData(cb) {
     var test;
     var holder;
@@ -91,16 +91,16 @@ export default class Update extends React.Component {
                 var newBio = $('#blurb').val();
                 this.setState({bio: newBio});
               }
-              this.setState({pic: users[i].pic});
+              this.setState({})
+              /*this.setState({pic: users[i].pic});
               if($('#pic').val()){
                 var newBio = $('#pic').val();
                 this.setState({pic: newBio});
-              }
+              }*/
             }
           }
-          //users[i].pic = this.state.pic;
           if(holder !== undefined){
-            //console.log('HOLD---->', holder);
+            //users[i].pic = this.state.pic;
             users[holder].displayName = this.state.displayName;
             users[holder].craftName = this.state.craftName;
             users[holder].bio = this.state.bio;
@@ -127,7 +127,7 @@ export default class Update extends React.Component {
   updateProfileData(param) {
     console.log('PARAM', param);
     fetch('/update', {
-      method: 'POST',
+      method: 'PUT',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -141,7 +141,7 @@ export default class Update extends React.Component {
   handleUpdate(e) {
     e.preventDefault();
     if(this.state.checked === true){
-      this.getProfileData(this.updateProfileData, this.state.authID);
+      this.getProfileData(this.updateProfileData);
       console.log('CLICK');
       //this.updateProfileData();
     } else {
@@ -168,24 +168,22 @@ export default class Update extends React.Component {
     });
   }
 
-
   render () {
       const avatarSrc = this.state.pic;
     return (
       <div>
-      <h3>Edit Profile</h3>
+        <h3>Edit Profile
+        </h3>
         <div className="container">
           <div className="row">
             <div className="col-sm-6">
               <div>
-                <h3>Update Profile below
-                </h3>
                 <form /*action="/updateForm" method="post"*/>
+                <label>Select profile image:</label>
                 <div className="form-group">
                   <div className="col-xs-3" >
                     <img src={avatarSrc} className="avatarSmPics"/>
                     <input type="radio"/>
-                  </div>
                   </div>
                   <div className="col-xs-3" >
                     <img src={avatarSrc} className="avatarSmPics"/>
@@ -194,6 +192,7 @@ export default class Update extends React.Component {
                   <div className="col-xs-3" >
                     <img src={avatarSrc} className="avatarSmPics"/>
                     <input type="radio" value="Default"/>
+                </div>
                   </div>
                   <div className="form-group">
                     <label htmlFor="display">Display Name:</label>
@@ -220,13 +219,12 @@ export default class Update extends React.Component {
             <h5><i>Preview:</i></h5>
             <div className="mainTitle">
               <img className="avatarPics" src={avatarSrc} />
-              <h3>{this.state.displayName}</h3>
-              <h4>Favorite Craft(s): {this.state.craftName}</h4>
-              <h4>Patterns: {this.state.pattCt}</h4>
-              <h4>Bio: {this.state.bio}</h4>
+              <h3><b>~{this.state.displayName}~</b></h3>
+              <h4><b>Favorite Craft(s):</b> {this.state.craftName}</h4>
+              <h4><b>Patterns:</b> {this.state.pattCt}</h4>
+              <h4><b>Bio: </b> {this.state.bio}</h4>
             </div>
             </div>
-
           </div>
         </div>
       </div>

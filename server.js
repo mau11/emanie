@@ -47,8 +47,8 @@ connection.query(newProfilesTable, function(err, rows){
   }
 });
 
-// CRUD ROUTES & SQL:
-// Adds only new users' email & id to profiles table
+
+// Adds new users' email & id to profiles table
 app.post('/addNew', function(req, res){
   console.log('FROM CLIENT ADD NEW', req.body);
   if(req.body.length === 2){
@@ -62,63 +62,8 @@ app.post('/addNew', function(req, res){
   }
 });
 
-// Update user's info in DB
-app.post('/update', function(req, res){
-  console.log('FROM CLIENT INPUT', req.body);
-  var add1, add2, add3, add4;
-  var sql1, sql2, sql3, sql4;
-  var bod = req.body;
-  console.log('ALL---->\n', bod);
-  if(bod.pic !== '../img/defaultIcon.png'){
-    add1 = (bod.pic);
-    sql1 = "UPDATE profiles SET pic = '"+add1+"' WHERE email = '"+req.body.email+"'";
-    connection.query(sql1, function(err, rows){
-      if(err){
-        throw err;
-      } else {
-        console.log('PIC UPDATED!', add1);
-      }
-    });
-  }
-  if(bod.displayName !== null){
-    add2 = (bod.displayName);
-    sql2 = "UPDATE profiles SET displayName = '"+add2+"' WHERE email = '"+req.body.email+"'";
-    connection.query(sql2, function(err, rows){
-      if(err){
-        throw err;
-      } else {
-        console.log('DISPLAY NAME UPDATED!', add2);
-      }
-    });
-  }
-  if(bod.craftName !== null){
-    add3 = (bod.craftName);
-    sql3 = "UPDATE profiles SET craftName = '"+add3+"' WHERE email = '"+req.body.email+"'";
-    connection.query(sql3, function(err, rows){
-      if(err){
-        throw err;
-      } else {
-        console.log('CRAFT NAME UPDATED!', add3);
-      }
-    });
-  }
-  if(bod.bio!== null){
-    add4 = (bod.bio);
-    sql4 = "UPDATE profiles SET bio = '"+add4+"' WHERE email = '"+req.body.email+"'";
-    connection.query(sql4, function(err, rows){
-      if(err){
-        throw err;
-      } else {
-        console.log('BIO UPDATED!', add4);
-      }
-    });
-  }
-  res.send('COMPLETE');
-});
-
-// Get single user's profile information
+// Get user's profile information
 app.get('/update', function (req, res){
-  //console.log('UPDATE', res);
   var allUsers = [];
   connection.query("SELECT email, displayName, pic, craftName, pattCt, bio FROM profiles", function(err, rows){
     if(err){
@@ -133,36 +78,61 @@ app.get('/update', function (req, res){
   });
 });
 
-app.get('/callback', function(req, res){
-  console.log('***USER INFO***', req);
-  if(!req.user){
-    console.log('***ERROR');
-    throw new Error('user null');
-  }
-  res.redirect('/');
-});
-
-// PUT (Update) --> UPDATE
-/*app.put('/update/', function (req, res){
-  var edited = [];
-  var editUser = "UPDATE profiles SET displayName = ? WHERE id = 2";
-  var inputs = [req.body.displayName];
-  var sql2 = mysql.format(editUser, inputs);
-  //res.send(req);
-  connection.query(sql2, function(err, rows){
+// Get all users' pic and display name for browsing
+app.get('/browse', function(req, res){
+  connection.query("SELECT displayName, pic FROM profiles", function(err, rows){
     if(err){
       throw err;
     }
-    for(var j = 0; j < rows.length; j++) {
-      console.log(rows[j]);
-      edited.push(rows[j]);
-    }
-  res.send(edited)
+    res.send(rows);
   })
-});*/
+});
 
-// DELETE (Delete) --> DELETE
-
+// Update user's info in DB based on client input
+app.put('/update', function(req, res){
+  console.log('FROM CLIENT INPUT', req.body);
+  var add1, add2, add3, add4;
+  var sql1, sql2, sql3, sql4;
+  var bod = req.body;
+  console.log('ALL---->\n', bod);
+  if(bod.pic !== '../img/defaultIcon.png'){
+    add1 = (bod.pic);
+    sql1 = "UPDATE profiles SET pic = '"+add1+"' WHERE email = '"+req.body.email+"'";
+    connection.query(sql1, function(err, rows){
+      if(err){
+        throw err;
+      }
+    });
+  }
+  if(bod.displayName !== null){
+    add2 = (bod.displayName);
+    sql2 = "UPDATE profiles SET displayName = '"+add2+"' WHERE email = '"+req.body.email+"'";
+    connection.query(sql2, function(err, rows){
+      if(err){
+        throw err;
+      }
+    });
+  }
+  if(bod.craftName !== null){
+    add3 = (bod.craftName);
+    sql3 = "UPDATE profiles SET craftName = '"+add3+"' WHERE email = '"+req.body.email+"'";
+    connection.query(sql3, function(err, rows){
+      if(err){
+        throw err;
+      }
+    });
+  }
+  if(bod.bio!== null){
+    add4 = (bod.bio);
+    sql4 = "UPDATE profiles SET bio = '"+add4+"' WHERE email = '"+req.body.email+"'";
+    connection.query(sql4, function(err, rows){
+      if(err){
+        throw err;
+      }
+    });
+  }
+  res.send('COMPLETE');
+});
 
 app.listen(port, function(){
   console.log('Listening on port: ' + port);

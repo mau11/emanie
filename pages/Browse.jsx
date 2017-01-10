@@ -11,8 +11,17 @@ export default class Browse extends React.Component {
     };
   }
 
-  getAllProfiles(){
+  componentWillMount() {
+    this.getAllProfiles();
+  }
 
+  // Get all users' avatar and display name.
+  getAllProfiles(){
+    return fetch('/browse', {method: 'GET'})
+      .then((response) => response.json())
+      .then(allProfiles => {
+        this.setState({allUsers: allProfiles})
+      });
   }
 
   render () {
@@ -25,7 +34,7 @@ export default class Browse extends React.Component {
             <div className="col-sm-3">
               <Link to="">
                 <img className="avatarPics" src={avatarSrc} />
-              </Link>USER
+              </Link>{user.displayName}
             </div>)})}
           </div>
         </div>

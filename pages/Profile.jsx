@@ -32,13 +32,19 @@ export default class Profile extends React.Component {
     });
   }
 
+  // Get user's initial data from DB
   componentWillMount() {
-    this.getAuthData();
+    if(this.state.displayName !== null || this.state.craftName !== null || this.state.bio !== null){
+      this.setState({prompt: "Looks like you haven't updated your profile yet..."});
+      this.getProfileData();
+    } else {
+      this.setState({prompt: null});
+      this.getAuthData();
+    }
   }
 
   // Get auth0 ID from logged in user and add to state
   getAuthData() {
-    console.log(this.state.profile);
     var obj = this.state.profile;
     var emailAndId = [];
     for(var key in obj){
@@ -57,7 +63,7 @@ export default class Profile extends React.Component {
     }
   }
 
-  // Add user's email and id to DB
+  // Add user's email and id from Auth0 login to DB
   sendFirstInfo(arr) {
     fetch('/addNew', {
       method: 'POST',
@@ -67,50 +73,37 @@ export default class Profile extends React.Component {
       },
       body: JSON.stringify(arr)
     });
-    this.setState({prompt: "Looks like you haven't updated your profile yet..."});
+    //this.setState({prompt: "Looks like you haven't updated your profile yet..."});
+    this.getProfileData();
   }
 
+  // Remove prompt after user set's up initial profile
+ /* componentDidUpdate() {
+    if(this.state.displayName !== null || this.state.craftName !== null || this.state.bio !== null){
+      this.setState({prompt: null});
+    }
+  }*/
 
-  // Get profile info from DB and render to page
-  initializeProfile() {
-    var emailAndId = [this.state.authID, this.state.email];
-    //cb(emailAndId);
-    console.log(emailAndId);
-
-    /*return fetch('/profile', {method: 'GET'})
+  // Get user's info from DB and render to page
+  getProfileData(cb) {
+    var test;
+    var holder;
+    fetch('/update', {method: 'GET'})
       .then((response) => response.json())
-      .then((profiles) => {
-        for(var i = 0; i < profiles.length; i++){
-          for(var key in profiles[i]){
-            console.log('HERE', profiles[i][key]);
-            if(profiles[i][identities][user_id] === this.state.authID){
-              this.setState({authID: profiles[i][key].authID});
-              this.setState({email: profiles[i][key].email});
-              this.setState({pic: profiles[i][key].picture});
+      .then((users) => {
+        console.log('FROM SERVER', users);
+        for(var i = 0; i < users.length; i++){
+          for(var key in users[i]){
+            if(this.state.email === users[i].email){
+              this.setState({displayName: users[i].displayName});
+              this.setState({craftName: users[i].craftName});
+              this.setState({bio: users[i].bio});
+              /*this.setState({pic: users[i].pic});*/
             }
           }
         }
-      })
-      .catch((err) => {
-        console.log('Error initializing profile ---> ', err);
-      });*/
-    }
-
-/*  // Check if auth0 ID matches ID in database
-  checkId() {
-    fetch('/callback', {method: 'GET'})
-    .then((response) => response.json())
-    .then((users) => {
-      for(var i = 0; i < users.length; i++){
-        for(var key in users[i]){
-          if(users[i].identities[0].user_ID === this.state.authID){
-            console.log('YES!');
-          }
-        }
-      }
-    });
-  }*/
-
+      });
+  }
 
   render () {
     const avatarSrc = this.state.pic;
@@ -121,10 +114,10 @@ export default class Profile extends React.Component {
             <div className="col-sm-12">
             <h3><b><i>{this.state.prompt}</i></b></h3>
               <img className="avatarPics" src={avatarSrc} />
-              <h3>Display Name: {this.state.displayName}</h3>
-              <h4>Favorite Craft: {this.state.craftName}</h4>
-              <h4>Pattern Count: {this.state.pattCt}</h4>
-              <h4>Bio: {this.state.bio}</h4>
+              <h3><b>~{this.state.displayName}~</b></h3>
+              <h4><b>Favorite Craft(s):</b> {this.state.craftName}</h4>
+              <h4><b>Patterns:</b> {this.state.pattCt}</h4>
+              <h4><b>Bio: </b> {this.state.bio}</h4>
             </div>
           </div>
         </div>
