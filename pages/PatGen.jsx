@@ -44,7 +44,7 @@ export default class PatGen extends React.Component {
                       <input type="checkbox" className="form-check-input" onClick=""/> I confirm that I have reviewed my changes.
                     </label>
                   </div>
-                  <button type="submit" className="btn btn-inverse">Add Pattern</button>
+                  <button type="submit" className="btn btn-inverse">Generate</button>
                 </form>
               </div>
             </div>

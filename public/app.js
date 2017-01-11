@@ -20,6 +20,7 @@ import Profile from '../pages/Profile.jsx';
 import Report from '../pages/Report.jsx';
 import Search from '../pages/Search.jsx';
 import Update from '../pages/Update.jsx';
+import ViewPatt from '../pages/ViewPatt.jsx';
 
 const auth = new AuthService('S068sKA2j8Jn3mYTZJSbMQf5siOn1iJn', 'mau11.auth0.com');
 
@@ -48,6 +49,7 @@ ReactDOM.render(
       <Route path="messages" component={ Messages } onEnter={requireAuth}/>
       <Route path="add" component={ AddPattern } onEnter={requireAuth}/>
       <Route path="patgen" component={ PatGen } onEnter={requireAuth}/>
+      <Route path="view" component={ ViewPatt } onEnter={requireAuth}/>
       <Route path="about" component={ About } auth={auth}/>
       <Route path="report" component={ Report } auth={auth}/>
       <Route path="contact" component={ Contact } auth={auth}/>

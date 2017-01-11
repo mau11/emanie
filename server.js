@@ -84,6 +84,7 @@ app.post('/addPatt', function(req, res){
   res.send('Complete');
 });
 
+
 // Get user's profile information
 app.get('/update', function (req, res){
   var allUsers = [];
@@ -103,6 +104,17 @@ app.get('/update', function (req, res){
 // Get all users' pic and display name for browsing
 app.get('/browse', function(req, res){
   connection.query("SELECT displayName, pic, FROM profiles", function(err, rows){
+    if(err){
+      throw err;
+    }
+    res.send(rows);
+  })
+});
+
+// Get all patterns from table
+app.get('/viewPatt', function(req, res){
+  var views = "SELECT * FROM patterns";
+  connection.query(views, function(err, rows){
     if(err){
       throw err;
     }

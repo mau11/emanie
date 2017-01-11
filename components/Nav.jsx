@@ -13,6 +13,7 @@ import Profile from '../pages/Profile.jsx';
 import Report from '../pages/Report.jsx';
 import Search from '../pages/Search.jsx';
 import Update from '../pages/Update.jsx';
+import ViewPatt from '../pages/ViewPatt.jsx';
 
 import { IndexLink, Link } from 'react-router';
 import AuthService from '../utils/AuthService';
@@ -67,7 +68,7 @@ export default class Nav extends React.Component {
             <li className="dropdown">
               <a data-toggle="dropdown" className="dropdown-toggle" href="#">Patterns <b className="caret"></b></a>
               <ul role="menu" className="dropdown-menu">
-                <li><Link to="">View All</Link></li>
+                <li><Link to="view">View All</Link></li>
                 <li><Link to="add">Add New</Link></li>
                 <li><Link to="patgen">PatGen</Link></li>
               </ul>

@@ -100,7 +100,7 @@ export default class Update extends React.Component {
             //users[i].pic = this.state.pic;
             users[holder].displayName = this.state.displayName;
             users[holder].craftName = this.state.craftName;
-            users[holder].bio = this.state.bio;
+            users[holder].bio
             users[holder].pattCt = this.state.pattCt;
             this.setState({allUsers: users});
             test = users[holder];
