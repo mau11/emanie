@@ -11,18 +11,14 @@ export default class PatGen extends React.Component {
   render () {
     return (
       <div>
-        <h3>Patterns</h3>
+        <h3>Pattern Generator</h3>
         <div className="container">
           <div className="row">
             <div className="col-sm-8">
               <div>
-                <h4>Add a New Pattern
+                <h4>Select from dropdown menu
                 </h4>
                 <form>
-                  <div className="form-group">
-                    <label htmlFor="patFile">Import PDF</label>
-                    <input type="file" className="form-control-file" id="patFile" name="pattPdf"/>
-                  </div>
                   <div className="form-group">
                     <label htmlFor="patt">Pattern Name:</label>
                     <input type="text" className="form-control" id="patt" placeholder="Enter pattern name"  name="pattName"/>

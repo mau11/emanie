@@ -5,6 +5,7 @@ import AuthService from '../utils/AuthService';
 
 
 import About from '../pages/About.jsx';
+import AddPattern from '../pages/AddPattern.jsx';
 import App from '../components/App.jsx';
 import Browse from '../pages/Browse.jsx';
 import Contact from '../pages/Contact.jsx';
@@ -45,6 +46,7 @@ ReactDOM.render(
       <Route path="update" component={ Update } onEnter={requireAuth}/>
       <Route path="browse" component={ Browse } onEnter={requireAuth}/>
       <Route path="messages" component={ Messages } onEnter={requireAuth}/>
+      <Route path="add" component={ AddPattern } onEnter={requireAuth}/>
       <Route path="patgen" component={ PatGen } onEnter={requireAuth}/>
       <Route path="about" component={ About } auth={auth}/>
       <Route path="report" component={ Report } auth={auth}/>

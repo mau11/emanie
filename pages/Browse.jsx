@@ -6,7 +6,7 @@ export default class Browse extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      allUsers: [1,2,3,4],
+      allUsers: [],
       avatarSrc: '../img/defaultIcon.png'
     };
   }

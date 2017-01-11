@@ -12,7 +12,7 @@ export default class App extends React.Component {
       <div>
         <h2>Welcome to Emanie!</h2>
         <hr />
-        <h5><i>A community for knitter and crocheters to store and share their crafts.</i></h5>
+        <h5><i>A community for knitters and crocheters to store and share their crafts.</i></h5>
       </div>
     );
   }

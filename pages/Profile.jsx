@@ -52,13 +52,11 @@ export default class Profile extends React.Component {
         this.setState({email: obj.email}, function(){ emailAndId.push(this.state.email);
         });
       }
-      if(obj.user_id.indexOf('google') !== -1){
-        if(key === 'identities'){
-          this.setState({authID: obj[key][0].user_id}, function(){
-            emailAndId.push(this.state.authID);
-            this.sendFirstInfo(emailAndId);
-          });
-        }
+      if(key === 'identities'){
+        this.setState({authID: obj[key][0].user_id}, function(){
+          emailAndId.push(this.state.authID);
+          this.sendFirstInfo(emailAndId);
+        });
       }
     }
   }

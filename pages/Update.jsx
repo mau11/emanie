@@ -1,6 +1,5 @@
 import React, { PropTypes as T } from 'react';
 import ReactDOM from 'react-dom';
-//import Profile from './Profile.jsx';
 import AuthService from '../utils/AuthService';
 
 export default class Update extends React.Component {
@@ -40,13 +39,11 @@ export default class Update extends React.Component {
         this.setState({email: obj.email}, function(){ emailAndId.push(this.state.email);
         });
       }
-      if(obj.user_id.indexOf('google') !== -1){
-        if(key === 'identities'){
-          this.setState({authID: obj[key][0].user_id}, function(){
-            emailAndId.push(this.state.authID);
-            this.sendFirstInfo(emailAndId);
-          });
-        }
+      if(key === 'identities'){
+        this.setState({authID: obj[key][0].user_id}, function(){
+          emailAndId.push(this.state.authID);
+          this.sendFirstInfo(emailAndId);
+        });
       }
     }
   }
@@ -91,7 +88,7 @@ export default class Update extends React.Component {
                 var newBio = $('#blurb').val();
                 this.setState({bio: newBio});
               }
-              this.setState({})
+              //this.setState({})
               /*this.setState({pic: users[i].pic});
               if($('#pic').val()){
                 var newBio = $('#pic').val();

@@ -2,6 +2,7 @@ import ReactDOM from 'react-dom';
 import React, { PropTypes as T } from 'react';
 
 import About from '../pages/About.jsx';
+import AddPattern from '../pages/AddPattern.jsx';
 import Browse from '../pages/Browse.jsx';
 import Contact from '../pages/Contact.jsx';
 import Login from '../pages/Login.jsx';
@@ -67,8 +68,8 @@ export default class Nav extends React.Component {
               <a data-toggle="dropdown" className="dropdown-toggle" href="#">Patterns <b className="caret"></b></a>
               <ul role="menu" className="dropdown-menu">
                 <li><Link to="">View All</Link></li>
-                <li><Link to="patgen">Add New</Link></li>
-                <li><Link to="">PatGen</Link></li>
+                <li><Link to="add">Add New</Link></li>
+                <li><Link to="patgen">PatGen</Link></li>
               </ul>
             </li>
             <li><Link to="browse">Browse Users</Link></li>

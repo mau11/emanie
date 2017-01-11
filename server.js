@@ -32,20 +32,20 @@ connection.connect(function(err){
 });
 
 // Create profiles table if it does not exist
-var newProfilesTable = 'CREATE TABLE IF NOT EXISTS profiles (id int(11) NOT NULL AUTO_INCREMENT, email varchar(50) UNIQUE, displayName varchar(20), pic varchar(50), craftName varchar(20), pattCt varchar(3), bio varchar(150), authId varchar(30) UNIQUE, PRIMARY KEY (id)) ENGINE=InnoDB  DEFAULT CHARSET=utf8';
+var newProfilesTable = 'CREATE TABLE IF NOT EXISTS profiles (id int(11) NOT NULL AUTO_INCREMENT, email varchar(50), displayName varchar(20), pic varchar(50), craftName varchar(20), bio varchar(150), authId varchar(30), pattCt varchar(3), PRIMARY KEY (id)) ENGINE=InnoDB  DEFAULT CHARSET=utf8';
 connection.query(newProfilesTable, function(err, rows){
   if(err){
     throw err;
   }
 });
 
-// Create patterns table if it does not exist
-var newPatternsTable = 'CREATE TABLE IF NOT EXISTS patterns (id int(11) NOT NULL AUTO_INCREMENT, user varchar(20), pattCt varchar(3), pName varchar(20), craft varchar(20), supplies varchar(50), gauge varchar(150), authId varchar(20), notes varchar(200), PRIMARY KEY (id)) ENGINE=InnoDB  DEFAULT CHARSET=utf8';
-connection.query(newProfilesTable, function(err, rows){
+// Set default pattern count for each user to 0, only do this once
+/*var setDefaultPattCt = "ALTER TABLE profiles ALTER pattCt SET DEFAULT 0";
+connection.query(setDefaultPattCt, function(err, rows){
   if(err){
     throw err;
   }
-});
+});*/
 
 
 // Adds new users' email & id to profiles table
@@ -53,13 +53,35 @@ app.post('/addNew', function(req, res){
   console.log('FROM CLIENT ADD NEW', req.body);
   if(req.body.length === 2){
     var addInitialInfo = "INSERT IGNORE INTO profiles (email, authId) VALUES ('"+req.body[0]+"'"+","+"'"+req.body[1]+"')";
-   connection.query(addInitialInfo, function(err, rows){
+    connection.query(addInitialInfo, function(err, rows){
+      if(err){
+        throw err;
+      }
+      console.log(req.body);
+    });
+  }
+});
+
+// Create patterns table if does not exist, adds patterns to patterns table
+app.post('/addPatt', function(req, res){
+  // Create patterns table for all users
+  var newPatternsTable = 'CREATE TABLE IF NOT EXISTS patterns (id int(11) NOT NULL AUTO_INCREMENT, pName varchar(20), craft varchar(20), tools varchar(50), notes varchar(500), email varchar(50), authId varchar(30), PRIMARY KEY (id)) ENGINE=InnoDB  DEFAULT CHARSET=utf8';
+  connection.query(newPatternsTable, function(err, rows){
     if(err){
       throw err;
     }
-    console.log(req.body);
-   });
+  });
+  if(req.body.length === 6){
+    var addInitialInfo = "INSERT IGNORE INTO patterns (email, authId, pName, craft, tools, notes) VALUES ('"+req.body[0]+"'"+","+"'"+req.body[1]+"'"+","+"'"+req.body[2]+"'"+","+"'"+req.body[3]+"'"+","+"'"+req.body[4]+"'"+","+"'"+req.body[5]+"')";
+    connection.query(addInitialInfo, function(err, rows){
+      if(err){
+        throw err;
+      }
+      console.log(req.body);
+    });
+    // Increase user's pattern count by one
   }
+  res.send('Complete');
 });
 
 // Get user's profile information
@@ -80,12 +102,17 @@ app.get('/update', function (req, res){
 
 // Get all users' pic and display name for browsing
 app.get('/browse', function(req, res){
-  connection.query("SELECT displayName, pic FROM profiles", function(err, rows){
+  connection.query("SELECT displayName, pic, FROM profiles", function(err, rows){
     if(err){
       throw err;
     }
     res.send(rows);
   })
+});
+
+// Get all patterns sorted A-Z
+app.get('/sortA-Z', function(req, res){
+  var sorted = "SELECT * FROM patterns ORDER BY pName";
 });
 
 // Update user's info in DB based on client input
