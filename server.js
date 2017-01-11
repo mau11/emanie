@@ -101,9 +101,9 @@ app.get('/update', function (req, res){
   });
 });
 
-// Get all users' pic and display name for browsing
+// Get all users' info for browsing
 app.get('/browse', function(req, res){
-  connection.query("SELECT displayName, pic, FROM profiles", function(err, rows){
+  connection.query("SELECT displayName, pic, craftName, bio FROM profiles", function(err, rows){
     if(err){
       throw err;
     }

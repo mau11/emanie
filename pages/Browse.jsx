@@ -17,7 +17,7 @@ export default class Browse extends React.Component {
 
   // Get all users' avatar and display name.
   getAllProfiles(){
-    return fetch('/browse', {method: 'GET'})
+    return fetch('/browse', {method: 'GET', mode: 'no-cors'})
       .then((response) => response.json())
       .then(allProfiles => {
         this.setState({allUsers: allProfiles})
@@ -30,12 +30,11 @@ export default class Browse extends React.Component {
       <div >
         <h3>Browse Users</h3>
         <div className="container">
-          <div className="row">{this.state.allUsers.map(user => { return (
-            <div className="col-sm-3">
-              <Link to="">
-                <img className="avatarPics" src={avatarSrc} />
-              </Link>{user.displayName}
-            </div>)})}
+          <div className="row">{this.state.allUsers.map(user =>
+            <div className="col-sm-3" key={user.displayName}>
+              <img className="avatarPics" src={user.pic}/>
+              {user.displayName}
+            </div>)}
           </div>
         </div>
       </div>

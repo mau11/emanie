@@ -57,13 +57,28 @@ export default class ViewPatt extends React.Component {
     return (
       <div >
         <h3>Patterns</h3>
-        <div className="container"> {this.state.prompt}{this.state.allPatts.map(patt => {
+        <div className="container">
+          <div className="row">
+          <div className="container">
+            <h4> Sort by:
+            </h4>
+          <div className="btn-toolbar">
+
+            <button className="btn btn-inverse">Pattern Name A-Z</button>
+            <button className="btn btn-inverse">Craft </button>
+            <button className="btn btn-inverse">Craft </button>
+            <button className="btn btn-inverse">Craft </button>
+          </div>
+        </div>
+        </div>
+         {this.state.prompt}{this.state.allPatts.map(patt => {
           return [
           <div>
             <h4><b>Pattern Name:</b> {patt.pName}</h4>
             <h4><b>Craft:</b> {patt.craft}</h4>
             <h4><b>Supplies:</b> {patt.tools}</h4>
             <h4><b>Notes: </b> {patt.notes}</h4>
+            <hr />
           </div>]})}
         </div>
       </div>

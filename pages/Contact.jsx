@@ -10,7 +10,7 @@ export default class Contact extends React.Component {
   render () {
     return (
       <div>
-        HELP AND CONTACT INFO
+        CONTACT INFO
       </div>
     );
   }

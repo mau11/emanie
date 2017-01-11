@@ -21,14 +21,30 @@ h2, h5, h6 {
 
 
 /*CLASSES*/
+.aboutPic {
+  max-width: 15%;
+  height: auto;
+  border-radius: 20px;
+}
+
 .avatarPics {
+  width: 150px;
   height: 100px;
-  width: 100px;
+  border-radius: 20px;
 }
+
 .avatarSmPics {
-  height: 60px;
-  width: 60px;
+  max-width: 80%;
+  height: auto;
+  border-radius: 20px;
 }
+
+.mainPics {
+  max-width: 40%;
+  height: auto;
+  border-radius: 20px;
+}
+
 .mainTitle{
   text-align: center;
 }

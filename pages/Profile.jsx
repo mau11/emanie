@@ -23,7 +23,7 @@ export default class Profile extends React.Component {
       profile: props.auth.getProfile(),
       authID: null,
       email: null,
-      pic: '../img/defaultIcon.png',
+      pic: null,
       prompt: null
     };
     // Once user's info has been stored locally, update state
@@ -33,7 +33,7 @@ export default class Profile extends React.Component {
   }
 
   // Get user's initial data from DB
-  componentWillMount() {
+  componentDidMount() {
     if(this.state.displayName !== null || this.state.craftName !== null || this.state.bio !== null){
       this.setState({prompt: "Looks like you haven't updated your profile yet..."});
       this.getProfileData();
@@ -96,7 +96,7 @@ export default class Profile extends React.Component {
               this.setState({displayName: users[i].displayName});
               this.setState({craftName: users[i].craftName});
               this.setState({bio: users[i].bio});
-              /*this.setState({pic: users[i].pic});*/
+              this.setState({pic: users[i].pic});
             }
           }
         }
