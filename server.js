@@ -195,14 +195,15 @@ app.put('/update', function(req, res){
 });
 
 // Delete a pattern from pattern's table
-app.delete('/removePatt', function(req, res){
-  var removal = "DELETE FROM patterns WHERE email = (), pName =(), notes =()LIMIT 1";
-  connection.query(removal, function(err, row){
+app.delete('/api/user/patt/:id', function(req, res){
+  console.log('PARAMS', req.params);
+  var removal = "DELETE FROM patterns WHERE email = ?, pName = ?, notes = ? LIMIT 1", [req.params.email, req.params.pName, req.params.notes];
+  /*connection.query(removal, function(err, row){
     if(err){
       throw err;
-    }
-  });
-  res.send(row) // returns number of deleted rows
+    } '$id'
+  });*/
+  res.send('DELETED'); // returns number of deleted rows
 });
 
 app.listen(port, function(){

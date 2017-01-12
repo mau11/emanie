@@ -85,18 +85,33 @@ export default class ViewPatt extends React.Component {
       });
   }
 
-  editPatt(){
-    fetch('/updatePatt', {method: 'PUT'})
+  edit(){
+
   }
 
-  deletePatt(){
-    fetch('/removePatt', {
-      method: 'DELETE'
+  editPatt(edits){
+    fetch('/updatePatt', {
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(edits)
     });
+    console.log('sending pattern edit');
+  }
+
+
+  deletePatt(e){
+    e.preventDefault();
+    var url = '/api/user/patt/:'+ identifier;
+    fetch(url, {method: 'DELETE'});
+    console.log('CLICK');
   }
 
   render () {
     let count = this.state.allPatts.length;
+    let identifier = 0;
     return (
       <div >
         <div className="container">
@@ -114,6 +129,8 @@ export default class ViewPatt extends React.Component {
           </div>
           {this.state.prompt}
           {this.state.allPatts.map(patt => {
+            identifier++;
+            //console.log(identifier);
           return [
           <div className="col-sm-12">
             <div className="addBorder">
@@ -129,7 +146,7 @@ export default class ViewPatt extends React.Component {
             <div className="mainTitle">
               <button type="button" className="btn btn-primary active">Edit
               </button>
-              <button type="button" className="btn btn-danger btn-xs btn-center active">Delete
+              <button type="button" id={identifier} className="btn btn-danger btn-xs btn-center active" onClick={this.deletePatt.bind(this)}>Delete
               </button>
               <hr />
             </div>
