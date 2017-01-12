@@ -4,6 +4,7 @@ var app = express();
 var path = require('path');
 var mysql = require('mysql');
 var port = 8000;
+var multer = require('multer');
 
 // Middleware
 app.use(express.static('./public'));
@@ -15,6 +16,33 @@ app.get('/', function (req, res){
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+// Pattern upload using multer
+var storage =   multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './uploads');
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.fieldname + '-' + Date.now());
+  }
+});
+var upload = multer({ storage : storage }).array('userFile', 2);
+
+app.get('/',function(req,res){
+  res.sendFile(__dirname + "/index.html");
+});
+
+app.post('/api/photo',function(req,res){
+  upload(req,res,function(err) {
+    console.log(req.body);
+    console.log(req.files);
+    if(err) {
+      return res.end("Error uploading file.");
+    }
+      res.end("File is uploaded");
+    });
+});
+
+
 // Set up db connection
 var connection = mysql.createConnection({
   host: 'localhost',
@@ -25,7 +53,7 @@ var connection = mysql.createConnection({
 // Connect to db
 connection.connect(function(err){
   if(err){
-    console.log('ERROR CONNECTING TO DATABASE', err)
+    console.log('ERROR CONNECTING TO DATABASE', err);
     return;
   }
   console.log('Success, connected as id ' + connection.threadId);
@@ -70,7 +98,7 @@ app.post('/addPatt', function(req, res){
     if(err){
       throw err;
     }
-  });
+  })
   if(req.body.length === 6){
     var addInitialInfo = "INSERT IGNORE INTO patterns (email, authId, pName, craft, tools, notes) VALUES ('"+req.body[0]+"'"+","+"'"+req.body[1]+"'"+","+"'"+req.body[2]+"'"+","+"'"+req.body[3]+"'"+","+"'"+req.body[4]+"'"+","+"'"+req.body[5]+"')";
     connection.query(addInitialInfo, function(err, rows){
@@ -108,7 +136,7 @@ app.get('/browse', function(req, res){
       throw err;
     }
     res.send(rows);
-  })
+  });
 });
 
 // Get all patterns from table
@@ -119,7 +147,7 @@ app.get('/viewPatt', function(req, res){
       throw err;
     }
     res.send(rows);
-  })
+  });
 });
 
 // Get all patterns sorted A-Z
@@ -131,7 +159,7 @@ app.get('/sortPatt', function(req, res){
     }
     console.log(rows);
     res.send(rows);
-  })
+  });
 });
 
 // Get all patterns sorted A-Z
@@ -143,8 +171,10 @@ app.get('/sortCraft', function(req, res){
     }
     console.log(rows);
     res.send(rows);
-  })
+  });
 });
+
+
 
 
 
@@ -195,15 +225,18 @@ app.put('/update', function(req, res){
 });
 
 // Delete a pattern from pattern's table
-app.delete('/api/user/patt/:id', function(req, res){
-  console.log('PARAMS', req.params);
-  var removal = "DELETE FROM patterns WHERE email = ?, pName = ?, notes = ? LIMIT 1", [req.params.email, req.params.pName, req.params.notes];
-  /*connection.query(removal, function(err, row){
+app.delete('/api/user/patt/:identifier', function(req, res){
+  var item = req.params.identifier
+  var item = item.substr(1);
+  var item = Number(item);
+  console.log('PARAMS', item);
+  var removal = "DELETE FROM patterns WHERE id = "+item+"";
+  connection.query(removal, function(err, row){
     if(err){
       throw err;
-    } '$id'
-  });*/
-  res.send('DELETED'); // returns number of deleted rows
+    }
+  });
+  //res.send('DELETED'); // returns number of deleted rows
 });
 
 app.listen(port, function(){

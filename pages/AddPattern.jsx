@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { IndexLink, Link } from 'react-router';
 import AuthService from '../utils/AuthService';
-import ViewPatt from './ViewPatt.jsx';
+//import ViewPatt from './ViewPatt.jsx';
 
 export default class AddPattern extends React.Component {
   static propTypes() {
@@ -94,22 +94,14 @@ export default class AddPattern extends React.Component {
         this.state.pattDetails.push('');
       }
       console.log(this.state.pattDetails);
-      this.clearFields();
       cb(this.state.pattDetails);
+      this.clearFields();
     }
   }
 
-  /*
 
-  size 10 needles
-
-Cast on 30sts, Row 1- K1,P1, Row 2- P1,K1, Repeat rows 1-2 until desired length.
-
-  */
-
-  // Add user's email and id to pattern's table in DB
   submitPatt(arr) {
-    console.log('sending');
+    console.log('sending', JSON.stringify(arr));
     fetch('/addPatt', {
       method: 'POST',
       headers: {
@@ -129,6 +121,7 @@ Cast on 30sts, Row 1- K1,P1, Row 2- P1,K1, Repeat rows 1-2 until desired length.
   }
 
   render () {
+
     return (
       <div>
         <h3>Patterns</h3>
@@ -136,13 +129,16 @@ Cast on 30sts, Row 1- K1,P1, Row 2- P1,K1, Repeat rows 1-2 until desired length.
           <div className="row">
             <div className="col-sm-8">
               <div>
-                <h4>Add a New Pattern
+                <h4>Upload a Pattern (PDF)
                 </h4>
+                <form id="uploadForm" encType="multipart/form-data" action="/api/photo" method="post">
+                  <input type="file" name="userFile" />
+                  Pattern Name: <input type='text' id='random' name='random'/><br />
+                  <input className="btn btn" type="submit" value="Upload PDF" name="submit"/>
+                  <span id = "status"></span>
+                </form><hr />
+                <h4> Or Enter Pattern Manually </h4>
                 <form>
-                  <div className="form-group">
-                    <label htmlFor="patFile">Import PDF</label>
-                    <input type="file" className="form-control-file" id="patFile" name="pattPdf"/>
-                  </div>
                   <div className="form-group">
                     <label htmlFor="patt">Pattern Name:</label>
                     <input type="text" className="form-control" id="pattName" placeholder="Enter pattern name"  name="pattName"/>
@@ -165,7 +161,6 @@ Cast on 30sts, Row 1- K1,P1, Row 2- P1,K1, Repeat rows 1-2 until desired length.
                     </label>
                   </div>
                   <button type="submit" className="btn btn-inverse" onClick={this.handleAddPattern.bind(this)}>Add Pattern</button>
-                  <button className="btn btn-inverse"><Link to='/view' type="button">View All Patterns</Link></button>
                 </form>
               </div>
             </div>
@@ -175,3 +170,6 @@ Cast on 30sts, Row 1- K1,P1, Row 2- P1,K1, Repeat rows 1-2 until desired length.
     );
   }
 }
+
+
+/*<button className="btn btn-inverse"><Link to='/view' type="button">View All Patterns</Link></button>*/
