@@ -27,6 +27,12 @@ h2, h5, h6 {
   border-radius: 20px;
 }
 
+.addBorder {
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding-left: 25px;
+}
+
 .avatarPics {
   width: 150px;
   height: 100px;
@@ -34,13 +40,13 @@ h2, h5, h6 {
 }
 
 .avatarSmPics {
-  max-width: 80%;
-  height: auto;
+  width: 60px;
+  height: 40px;
   border-radius: 20px;
 }
 
 .mainPics {
-  max-width: 40%;
+  max-width: 50%;
   height: auto;
   border-radius: 20px;
 }

@@ -123,9 +123,30 @@ app.get('/viewPatt', function(req, res){
 });
 
 // Get all patterns sorted A-Z
-app.get('/sortA-Z', function(req, res){
+app.get('/sortPatt', function(req, res){
   var sorted = "SELECT * FROM patterns ORDER BY pName";
+  connection.query(sorted, function(err, rows){
+    if(err){
+      throw err;
+    }
+    console.log(rows);
+    res.send(rows);
+  })
 });
+
+// Get all patterns sorted A-Z
+app.get('/sortCraft', function(req, res){
+  var sorted = "SELECT * FROM patterns ORDER BY craft, pName";
+  connection.query(sorted, function(err, rows){
+    if(err){
+      throw err;
+    }
+    console.log(rows);
+    res.send(rows);
+  })
+});
+
+
 
 // Update user's info in DB based on client input
 app.put('/update', function(req, res){
@@ -134,7 +155,7 @@ app.put('/update', function(req, res){
   var sql1, sql2, sql3, sql4;
   var bod = req.body;
   console.log('ALL---->\n', bod);
-  if(bod.pic !== '../img/defaultIcon.png'){
+  if(bod.pic !== null){
     add1 = (bod.pic);
     sql1 = "UPDATE profiles SET pic = '"+add1+"' WHERE email = '"+req.body.email+"'";
     connection.query(sql1, function(err, rows){
@@ -171,6 +192,17 @@ app.put('/update', function(req, res){
     });
   }
   res.send('COMPLETE');
+});
+
+// Delete a pattern from pattern's table
+app.delete('/removePatt', function(req, res){
+  var removal = "DELETE FROM patterns WHERE email = (), pName =(), notes =()LIMIT 1";
+  connection.query(removal, function(err, row){
+    if(err){
+      throw err;
+    }
+  });
+  res.send(row) // returns number of deleted rows
 });
 
 app.listen(port, function(){

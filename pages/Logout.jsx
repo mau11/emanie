@@ -17,7 +17,7 @@ export default class Logout extends React.Component {
       <div className="root">
         <h2>Thanks for stopping by, come back soon!</h2>
         <ButtonToolbar className="toolbar">
-          <Button bsStyle="primary" onClick={auth.login.bind(this)}>Login</Button>
+          <button className="btn btn-primary active" onClick={auth.login.bind(this)}>Login</button>
         </ButtonToolbar>
       </div>
     );

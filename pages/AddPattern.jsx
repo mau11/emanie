@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { IndexLink, Link } from 'react-router';
 import AuthService from '../utils/AuthService';
+import ViewPatt from './ViewPatt.jsx';
 
 export default class AddPattern extends React.Component {
   static propTypes() {
@@ -102,10 +103,7 @@ export default class AddPattern extends React.Component {
 
   size 10 needles
 
-Cast on 30sts
-Row 1- K1P1
-Row 2- P1K1
-Repeat rows 1-2 until desired length.
+Cast on 30sts, Row 1- K1,P1, Row 2- P1,K1, Repeat rows 1-2 until desired length.
 
   */
 
@@ -167,6 +165,7 @@ Repeat rows 1-2 until desired length.
                     </label>
                   </div>
                   <button type="submit" className="btn btn-inverse" onClick={this.handleAddPattern.bind(this)}>Add Pattern</button>
+                  <button className="btn btn-inverse"><Link to='/view' type="button">View All Patterns</Link></button>
                 </form>
               </div>
             </div>

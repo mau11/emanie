@@ -28,8 +28,8 @@ export default class Browse extends React.Component {
     const avatarSrc = this.state.avatarSrc;
     return (
       <div >
-        <h3>Browse Users</h3>
         <div className="container">
+          <h3>Browse Users</h3>
           <div className="row">{this.state.allUsers.map(user =>
             <div className="col-sm-3" key={user.displayName}>
               <img className="avatarPics" src={user.pic}/>

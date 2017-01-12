@@ -106,17 +106,17 @@ export default class Update extends React.Component {
               }
             }
           }
-          if(holder !== undefined){
-            users[holder].pic = this.state.pic;
-            users[holder].displayName = this.state.displayName;
-            users[holder].craftName = this.state.craftName;
-            users[holder].bio = this.state.bio;
-            users[holder].pattCt = this.state.pattCt;
-            this.setState({allUsers: users});
-            test = users[holder];
-            console.log('TO SERVER modified', users);
-            cb(test);
-          }
+        }
+        if(holder !== undefined){
+          users[holder].pic = this.state.pic;
+          users[holder].displayName = this.state.displayName;
+          users[holder].craftName = this.state.craftName;
+          users[holder].bio = this.state.bio;
+          users[holder].pattCt = this.state.pattCt;
+          this.setState({allUsers: users});
+          test = users[holder];
+          console.log('TO SERVER modified', test);
+          cb(test);
         }
       });
   }
