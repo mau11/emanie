@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class Report extends React.Component {
+export default class Contact extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -10,10 +10,8 @@ class Report extends React.Component {
   render () {
     return (
       <div>
-        REPORT ISSUES WITH SITE OR THROUGH GITHUB
+        CONTACT INFO
       </div>
     );
   }
 }
-
-export default Report;
