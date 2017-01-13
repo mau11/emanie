@@ -114,7 +114,6 @@ export default class Profile extends React.Component {
               <img className="avatarPics" src={avatarSrc} />
               <h3><b>~{this.state.displayName}~</b></h3>
               <h4><b>Favorite Craft(s):</b> {this.state.craftName}</h4>
-              <h4><b>Patterns:</b> {this.state.pattCt}</h4>
               <h4><b>Bio: </b> {this.state.bio}</h4>
             </div>
           </div>

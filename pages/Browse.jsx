@@ -32,8 +32,8 @@ export default class Browse extends React.Component {
           <h3>Browse Users</h3>
           <div className="row">{this.state.allUsers.map(user =>
             <div className="col-sm-3" key={user.displayName}>
-              <img className="avatarPics" src={user.pic}/>
-              {user.displayName}
+              <img className="avatarPics" src={user.pic}/><b>
+              {user.displayName}</b>
             </div>)}
           </div>
         </div>
