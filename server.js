@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var app = express();
 var path = require('path');
 var mysql = require('mysql');
-var port = 8000;
+var port = process.env.PORT || 8080;
 var multer = require('multer');
 
 // Middleware
