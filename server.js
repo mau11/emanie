@@ -42,7 +42,7 @@ app.post('/api/photo',function(req,res){
     });
 });
 
-
+/*
 // Set up db connection
 var connection = mysql.createConnection({
   host: 'localhost',
@@ -66,7 +66,7 @@ connection.query(newProfilesTable, function(err, rows){
     throw err;
   }
 });
-
+*/
 // Set default pattern count for each user to 0, only do this once
 /*var setDefaultPattCt = "ALTER TABLE profiles ALTER pattCt SET DEFAULT 0";
 connection.query(setDefaultPattCt, function(err, rows){
