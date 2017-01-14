@@ -1,6 +1,6 @@
 var should = require('should');
 var supertest = require('supertest');
-var server = supertest.agent('http://localhost:8000');
+var server = supertest.agent('http://localhost:8080');
 
 // Start up server prior to running test.
 describe('server',function(){
