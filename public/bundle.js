@@ -56173,19 +56173,66 @@
 	var Messages = function (_React$Component) {
 	  _inherits(Messages, _React$Component);
 
+	  _createClass(Messages, null, [{
+	    key: 'propTypes',
+	    value: function propTypes() {
+	      return {
+	        auth: T.instanceOf(AuthService),
+	        profile: T.object
+	      };
+	    }
+	  }]);
+
 	  function Messages(props) {
 	    _classCallCheck(this, Messages);
 
 	    var _this = _possibleConstructorReturn(this, (Messages.__proto__ || Object.getPrototypeOf(Messages)).call(this, props));
 
-	    _this.state = {};
+	    _this.state = {
+	      displayName: null,
+	      profile: props.auth.getProfile(),
+	      authID: null,
+	      email: null,
+	      pic: '../img/defaultIcon.png',
+	      checked: false,
+	      allMessages: null
+	    };
 	    return _this;
 	  }
 
 	  _createClass(Messages, [{
+	    key: 'componentWillMount',
+	    value: function componentWillMount() {}
+	    //this.getMessages
+
+
+	    // Get auth0 ID & email from logged in user and add to state
+
+	  }, {
+	    key: 'getAuthInfo',
+	    value: function getAuthInfo() {
+	      var obj = this.state.profile;
+	      //var emailAndId = [];
+	      for (var key in obj) {
+	        if (key === 'email_verified' && obj[key] === true) {
+	          this.setState({ email: obj.email }, function () {});
+	        }
+	        if (key === 'identities') {
+	          this.setState({ authId: obj[key][0].user_id }, function () {});
+	        }
+	      }
+	      //this.getUserPatterns();
+	    }
+	  }, {
+	    key: 'getMessages',
+	    value: function getMessages() {}
+
+	    //$('id or class').val()
+
+	  }, {
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement("div", null, "USER'S MESSAGES");
+	      return _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("canvas", { className: "form-control" }), _react2.default.createElement("hr", null), _react2.default.createElement("input", null), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse" }, "Submit")));
 	    }
 	  }]);
 
