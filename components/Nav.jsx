@@ -3,6 +3,7 @@ import React, { PropTypes as T } from 'react';
 
 import About from '../pages/About.jsx';
 import AddPattern from '../pages/AddPattern.jsx';
+import AddSupplies from '../pages/AddSupplies.jsx';
 import Browse from '../pages/Browse.jsx';
 import Contact from '../pages/Contact.jsx';
 import Login from '../pages/Login.jsx';
@@ -14,6 +15,7 @@ import Report from '../pages/Report.jsx';
 import Search from '../pages/Search.jsx';
 import Update from '../pages/Update.jsx';
 import ViewPatt from '../pages/ViewPatt.jsx';
+import ViewSupp from '../pages/ViewSupp.jsx';
 
 import { IndexLink, Link } from 'react-router';
 import AuthService from '../utils/AuthService';
@@ -43,6 +45,8 @@ export default class Nav extends React.Component {
 
   render() {
     const { auth } = this.props;
+
+    // Google Analytics
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
@@ -76,8 +80,15 @@ export default class Nav extends React.Component {
               <a data-toggle="dropdown" className="dropdown-toggle" href="#">Patterns <b className="caret"></b></a>
               <ul role="menu" className="dropdown-menu">
                 <li><Link to="view">View All</Link></li>
-                <li><Link to="add">Add New</Link></li>
+                <li><Link to="add">Add Patterns</Link></li>
                 <li><Link to="patgen">PatGen</Link></li>
+              </ul>
+            </li>
+            <li className="dropdown">
+              <a data-toggle="dropdown" className="dropdown-toggle" href="#">Supplies <b className="caret"></b></a>
+              <ul role="menu" className="dropdown-menu">
+                <li><Link to="supplies">View All</Link></li>
+                <li><Link to="addtools">Add Tools/Yarn</Link></li>
               </ul>
             </li>
             <li><Link to="browse">Browse Users</Link></li>
@@ -94,7 +105,7 @@ export default class Nav extends React.Component {
           <form role="search" className="navbar-form navbar-left">
             <div className="form-group">
               <input type="text" placeholder="Search Patterns" className="form-control" />
-              <button type="submit" className="btn btn-inverse">Search</button>
+              <button type="submit" className="btn btn-inverse" onClick={this.}>Search</button>
             </div>
           </form>
           <ul className="nav navbar-nav navbar-right" id="togLogin" onClick={auth.login.bind(this)}>

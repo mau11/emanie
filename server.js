@@ -2,9 +2,10 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 var path = require('path');
-var mysql = require('mysql');
+//var mysql = require('./utils/db.js');
 var port = process.env.PORT || 8080;
 var multer = require('multer');
+var handler = require('./utils/requestHandler.js');
 
 // Middleware
 app.use(express.static('./public'));
@@ -42,7 +43,7 @@ app.post('/api/photo',function(req,res){
     });
 });
 
-
+/*
 // Set up db connection
 var connection = mysql.createConnection({
   host: 'localhost',
@@ -66,7 +67,7 @@ connection.query(newProfilesTable, function(err, rows){
     throw err;
   }
 });
-
+*/
 // Set default pattern count for each user to 0, only do this once
 /*var setDefaultPattCt = "ALTER TABLE profiles ALTER pattCt SET DEFAULT 0";
 connection.query(setDefaultPattCt, function(err, rows){
@@ -129,15 +130,9 @@ app.get('/update', function (req, res){
   });
 });
 
-// Get all users' info for browsing
-app.get('/browse', function(req, res){
-  connection.query("SELECT displayName, pic, craftName, bio FROM profiles", function(err, rows){
-    if(err){
-      throw err;
-    }
-    res.send(rows);
-  });
-});
+// Get all users' public information for browsing
+app.get('/api/users', handler.getUserPublicInfo);
+
 
 // Get all patterns from table
 app.get('/viewPatt', function(req, res){

@@ -2,21 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 export default class Search extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      search: null
-    };
+  constructor(props) {
+    super(props);
+    this.state = {};
   }
 
-  updateSearch() {
-    this.setState({search});
-  }
-
-  rendor () {
+  rendor() {
     return (
-      <div>Search Patterns on the page
-        <input onChange={this.updateSearch.bind(this)} value={this.state.search}/>
+      <div>
+        <form role="search" className="navbar-form navbar-left">
+            <div className="form-group">
+              <input type="text" placeholder="Search Patterns" className="form-control" />
+              <button type="submit" className="btn btn-inverse">Search</button>
+            </div>
+          </form>
       </div>
     );
   }
