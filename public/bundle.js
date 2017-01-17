@@ -95,19 +95,19 @@
 
 	var _Container2 = _interopRequireDefault(_Container);
 
-	var _Layout = __webpack_require__(564);
+	var _Layout = __webpack_require__(554);
 
 	var _Layout2 = _interopRequireDefault(_Layout);
 
-	var _Login = __webpack_require__(554);
+	var _Login = __webpack_require__(556);
 
 	var _Login2 = _interopRequireDefault(_Login);
 
-	var _Logout = __webpack_require__(555);
+	var _Logout = __webpack_require__(557);
 
 	var _Logout2 = _interopRequireDefault(_Logout);
 
-	var _Messages = __webpack_require__(556);
+	var _Messages = __webpack_require__(558);
 
 	var _Messages2 = _interopRequireDefault(_Messages);
 
@@ -115,31 +115,31 @@
 
 	var _Nav2 = _interopRequireDefault(_Nav);
 
-	var _PatGen = __webpack_require__(557);
+	var _PatGen = __webpack_require__(559);
 
 	var _PatGen2 = _interopRequireDefault(_PatGen);
 
-	var _Profile = __webpack_require__(558);
+	var _Profile = __webpack_require__(560);
 
 	var _Profile2 = _interopRequireDefault(_Profile);
 
-	var _Report = __webpack_require__(559);
+	var _Report = __webpack_require__(561);
 
 	var _Report2 = _interopRequireDefault(_Report);
 
-	var _Search = __webpack_require__(560);
+	var _Search = __webpack_require__(562);
 
 	var _Search2 = _interopRequireDefault(_Search);
 
-	var _Update = __webpack_require__(561);
+	var _Update = __webpack_require__(563);
 
 	var _Update2 = _interopRequireDefault(_Update);
 
-	var _ViewPatt = __webpack_require__(562);
+	var _ViewPatt = __webpack_require__(564);
 
 	var _ViewPatt2 = _interopRequireDefault(_ViewPatt);
 
-	var _ViewSupp = __webpack_require__(563);
+	var _ViewSupp = __webpack_require__(565);
 
 	var _ViewSupp2 = _interopRequireDefault(_ViewSupp);
 
@@ -36699,7 +36699,7 @@
 	    key: 'submitPatt',
 	    value: function submitPatt(arr) {
 	      console.log('sending', JSON.stringify(arr));
-	      fetch('/addPatt', {
+	      fetch('/api/patterns/new', {
 	        method: 'POST',
 	        headers: {
 	          'Accept': 'application/json',
@@ -36718,10 +36718,14 @@
 	      $('#pattNotes').val('');
 	    }
 	  }, {
+	    key: 'handleUpload',
+	    value: function handleUpload(e) {
+	      e.preventDefault();
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
-
-	      return _react2.default.createElement("div", null, _react2.default.createElement("h3", null, "Patterns"), _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("div", { className: "row" }, _react2.default.createElement("div", { className: "col-sm-8" }, _react2.default.createElement("div", null, _react2.default.createElement("h4", null, "Upload a Pattern (PDF)"), _react2.default.createElement("form", { id: "uploadForm", encType: "multipart/form-data", action: "/api/photo", method: "post" }, _react2.default.createElement("input", { type: "file", name: "userFile" }), "Pattern Name: ", _react2.default.createElement("input", { type: "text", id: "random", name: "random" }), _react2.default.createElement("br", null), _react2.default.createElement("input", { className: "btn btn", type: "submit", value: "Upload PDF", name: "submit" }), _react2.default.createElement("span", { id: "status" })), _react2.default.createElement("hr", null), _react2.default.createElement("h4", null, " Or Enter Pattern Manually "), _react2.default.createElement("form", null, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "patt" }, "Pattern Name:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "pattName", placeholder: "Enter pattern name", name: "pattName" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "patCra" }, "Craft:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "pattCraft", placeholder: "Crochet, Knitting, Sewing, etc", name: "pattCraft" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "supp" }, "Supplies:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "pattTools", placeholder: "Hooks, Needles, Sizes, etc", name: "suppName" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "notes" }, "Notes/Details:"), _react2.default.createElement("textarea", { className: "form-control", id: "pattNotes", rows: "5", name: "notesDetails" })), _react2.default.createElement("div", { className: "form-check" }, _react2.default.createElement("label", { className: "form-check-label" }, _react2.default.createElement("input", { type: "checkbox", className: "form-check-input", onClick: this.handleCheckbox.bind(this) }), " I confirm that I have reviewed my changes.")), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse", onClick: this.handleAddPattern.bind(this) }, "Add Pattern")))))));
+	      return _react2.default.createElement("div", null, _react2.default.createElement("h3", null, "Patterns"), _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("div", { className: "row" }, _react2.default.createElement("div", { className: "col-sm-8" }, _react2.default.createElement("div", null, _react2.default.createElement("h4", null, "Upload a Pattern (PDF)"), _react2.default.createElement("form", { id: "uploadForm", encType: "multipart/form-data", action: "/api/patterns/upload", method: "post" }, _react2.default.createElement("input", { type: "file", name: "userFile" }), "Pattern Name: ", _react2.default.createElement("input", { type: "text", id: "random", name: "random" }), _react2.default.createElement("br", null), _react2.default.createElement("input", { className: "btn btn", type: "submit", value: "Upload PDF", name: "submit" }), _react2.default.createElement("span", { id: "status" })), _react2.default.createElement("hr", null), _react2.default.createElement("h4", null, " Or Enter Pattern Manually "), _react2.default.createElement("form", null, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "patt" }, "Pattern Name:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "pattName", placeholder: "Enter pattern name", name: "pattName" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "patCra" }, "Craft:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "pattCraft", placeholder: "Crochet, Knitting, Sewing, etc", name: "pattCraft" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "supp" }, "Supplies:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "pattTools", placeholder: "Hooks, Needles, Sizes, etc", name: "suppName" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "notes" }, "Notes/Details:"), _react2.default.createElement("textarea", { className: "form-control", id: "pattNotes", rows: "5", name: "notesDetails" })), _react2.default.createElement("div", { className: "form-check" }, _react2.default.createElement("label", { className: "form-check-label" }, _react2.default.createElement("input", { type: "checkbox", className: "form-check-input", onClick: this.handleCheckbox.bind(this) }), " I confirm that I have reviewed my changes.")), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse", onClick: this.handleAddPattern.bind(this) }, "Add Pattern")))))));
 	    }
 	  }]);
 
@@ -36902,16 +36906,14 @@
 	        return response.json();
 	      }).then(function (allProfiles) {
 	        _this2.setState({ allUsers: allProfiles });
-	        console.log(allProfiles);
 	      });
 	    }
 
-	    // Render more user info on click
+	    // Render more user info on hover
 
 	  }, {
 	    key: 'handleHover',
 	    value: function handleHover(e) {
-	      console.log('HOVER', e.target.id);
 	      $('div.toggle').show();
 	    }
 	  }, {
@@ -36924,7 +36926,6 @@
 	    value: function render() {
 	      var _this3 = this;
 
-	      var find = void 0;
 	      return _react2.default.createElement("div", null, _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("h3", null, "Browse Users"), _react2.default.createElement("div", { className: "row" }, this.state.allUsers.map(function (user) {
 	        return _react2.default.createElement("div", { className: "col-sm-3", key: user.displayName }, _react2.default.createElement("img", { className: "avatarPics", src: user.pic, id: user.id, onMouseOver: _this3.handleHover.bind(_this3), onMouseOut: _this3.handleLeave.bind(_this3) }), _react2.default.createElement("b", null, user.displayName), _react2.default.createElement("div", { id: user.id, className: "toggle" }, user.bio));
 	      }))));
@@ -55785,43 +55786,43 @@
 
 	var _Contact2 = _interopRequireDefault(_Contact);
 
-	var _Login = __webpack_require__(554);
+	var _Login = __webpack_require__(556);
 
 	var _Login2 = _interopRequireDefault(_Login);
 
-	var _Logout = __webpack_require__(555);
+	var _Logout = __webpack_require__(557);
 
 	var _Logout2 = _interopRequireDefault(_Logout);
 
-	var _Messages = __webpack_require__(556);
+	var _Messages = __webpack_require__(558);
 
 	var _Messages2 = _interopRequireDefault(_Messages);
 
-	var _PatGen = __webpack_require__(557);
+	var _PatGen = __webpack_require__(559);
 
 	var _PatGen2 = _interopRequireDefault(_PatGen);
 
-	var _Profile = __webpack_require__(558);
+	var _Profile = __webpack_require__(560);
 
 	var _Profile2 = _interopRequireDefault(_Profile);
 
-	var _Report = __webpack_require__(559);
+	var _Report = __webpack_require__(561);
 
 	var _Report2 = _interopRequireDefault(_Report);
 
-	var _Search = __webpack_require__(560);
+	var _Search = __webpack_require__(562);
 
 	var _Search2 = _interopRequireDefault(_Search);
 
-	var _Update = __webpack_require__(561);
+	var _Update = __webpack_require__(563);
 
 	var _Update2 = _interopRequireDefault(_Update);
 
-	var _ViewPatt = __webpack_require__(562);
+	var _ViewPatt = __webpack_require__(564);
 
 	var _ViewPatt2 = _interopRequireDefault(_ViewPatt);
 
-	var _ViewSupp = __webpack_require__(563);
+	var _ViewSupp = __webpack_require__(565);
 
 	var _ViewSupp2 = _interopRequireDefault(_ViewSupp);
 
@@ -55912,6 +55913,106 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _Nav = __webpack_require__(553);
+
+	var _Nav2 = _interopRequireDefault(_Nav);
+
+	var _Footer = __webpack_require__(555);
+
+	var _Footer2 = _interopRequireDefault(_Footer);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	//import Container from './Container.js';
+
+	var Layout = function (_React$Component) {
+	  _inherits(Layout, _React$Component);
+
+	  function Layout() {
+	    _classCallCheck(this, Layout);
+
+	    return _possibleConstructorReturn(this, (Layout.__proto__ || Object.getPrototypeOf(Layout)).apply(this, arguments));
+	  }
+
+	  _createClass(Layout, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement("div", null);
+	    }
+	  }]);
+
+	  return Layout;
+	}(_react2.default.Component);
+
+	exports.default = Layout;
+
+/***/ },
+/* 555 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Footer = function (_React$Component) {
+	  _inherits(Footer, _React$Component);
+
+	  function Footer() {
+	    _classCallCheck(this, Footer);
+
+	    return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
+	  }
+
+	  _createClass(Footer, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement("footer", null, "This is a footer");
+	    }
+	  }]);
+
+	  return Footer;
+	}(_react2.default.Component);
+
+	exports.default = Footer;
+
+/***/ },
+/* 556 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
 	var _reactBootstrap = __webpack_require__(303);
 
 	var _AuthService = __webpack_require__(234);
@@ -55981,7 +56082,7 @@
 	exports.default = Login;
 
 /***/ },
-/* 555 */
+/* 557 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -56042,7 +56143,7 @@
 	exports.default = Logout;
 
 /***/ },
-/* 556 */
+/* 558 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -56094,7 +56195,7 @@
 	exports.default = Messages;
 
 /***/ },
-/* 557 */
+/* 559 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -56148,7 +56249,7 @@
 	exports.default = PatGen;
 
 /***/ },
-/* 558 */
+/* 560 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -56227,7 +56328,7 @@
 	  _createClass(Profile, [{
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
-	      if (this.state.displayName !== null || this.state.craftName !== null || this.state.bio !== null) {
+	      if (this.state.displayName !== null && this.state.craftName !== null && this.state.bio !== null) {
 	        this.setState({ prompt: "Looks like you haven't updated your profile yet..." });
 	        this.getProfileData();
 	      } else {
@@ -56263,15 +56364,22 @@
 	  }, {
 	    key: 'sendFirstInfo',
 	    value: function sendFirstInfo(arr) {
-	      fetch('/addNew', {
-	        method: 'POST',
-	        headers: {
-	          'Accept': 'application/json',
-	          'Content-Type': 'application/json'
-	        },
-	        body: JSON.stringify(arr)
-	      });
-	      //this.setState({prompt: "Looks like you haven't updated your profile yet..."});
+	      console.log(this.state.displayName);
+	      if (this.state.displayName === null && this.state.craftName === null && this.state.bio === null) {
+	        console.log('FETCHING');
+	        fetch('/api/users/new', {
+	          method: 'POST',
+	          headers: {
+	            'Accept': 'application/json',
+	            'Content-Type': 'application/json'
+	          },
+	          body: JSON.stringify(arr)
+	        }).catch(function (err) {
+	          if (err) {
+	            throw err;
+	          }
+	        });
+	      }
 	      this.getProfileData();
 	    }
 
@@ -56291,10 +56399,9 @@
 
 	      var test;
 	      var holder;
-	      fetch('/update', { method: 'GET' }).then(function (response) {
+	      fetch('/api/users/all', { method: 'GET' }).then(function (response) {
 	        return response.json();
 	      }).then(function (users) {
-	        console.log('FROM SERVER', users);
 	        for (var i = 0; i < users.length; i++) {
 	          for (var key in users[i]) {
 	            if (_this2.state.email === users[i].email) {
@@ -56321,7 +56428,7 @@
 	exports.default = Profile;
 
 /***/ },
-/* 559 */
+/* 561 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -56373,7 +56480,7 @@
 	exports.default = Report;
 
 /***/ },
-/* 560 */
+/* 562 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -56430,7 +56537,7 @@
 	exports.default = Search;
 
 /***/ },
-/* 561 */
+/* 563 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -56528,13 +56635,9 @@
 	  }, {
 	    key: 'sendFirstInfo',
 	    value: function sendFirstInfo(arr) {
-	      fetch('/addNew', {
+	      fetch('/api/users/new', {
 	        method: 'POST',
 	        mode: 'no-cors',
-	        /*headers: {
-	          'Accept': 'application/json',
-	          'Content-Type': 'application/json',
-	        },*/
 	        body: JSON.stringify(arr)
 	      });
 	    }
@@ -56548,7 +56651,7 @@
 
 	      var test;
 	      var holder;
-	      fetch('/update', { method: 'GET' }).then(function (response) {
+	      fetch('/api/users/all', { method: 'GET' }).then(function (response) {
 	        return response.json();
 	      }).then(function (users) {
 	        console.log('FROM SERVER', users);
@@ -56617,7 +56720,7 @@
 	    key: 'updateProfileData',
 	    value: function updateProfileData(param) {
 	      console.log('PARAM', param);
-	      fetch('/update', {
+	      fetch('/api/user/update', {
 	        method: 'PUT',
 	        headers: {
 	          'Accept': 'application/json',
@@ -56698,7 +56801,7 @@
 	    key: 'render',
 	    value: function render() {
 
-	      return _react2.default.createElement("div", null, _react2.default.createElement("h3", null, "Edit Profile"), _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("div", { className: "row" }, _react2.default.createElement("div", { className: "col-sm-6" }, _react2.default.createElement("div", null, _react2.default.createElement("form", null, _react2.default.createElement("label", null, "Select profile image:"), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("div", { className: "col-xs-2" }, _react2.default.createElement("img", { src: "../img/lightGrey.jpg", className: "avatarSmPics" }), _react2.default.createElement("input", { type: "radio", value: "pic1", onClick: this.handlePic1.bind(this), name: "pics" })), _react2.default.createElement("div", { className: "col-xs-2" }, _react2.default.createElement("img", { src: "../img/perfectPink.jpg", className: "avatarSmPics" }), _react2.default.createElement("input", { type: "radio", value: "pic2", onClick: this.handlePic2.bind(this), name: "pics" })), _react2.default.createElement("div", { className: "col-xs-2" }, _react2.default.createElement("img", { src: "../img/lightBlue.jpg", className: "avatarSmPics" }), _react2.default.createElement("input", { type: "radio", value: "pic3", onClick: this.handlePic3.bind(this), name: "pics" })), _react2.default.createElement("div", { className: "col-xs-2" }, _react2.default.createElement("img", { src: "../img/realTeal.jpg", className: "avatarSmPics" }), _react2.default.createElement("input", { type: "radio", value: "pic4", onClick: this.handlePic4.bind(this), name: "pics" })), _react2.default.createElement("div", { className: "col-xs-2" }, _react2.default.createElement("img", { src: "../img/paleYellow.jpg", className: "avatarSmPics" }), _react2.default.createElement("input", { type: "radio", value: "pic5", onClick: this.handlePic5.bind(this), name: "pics" })), _react2.default.createElement("div", { className: "col-xs-2" }, _react2.default.createElement("img", { src: "../img/defaultIcon.png", className: "avatarSmPics" }), _react2.default.createElement("input", { type: "radio", value: "pic6", onClick: this.handlePic6.bind(this), name: "pics" }))), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "display" }, "Display Name:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "display", placeholder: "Enter new display name", onChange: this.onDisplay.bind(this), name: "display" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "craft" }, "Favorite Craft(s):"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "craft", placeholder: "Crochet, Knitting, Sewing...Everything!", name: "craft", onChange: this.onCraft.bind(this) })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "blurb" }, "Bio:"), _react2.default.createElement("textarea", { className: "form-control", id: "blurb", rows: "3", name: "bio", onChange: this.onBio.bind(this) })), _react2.default.createElement("div", { className: "form-check" }, _react2.default.createElement("label", { className: "form-check-label" }, _react2.default.createElement("input", { type: "checkbox", className: "form-check-input", onClick: this.handleCheckbox.bind(this) }), " I confirm that I have reviewed my changes.")), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse", onClick: this.handleUpdate.bind(this) }, "Update Profile")))), _react2.default.createElement("div", { className: "col-sm-6" }, _react2.default.createElement("h5", null, _react2.default.createElement("i", null, "Preview:")), _react2.default.createElement("div", { className: "mainTitle" }, _react2.default.createElement("img", { className: "avatarPics", src: this.state.pic }), _react2.default.createElement("h3", null, _react2.default.createElement("b", null, "~", this.state.displayName, "~")), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Favorite Craft(s):"), " ", this.state.craftName), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Patterns:"), " ", this.state.pattCt), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Bio: "), " ", this.state.bio))))));
+	      return _react2.default.createElement("div", null, _react2.default.createElement("h3", null, "Edit Profile"), _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("div", { className: "row" }, _react2.default.createElement("div", { className: "col-sm-6" }, _react2.default.createElement("div", null, _react2.default.createElement("form", null, _react2.default.createElement("label", null, "Select profile image:"), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("div", { className: "col-xs-2" }, _react2.default.createElement("img", { src: "../img/lightGrey.jpg", className: "avatarSmPics" }), _react2.default.createElement("input", { type: "radio", value: "pic1", onClick: this.handlePic1.bind(this), name: "pics" })), _react2.default.createElement("div", { className: "col-xs-2" }, _react2.default.createElement("img", { src: "../img/perfectPink.jpg", className: "avatarSmPics" }), _react2.default.createElement("input", { type: "radio", value: "pic2", onClick: this.handlePic2.bind(this), name: "pics" })), _react2.default.createElement("div", { className: "col-xs-2" }, _react2.default.createElement("img", { src: "../img/lightBlue.jpg", className: "avatarSmPics" }), _react2.default.createElement("input", { type: "radio", value: "pic3", onClick: this.handlePic3.bind(this), name: "pics" })), _react2.default.createElement("div", { className: "col-xs-2" }, _react2.default.createElement("img", { src: "../img/realTeal.jpg", className: "avatarSmPics" }), _react2.default.createElement("input", { type: "radio", value: "pic4", onClick: this.handlePic4.bind(this), name: "pics" })), _react2.default.createElement("div", { className: "col-xs-2" }, _react2.default.createElement("img", { src: "../img/paleYellow.jpg", className: "avatarSmPics" }), _react2.default.createElement("input", { type: "radio", value: "pic5", onClick: this.handlePic5.bind(this), name: "pics" })), _react2.default.createElement("div", { className: "col-xs-2" }, _react2.default.createElement("img", { src: "../img/defaultIcon.png", className: "avatarSmPics" }), _react2.default.createElement("input", { type: "radio", value: "pic6", onClick: this.handlePic6.bind(this), name: "pics" }))), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "display" }, "Display Name:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "display", placeholder: "Enter new display name", onChange: this.onDisplay.bind(this), name: "display" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "craft" }, "Favorite Craft(s):"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "craft", placeholder: "Crochet, Knitting, Sewing...Everything!", name: "craft", onChange: this.onCraft.bind(this) })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "blurb" }, "Bio:"), _react2.default.createElement("textarea", { className: "form-control", id: "blurb", rows: "3", name: "bio", onChange: this.onBio.bind(this) })), _react2.default.createElement("div", { className: "form-check" }, _react2.default.createElement("label", { className: "form-check-label" }, _react2.default.createElement("input", { type: "checkbox", className: "form-check-input", onClick: this.handleCheckbox.bind(this) }), " I confirm that I have reviewed my changes.")), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse", onClick: this.handleUpdate.bind(this) }, "Update Profile")))), _react2.default.createElement("div", { className: "col-sm-6" }, _react2.default.createElement("h5", null, _react2.default.createElement("i", null, "Preview:")), _react2.default.createElement("div", { className: "mainTitle" }, _react2.default.createElement("img", { className: "avatarPics", src: this.state.pic }), _react2.default.createElement("h3", null, _react2.default.createElement("b", null, "~", this.state.displayName, "~")), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Favorite Craft(s):"), " ", this.state.craftName), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Bio: "), " ", this.state.bio))))));
 	    }
 	  }]);
 
@@ -56708,7 +56811,7 @@
 	exports.default = Update;
 
 /***/ },
-/* 562 */
+/* 564 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -56764,9 +56867,6 @@
 	      this.getAuthInfo();
 	    }
 
-	    /*componentWillUpdate() {
-	      this.deletePatt();
-	    }*/
 	    // Get auth0 ID & email from logged in user and add to state
 
 	  }, {
@@ -56792,16 +56892,14 @@
 	    value: function getUserPatterns() {
 	      var _this2 = this;
 
-	      return fetch('/viewPatt', { method: 'GET' }).then(function (response) {
+	      return fetch('/api/patterns', { method: 'GET' }).then(function (response) {
 	        return response.json();
 	      }).then(function (allPatterns) {
 	        for (var i = 0; i < allPatterns.length; i++) {
 	          for (var key in allPatterns[i]) {
 	            if (allPatterns[i].email === _this2.state.email && allPatterns[i].authId === _this2.state.authId) {
 	              _this2.setState({ allPatts: allPatterns });
-	            } /* else {
-	               this.setState({prompt: "Looks like you don't have any patterns yet, add some above!"});
-	              }*/
+	            }
 	          }
 	        }
 	      });
@@ -56815,7 +56913,7 @@
 	      var _this3 = this;
 
 	      e.preventDefault();
-	      return fetch('/sortPatt', { method: 'GET' }).then(function (response) {
+	      return fetch('/api/patterns/sorted/name', { method: 'GET' }).then(function (response) {
 	        return response.json();
 	      }).then(function (sorted) {
 	        for (var i = 0; i < sorted.length; i++) {
@@ -56836,7 +56934,7 @@
 	      var _this4 = this;
 
 	      e.preventDefault();
-	      return fetch('/sortCraft', { method: 'GET' }).then(function (response) {
+	      return fetch('/api/patterns/sorted/craft', { method: 'GET' }).then(function (response) {
 	        return response.json();
 	      }).then(function (sortedCrafts) {
 	        for (var i = 0; i < sortedCrafts.length; i++) {
@@ -56867,13 +56965,9 @@
 	  }, {
 	    key: 'deletePatt',
 	    value: function deletePatt(e) {
-	      //e.preventDefault();
-	      var identifier = e.target.id;
-	      var url = '/api/user/patt/:' + identifier;
-	      fetch(url, { method: 'DELETE' })
-	      //      .then(this.getUserPatterns)
-	      .then(window.location.reload());
-	      console.log('CLICK', url);
+	      var deletePatt = e.target.id;
+	      var url = '/api/patterns/:' + deletePatt;
+	      fetch(url, { method: 'DELETE' }).then(window.location.reload());
 	    }
 	  }, {
 	    key: 'render',
@@ -56896,7 +56990,7 @@
 	exports.default = ViewPatt;
 
 /***/ },
-/* 563 */
+/* 565 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -56949,106 +57043,6 @@
 	}(_react2.default.Component);
 
 	exports.default = ViewSupp;
-
-/***/ },
-/* 564 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _Nav = __webpack_require__(553);
-
-	var _Nav2 = _interopRequireDefault(_Nav);
-
-	var _Footer = __webpack_require__(565);
-
-	var _Footer2 = _interopRequireDefault(_Footer);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	//import Container from './Container.js';
-
-	var Layout = function (_React$Component) {
-	  _inherits(Layout, _React$Component);
-
-	  function Layout() {
-	    _classCallCheck(this, Layout);
-
-	    return _possibleConstructorReturn(this, (Layout.__proto__ || Object.getPrototypeOf(Layout)).apply(this, arguments));
-	  }
-
-	  _createClass(Layout, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement("div", null);
-	    }
-	  }]);
-
-	  return Layout;
-	}(_react2.default.Component);
-
-	exports.default = Layout;
-
-/***/ },
-/* 565 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Footer = function (_React$Component) {
-	  _inherits(Footer, _React$Component);
-
-	  function Footer() {
-	    _classCallCheck(this, Footer);
-
-	    return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
-	  }
-
-	  _createClass(Footer, [{
-	    key: "render",
-	    value: function render() {
-	      return _react2.default.createElement("footer", null, "This is a footer");
-	    }
-	  }]);
-
-	  return Footer;
-	}(_react2.default.Component);
-
-	exports.default = Footer;
 
 /***/ }
 /******/ ]);

@@ -51,13 +51,9 @@ export default class Update extends React.Component {
 
   // Add user's email and id to DB
   sendFirstInfo(arr) {
-    fetch('/addNew', {
+    fetch('/api/users/new', {
       method: 'POST',
       mode: 'no-cors',
-      /*headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },*/
       body: JSON.stringify(arr)
     });
   }
@@ -66,7 +62,7 @@ export default class Update extends React.Component {
   getProfileData(cb) {
     var test;
     var holder;
-    fetch('/update', {method: 'GET'})
+    fetch('/api/users/all', {method: 'GET'})
       .then((response) => response.json())
       .then((users) => {
         console.log('FROM SERVER', users);
@@ -133,7 +129,7 @@ export default class Update extends React.Component {
 
   updateProfileData(param) {
     console.log('PARAM', param);
-    fetch('/update', {
+    fetch('/api/user/update', {
       method: 'PUT',
       headers: {
         'Accept': 'application/json',
@@ -260,7 +256,6 @@ export default class Update extends React.Component {
                 <img className="avatarPics" src={this.state.pic} />
                 <h3><b>~{this.state.displayName}~</b></h3>
                 <h4><b>Favorite Craft(s):</b> {this.state.craftName}</h4>
-                <h4><b>Patterns:</b> {this.state.pattCt}</h4>
                 <h4><b>Bio: </b> {this.state.bio}</h4>
               </div>
             </div>

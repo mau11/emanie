@@ -102,7 +102,7 @@ export default class AddPattern extends React.Component {
 
   submitPatt(arr) {
     console.log('sending', JSON.stringify(arr));
-    fetch('/addPatt', {
+    fetch('/api/patterns/new', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -120,8 +120,12 @@ export default class AddPattern extends React.Component {
     $('#pattNotes').val('');
   }
 
-  render () {
+  handleUpload(e) {
+    e.preventDefault();
 
+  }
+
+  render () {
     return (
       <div>
         <h3>Patterns</h3>
@@ -131,7 +135,7 @@ export default class AddPattern extends React.Component {
               <div>
                 <h4>Upload a Pattern (PDF)
                 </h4>
-                <form id="uploadForm" encType="multipart/form-data" action="/api/photo" method="post">
+                <form id="uploadForm" encType="multipart/form-data" action="/api/patterns/upload" method="post">
                   <input type="file" name="userFile" />
                   Pattern Name: <input type='text' id='random' name='random'/><br />
                   <input className="btn btn" type="submit" value="Upload PDF" name="submit"/>

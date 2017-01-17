@@ -34,7 +34,7 @@ export default class Profile extends React.Component {
 
   // Get user's initial data from DB
   componentDidMount() {
-    if(this.state.displayName !== null || this.state.craftName !== null || this.state.bio !== null){
+    if(this.state.displayName !== null && this.state.craftName !== null && this.state.bio !== null){
       this.setState({prompt: "Looks like you haven't updated your profile yet..."});
       this.getProfileData();
     } else {
@@ -63,15 +63,22 @@ export default class Profile extends React.Component {
 
   // Add user's email and id from Auth0 login to DB
   sendFirstInfo(arr) {
-    fetch('/addNew', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(arr)
-    });
-    //this.setState({prompt: "Looks like you haven't updated your profile yet..."});
+    console.log(this.state.displayName);
+    if(this.state.displayName === null && this.state.craftName === null && this.state.bio === null){
+      console.log('FETCHING');
+      fetch('/api/users/new', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(arr)
+      }).catch(function(err){
+        if(err){
+          throw err;
+        }
+      });
+    }
     this.getProfileData();
   }
 
@@ -86,10 +93,9 @@ export default class Profile extends React.Component {
   getProfileData(cb) {
     var test;
     var holder;
-    fetch('/update', {method: 'GET'})
+    fetch('/api/users/all', {method: 'GET'})
       .then((response) => response.json())
       .then((users) => {
-        console.log('FROM SERVER', users);
         for(var i = 0; i < users.length; i++){
           for(var key in users[i]){
             if(this.state.email === users[i].email){

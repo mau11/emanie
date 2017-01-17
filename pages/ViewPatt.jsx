@@ -20,9 +20,6 @@ export default class ViewPatt extends React.Component {
     this.getAuthInfo();
   }
 
-  /*componentWillUpdate() {
-    this.deletePatt();
-  }*/
   // Get auth0 ID & email from logged in user and add to state
   getAuthInfo() {
     var obj = this.state.profile;
@@ -43,16 +40,14 @@ export default class ViewPatt extends React.Component {
 
   // Get all users' avatar and display name.
   getUserPatterns(){
-    return fetch('/viewPatt', {method: 'GET'})
+    return fetch('/api/patterns', {method: 'GET'})
       .then((response) => response.json())
       .then(allPatterns => {
         for(var i = 0; i < allPatterns.length; i++){
           for(var key in allPatterns[i]){
             if(allPatterns[i].email === this.state.email && allPatterns[i].authId === this.state.authId){
               this.setState({allPatts: allPatterns});
-            }/* else {
-              this.setState({prompt: "Looks like you don't have any patterns yet, add some above!"});
-            }*/
+            }
           }
         }
       });
@@ -61,7 +56,7 @@ export default class ViewPatt extends React.Component {
   // Sort patterns A-Z
   sortPattAZ(e){
     e.preventDefault();
-    return fetch('/sortPatt', {method: 'GET'})
+    return fetch('/api/patterns/sorted/name', {method: 'GET'})
       .then((response) => response.json())
       .then(sorted => {
         for(var i = 0; i < sorted.length; i++){
@@ -77,7 +72,7 @@ export default class ViewPatt extends React.Component {
   // Sort by craft, then by pattern name for the same crafts
   sortCraftAZ(e){
     e.preventDefault();
-    return fetch('/sortCraft', {method: 'GET'})
+    return fetch('/api/patterns/sorted/craft', {method: 'GET'})
       .then((response) => response.json())
       .then(sortedCrafts => {
         for(var i = 0; i < sortedCrafts.length; i++){
@@ -106,16 +101,11 @@ export default class ViewPatt extends React.Component {
     console.log('sending pattern edit');
   }
 
-
   deletePatt(e){
-    //e.preventDefault();
-    var identifier = e.target.id;
-    var url = '/api/user/patt/:'+ identifier;
+    var deletePatt = e.target.id;
+    var url = '/api/patterns/:'+ deletePatt;
     fetch(url, {method: 'DELETE'})
-//      .then(this.getUserPatterns)
       .then(window.location.reload());
-    console.log('CLICK', url);
-
   }
 
   render () {

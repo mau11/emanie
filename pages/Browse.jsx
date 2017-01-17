@@ -21,13 +21,11 @@ export default class Browse extends React.Component {
       .then((response) => response.json())
       .then(allProfiles => {
         this.setState({allUsers: allProfiles})
-        console.log(allProfiles);
       });
   }
 
-  // Render more user info on click
+  // Render more user info on hover
   handleHover(e) {
-    console.log('HOVER', e.target.id);
     $('div.toggle').show();
   }
 
@@ -36,7 +34,6 @@ export default class Browse extends React.Component {
   }
 
   render () {
-    let find;
     return (
       <div >
         <div className="container">
