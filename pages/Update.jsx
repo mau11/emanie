@@ -88,15 +88,15 @@ export default class Update extends React.Component {
               this.setState({pic: users[i].pic});
               var selected = $("input[name='pics']:checked").val();
               if(selected === 'pic1'){
-                this.setState({pic: '../img/lightGrey.jpg'});
+                this.setState({pic: '../img/lightGrey.JPG'});
               } else if(selected === 'pic2'){
                 this.setState({pic: '../img/perfectPink.jpg'});
               } else if(selected === 'pic3'){
-                this.setState({pic: '../img/lightBlue.jpg'});
+                this.setState({pic: '../img/lightBlue.JPG'});
               } else if(selected === 'pic4'){
-                this.setState({pic: '../img/realTeal.jpg'});
+                this.setState({pic: '../img/realTeal.JPG'});
               } else if(selected === 'pic5'){
-                this.setState({pic: '../img/paleYellow.jpg'});
+                this.setState({pic: '../img/paleYellow.JPG'});
               } else if(selected === 'pic6'){
                 this.setState({pic: '../img/defaultIcon.png'});
               }
@@ -153,19 +153,19 @@ export default class Update extends React.Component {
   }
 
   handlePic1() {
-    this.setState({pic: '../img/lightGrey.jpg'});
+    this.setState({pic: '../img/lightGrey.JPG'});
   }
   handlePic2() {
     this.setState({pic: '../img/perfectPink.jpg'});
   }
   handlePic3() {
-    this.setState({pic: '../img/lightBlue.jpg'});
+    this.setState({pic: '../img/lightBlue.JPG'});
   }
   handlePic4() {
-    this.setState({pic: '../img/realTeal.jpg'});
+    this.setState({pic: '../img/realTeal.JPG'});
   }
   handlePic5() {
-    this.setState({pic: '../img/paleYellow.jpg'});
+    this.setState({pic: '../img/paleYellow.JPG'});
   }
   handlePic6() {
     this.setState({pic: '../img/defaultIcon.png'});
@@ -204,7 +204,7 @@ export default class Update extends React.Component {
                 <label>Select profile image:</label>
                 <div className="form-group">
                   <div className="col-xs-2" >
-                    <img src='../img/lightGrey.jpg' className="avatarSmPics"/>
+                    <img src='../img/lightGrey.JPG' className="avatarSmPics"/>
                     <input type="radio" value="pic1" onClick={this.handlePic1.bind(this)} name="pics"/>
                   </div>
                   <div className="col-xs-2" >
@@ -212,15 +212,15 @@ export default class Update extends React.Component {
                     <input type="radio" value="pic2" onClick={this.handlePic2.bind(this)} name="pics"/>
                   </div>
                   <div className="col-xs-2" >
-                    <img src='../img/lightBlue.jpg' className="avatarSmPics"/>
+                    <img src='../img/lightBlue.JPG' className="avatarSmPics"/>
                     <input type="radio" value="pic3" onClick={this.handlePic3.bind(this)} name="pics"/>
                   </div>
                   <div className="col-xs-2" >
-                    <img src='../img/realTeal.jpg' className="avatarSmPics"/>
+                    <img src='../img/realTeal.JPG' className="avatarSmPics"/>
                     <input type="radio" value="pic4" onClick={this.handlePic4.bind(this)} name="pics"/>
                   </div>
                   <div className="col-xs-2" >
-                    <img src='../img/paleYellow.jpg' className="avatarSmPics"/>
+                    <img src='../img/paleYellow.JPG' className="avatarSmPics"/>
                     <input type="radio" value="pic5" onClick={this.handlePic5.bind(this)} name="pics"/>
                   </div>
                   <div className="col-xs-2" >
