@@ -56624,15 +56624,15 @@
 	              _this2.setState({ pic: users[i].pic });
 	              var selected = $("input[name='pics']:checked").val();
 	              if (selected === 'pic1') {
-	                _this2.setState({ pic: '../img/lightGrey.jpg' });
+	                _this2.setState({ pic: '../img/lightGrey.JPG' });
 	              } else if (selected === 'pic2') {
 	                _this2.setState({ pic: '../img/perfectPink.jpg' });
 	              } else if (selected === 'pic3') {
-	                _this2.setState({ pic: '../img/lightBlue.jpg' });
+	                _this2.setState({ pic: '../img/lightBlue.JPG' });
 	              } else if (selected === 'pic4') {
-	                _this2.setState({ pic: '../img/realTeal.jpg' });
+	                _this2.setState({ pic: '../img/realTeal.JPG' });
 	              } else if (selected === 'pic5') {
-	                _this2.setState({ pic: '../img/paleYellow.jpg' });
+	                _this2.setState({ pic: '../img/paleYellow.JPG' });
 	              } else if (selected === 'pic6') {
 	                _this2.setState({ pic: '../img/defaultIcon.png' });
 	              }
@@ -56693,7 +56693,7 @@
 	  }, {
 	    key: 'handlePic1',
 	    value: function handlePic1() {
-	      this.setState({ pic: '../img/lightGrey.jpg' });
+	      this.setState({ pic: '../img/lightGrey.JPG' });
 	    }
 	  }, {
 	    key: 'handlePic2',
@@ -56703,17 +56703,17 @@
 	  }, {
 	    key: 'handlePic3',
 	    value: function handlePic3() {
-	      this.setState({ pic: '../img/lightBlue.jpg' });
+	      this.setState({ pic: '../img/lightBlue.JPG' });
 	    }
 	  }, {
 	    key: 'handlePic4',
 	    value: function handlePic4() {
-	      this.setState({ pic: '../img/realTeal.jpg' });
+	      this.setState({ pic: '../img/realTeal.JPG' });
 	    }
 	  }, {
 	    key: 'handlePic5',
 	    value: function handlePic5() {
-	      this.setState({ pic: '../img/paleYellow.jpg' });
+	      this.setState({ pic: '../img/paleYellow.JPG' });
 	    }
 	  }, {
 	    key: 'handlePic6',
@@ -56748,7 +56748,7 @@
 	    key: 'render',
 	    value: function render() {
 
-	      return _react2.default.createElement("div", null, _react2.default.createElement("h3", null, "Edit Profile"), _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("div", { className: "row" }, _react2.default.createElement("div", { className: "col-sm-6" }, _react2.default.createElement("div", null, _react2.default.createElement("form", null, _react2.default.createElement("label", null, "Select profile image:"), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("div", { className: "col-xs-2" }, _react2.default.createElement("img", { src: "../img/lightGrey.jpg", className: "avatarSmPics" }), _react2.default.createElement("input", { type: "radio", value: "pic1", onClick: this.handlePic1.bind(this), name: "pics" })), _react2.default.createElement("div", { className: "col-xs-2" }, _react2.default.createElement("img", { src: "../img/perfectPink.jpg", className: "avatarSmPics" }), _react2.default.createElement("input", { type: "radio", value: "pic2", onClick: this.handlePic2.bind(this), name: "pics" })), _react2.default.createElement("div", { className: "col-xs-2" }, _react2.default.createElement("img", { src: "../img/lightBlue.jpg", className: "avatarSmPics" }), _react2.default.createElement("input", { type: "radio", value: "pic3", onClick: this.handlePic3.bind(this), name: "pics" })), _react2.default.createElement("div", { className: "col-xs-2" }, _react2.default.createElement("img", { src: "../img/realTeal.jpg", className: "avatarSmPics" }), _react2.default.createElement("input", { type: "radio", value: "pic4", onClick: this.handlePic4.bind(this), name: "pics" })), _react2.default.createElement("div", { className: "col-xs-2" }, _react2.default.createElement("img", { src: "../img/paleYellow.jpg", className: "avatarSmPics" }), _react2.default.createElement("input", { type: "radio", value: "pic5", onClick: this.handlePic5.bind(this), name: "pics" })), _react2.default.createElement("div", { className: "col-xs-2" }, _react2.default.createElement("img", { src: "../img/defaultIcon.png", className: "avatarSmPics" }), _react2.default.createElement("input", { type: "radio", value: "pic6", onClick: this.handlePic6.bind(this), name: "pics" }))), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "display" }, "Display Name:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "display", placeholder: "Enter new display name", onChange: this.onDisplay.bind(this), name: "display" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "craft" }, "Favorite Craft(s):"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "craft", placeholder: "Crochet, Knitting, Sewing...Everything!", name: "craft", onChange: this.onCraft.bind(this) })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "blurb" }, "Bio:"), _react2.default.createElement("textarea", { className: "form-control", id: "blurb", rows: "3", name: "bio", onChange: this.onBio.bind(this) })), _react2.default.createElement("div", { className: "form-check" }, _react2.default.createElement("label", { className: "form-check-label" }, _react2.default.createElement("input", { type: "checkbox", className: "form-check-input", onClick: this.handleCheckbox.bind(this) }), " I confirm that I have reviewed my changes.")), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse", onClick: this.handleUpdate.bind(this) }, "Update Profile")))), _react2.default.createElement("div", { className: "col-sm-6" }, _react2.default.createElement("h5", null, _react2.default.createElement("i", null, "Preview:")), _react2.default.createElement("div", { className: "mainTitle" }, _react2.default.createElement("img", { className: "avatarPics", src: this.state.pic }), _react2.default.createElement("h3", null, _react2.default.createElement("b", null, "~", this.state.displayName, "~")), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Favorite Craft(s):"), " ", this.state.craftName), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Bio: "), " ", this.state.bio))))));
+	      return _react2.default.createElement("div", null, _react2.default.createElement("h3", null, "Edit Profile"), _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("div", { className: "row" }, _react2.default.createElement("div", { className: "col-sm-6" }, _react2.default.createElement("div", null, _react2.default.createElement("form", null, _react2.default.createElement("label", null, "Select profile image:"), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("div", { className: "col-xs-2" }, _react2.default.createElement("img", { src: "../img/lightGrey.JPG", className: "avatarSmPics" }), _react2.default.createElement("input", { type: "radio", value: "pic1", onClick: this.handlePic1.bind(this), name: "pics" })), _react2.default.createElement("div", { className: "col-xs-2" }, _react2.default.createElement("img", { src: "../img/perfectPink.jpg", className: "avatarSmPics" }), _react2.default.createElement("input", { type: "radio", value: "pic2", onClick: this.handlePic2.bind(this), name: "pics" })), _react2.default.createElement("div", { className: "col-xs-2" }, _react2.default.createElement("img", { src: "../img/lightBlue.JPG", className: "avatarSmPics" }), _react2.default.createElement("input", { type: "radio", value: "pic3", onClick: this.handlePic3.bind(this), name: "pics" })), _react2.default.createElement("div", { className: "col-xs-2" }, _react2.default.createElement("img", { src: "../img/realTeal.JPG", className: "avatarSmPics" }), _react2.default.createElement("input", { type: "radio", value: "pic4", onClick: this.handlePic4.bind(this), name: "pics" })), _react2.default.createElement("div", { className: "col-xs-2" }, _react2.default.createElement("img", { src: "../img/paleYellow.JPG", className: "avatarSmPics" }), _react2.default.createElement("input", { type: "radio", value: "pic5", onClick: this.handlePic5.bind(this), name: "pics" })), _react2.default.createElement("div", { className: "col-xs-2" }, _react2.default.createElement("img", { src: "../img/defaultIcon.png", className: "avatarSmPics" }), _react2.default.createElement("input", { type: "radio", value: "pic6", onClick: this.handlePic6.bind(this), name: "pics" }))), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "display" }, "Display Name:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "display", placeholder: "Enter new display name", onChange: this.onDisplay.bind(this), name: "display" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "craft" }, "Favorite Craft(s):"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "craft", placeholder: "Crochet, Knitting, Sewing...Everything!", name: "craft", onChange: this.onCraft.bind(this) })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "blurb" }, "Bio:"), _react2.default.createElement("textarea", { className: "form-control", id: "blurb", rows: "3", name: "bio", onChange: this.onBio.bind(this) })), _react2.default.createElement("div", { className: "form-check" }, _react2.default.createElement("label", { className: "form-check-label" }, _react2.default.createElement("input", { type: "checkbox", className: "form-check-input", onClick: this.handleCheckbox.bind(this) }), " I confirm that I have reviewed my changes.")), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse", onClick: this.handleUpdate.bind(this) }, "Update Profile")))), _react2.default.createElement("div", { className: "col-sm-6" }, _react2.default.createElement("h5", null, _react2.default.createElement("i", null, "Preview:")), _react2.default.createElement("div", { className: "mainTitle" }, _react2.default.createElement("img", { className: "avatarPics", src: this.state.pic }), _react2.default.createElement("h3", null, _react2.default.createElement("b", null, "~", this.state.displayName, "~")), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Favorite Craft(s):"), " ", this.state.craftName), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Bio: "), " ", this.state.bio))))));
 	    }
 	  }]);
 
