@@ -5,8 +5,8 @@ var connection = mysql.createConnection({
   host: process.env.RDS_HOSTNAME || 'localhost',
   user: process.env.RDS_USERNAME || 'root',
   database: process.env.RDS_DB_NAME || 'emanie',
-  password: process.env.RDS_PASSWORD || ''
-  //port: process.env.PORT || 8080
+  password: process.env.RDS_PASSWORD || '',
+  port: "'" + process.env.PORT + "'" || '8080'
 });
 
 // Connect to db
