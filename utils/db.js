@@ -1,5 +1,4 @@
 var mysql = require('mysql');
-var fs = require('fs');
 
 // Set up db connection
 var connection = mysql.createConnection({
@@ -8,9 +7,6 @@ var connection = mysql.createConnection({
   database: process.env.RDS_DB_NAME || 'emanie',
   password: process.env.RDS_PASSWORD || '',
   port: process.env.RDS_PORT || 8080
-/*  ssl: {
-    ca: fs.readFileSync(__dirname + '/rds-combined-ca-bundle.pemt')
-  }*/
 });
 
 // Connect to db
