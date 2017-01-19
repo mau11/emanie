@@ -24,25 +24,29 @@ export default class Browse extends React.Component {
       });
   }
 
-  // Render more user info on hover
-  handleHover(e) {
-    $('div.toggle').show();
-  }
-
-  handleLeave(e) {
-    $('div.toggle').hide();
+  // Render more user info on click.
+  handleClick(e) {
+    var moreInfo = e.target.id +'bio';
+    $('#'+moreInfo).toggle();
   }
 
   render () {
     return (
       <div >
         <div className="container">
-          <h3>Browse Users</h3>
+          <h3>Browse Users
+          </h3>
+          <small>
+            <i>Click on user's avatar see view more information.</i>
+          </small>
           <div className="row">{this.state.allUsers.map(user =>
             <div className="col-sm-3" key={user.displayName}>
-              <img className="avatarPics" src={user.pic} id={user.id} onMouseOver={this.handleHover.bind(this)} onMouseOut={this.handleLeave.bind(this)}/><b>
-              {user.displayName}</b>
-              <div id={user.id} className="toggle">{user.bio}</div>
+              <hr />
+              <img className="avatarPics" src={user.pic} id={user.id} onClick={this.handleClick.bind(this)}/>
+              <br />
+              <b>{user.displayName}</b>
+              <div id={user.id+'bio'} className="tog">{user.bio}
+              </div>
             </div>)}
           </div>
         </div>
