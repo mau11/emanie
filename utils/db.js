@@ -7,7 +7,7 @@ var connection = mysql.createConnection({
   database: process.env.RDS_DB_NAME || 'emanie',
   password: process.env.RDS_PASSWORD || '',
   // Comment out the following line during development, port property needed for AWS deployment
-  port: process.env.RDS_PORT || 8080*/
+  port: process.env.RDS_PORT || 8080
 });
 
 // Connect to db
