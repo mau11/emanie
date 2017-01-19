@@ -98,15 +98,8 @@ exports.updateProfile = function(req, res){
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-// Create patterns table if does not exist, adds patterns to patterns table
+// Adds patterns to patterns table
 exports.addNewPattern = function(req, res){
-  // Create patterns table for all users
-  var newPatternsTable = 'CREATE TABLE IF NOT EXISTS patterns (id int(11) NOT NULL AUTO_INCREMENT, pName varchar(20), craft varchar(20), tools varchar(50), notes varchar(500), email varchar(50), authId varchar(30), PRIMARY KEY (id)) ENGINE=InnoDB  DEFAULT CHARSET=utf8';
-  db.connection.query(newPatternsTable, function(err, rows){
-    if(err){
-      throw err;
-    }
-  })
   if(req.body.length === 6){
     var addInitialInfo = "INSERT IGNORE INTO patterns (email, authId, pName, craft, tools, notes) VALUES ('"+req.body[0]+"'"+","+"'"+req.body[1]+"'"+","+"'"+req.body[2]+"'"+","+"'"+req.body[3]+"'"+","+"'"+req.body[4]+"'"+","+"'"+req.body[5]+"')";
     db.connection.query(addInitialInfo, function(err, rows){
@@ -170,6 +163,49 @@ exports.deletePattern = function(req, res){
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-~~~~~~~~~~~ SUPPLIES ~~~~~~~~~~~
+~~~~~~~~~~~~~ YARN ~~~~~~~~~~~~~
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
+
+exports.addNewYarn = function(req, res){
+  if(req.body.length === 7){
+    var adding = "INSERT IGNORE INTO yarn (email, authId, color, weight, brand, amount, notes) VALUES ('"+req.body[0]+"'"+","+"'"+req.body[1]+"'"+","+"'"+req.body[2]+"'"+","+"'"+req.body[3]+"'"+","+"'"+req.body[4]+"'"+","+"'"+req.body[5]+"'"+","+"'"+req.body[6]+"')";
+    db.connection.query(adding, function(err, rows){
+      if(err){
+        throw err;
+      }
+      console.log(req.body);
+    });
+  }
+  res.send('Complete');
+};
+
+exports.addNewTool = function(req, res){
+  if(req.body.length === 7){
+    var addingTool = "INSERT IGNORE INTO tools (email, authId, craft, tool, size, material, notes) VALUES ('"+req.body[0]+"'"+","+"'"+req.body[1]+"'"+","+"'"+req.body[2]+"'"+","+"'"+req.body[3]+"'"+","+"'"+req.body[4]+"'"+","+"'"+req.body[5]+"'"+","+"'"+req.body[6]+"')";
+    db.connection.query(addingTool, function(err, rows){
+      if(err){
+        throw err;
+      }
+      console.log(req.body);
+    });
+  }
+  res.send('Complete');
+};
+
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~ WEEKLY UPDATES ~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+exports.getWeeklyUpdates = function(req, res){
+  var updated = "SELECT DATE_FORMAT(date, '%b-%d-%Y'), notes, id FROM updates ORDER BY date DESC";
+  db.connection.query(updated, function(err, rows){
+    if(err){
+      throw err;
+    }
+    console.log(rows);
+    res.send(rows);
+  });
+}

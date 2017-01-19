@@ -18,13 +18,11 @@ export default class Profile extends React.Component {
     this.state = {
       displayName: null,
       craftName: null,
-      pattCt: 0,
       bio: null,
       profile: props.auth.getProfile(),
       authID: null,
       email: null,
-      pic: null,
-      prompt: null
+      pic: null
     };
     // Once user's info has been stored locally, update state
     props.auth.on('profile_updated', (newProfile) => {
@@ -34,13 +32,7 @@ export default class Profile extends React.Component {
 
   // Get user's initial data from DB
   componentDidMount() {
-    if(this.state.displayName !== null && this.state.craftName !== null && this.state.bio !== null){
-      this.setState({prompt: "Looks like you haven't updated your profile yet..."});
-      this.getProfileData();
-    } else {
-      this.setState({prompt: null});
-      this.getAuthData();
-    }
+    this.getAuthData();
   }
 
   // Get auth0 ID from logged in user and add to state
@@ -63,35 +55,23 @@ export default class Profile extends React.Component {
 
   // Add user's email and id from Auth0 login to DB
   sendFirstInfo(arr) {
-    console.log(this.state.displayName);
-    if(this.state.displayName === null && this.state.craftName === null && this.state.bio === null){
-      console.log('FETCHING');
-      fetch('/api/users/new', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(arr)
-      }).catch(function(err){
-        if(err){
-          throw err;
-        }
-      });
-    }
+    fetch('/api/users/add', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(arr)
+    }).catch(function(err){
+      if(err){
+        throw err;
+      }
+    });
     this.getProfileData();
   }
 
-  // Remove prompt after user set's up initial profile
- /* componentDidUpdate() {
-    if(this.state.displayName !== null || this.state.craftName !== null || this.state.bio !== null){
-      this.setState({prompt: null});
-    }
-  }*/
-
   // Get user's info from DB and render to page
   getProfileData(cb) {
-    var test;
     var holder;
     fetch('/api/users/all', {method: 'GET'})
       .then((response) => response.json())
@@ -112,16 +92,19 @@ export default class Profile extends React.Component {
   render () {
     const avatarSrc = this.state.pic;
     return (
-      <div className="profileView">
+      <div className="mainTitle">
         <div className="container">
-          <div className="row">
-            <div className="col-sm-12">
-            <h3><b><i>{this.state.prompt}</i></b></h3>
-              <img className="avatarPics" src={avatarSrc} />
-              <h3><b>~{this.state.displayName}~</b></h3>
-              <h4><b>Favorite Craft(s):</b> {this.state.craftName}</h4>
-              <h4><b>Bio: </b> {this.state.bio}</h4>
-            </div>
+          <div className="profileView">
+            <img className="avatarPics" src={avatarSrc} />
+            <h3>
+              <b>~{this.state.displayName}~</b>
+            </h3>
+            <h4>
+              <b>Favorite Craft(s):</b> {this.state.craftName}
+            </h4>
+            <h4>
+              <b>Bio: </b> {this.state.bio}
+            </h4>
           </div>
         </div>
       </div>

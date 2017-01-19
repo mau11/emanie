@@ -50,7 +50,7 @@ app.post('/api/patterns/upload', function(req,res){
 */
 
 // Adds new users' email & unique auth0 id to profiles table
-app.post('/api/users/new', handler.addNewUser);
+app.post('/api/users/add', handler.addNewUser);
 
 // Get all users' public information for browsing
 app.get('/api/users', handler.getUserPublicInfo);
@@ -67,7 +67,7 @@ app.put('/api/user/update', handler.updateProfile);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-// Create patterns table if does not exist, adds patterns to patterns table
+// Adds patterns to patterns table
 app.post('/api/patterns/new', handler.addNewPattern);
 
 // Get all patterns from table
@@ -81,6 +81,35 @@ app.get('/api/patterns/sorted/craft', handler.sortPatternsByCraft);
 
 // Delete a pattern
 app.delete('/api/patterns/:deletePatt', handler.deletePattern);
+
+
+
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~ YARN ~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+// Adds yarn to yarn table
+app.post('/api/yarn/add', handler.addNewYarn);
+
+
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~ TOOLS ~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+// Adds hooks/needles to tools table
+app.post('/api/tools/add', handler.addNewTool);
+
+
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~ WEEKLY UPDATES ~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+app.get('/api/updates', handler.getWeeklyUpdates);
 
 
 app.listen(port, function(){

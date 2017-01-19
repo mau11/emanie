@@ -41,12 +41,13 @@ export default class App extends React.Component {
             <hr />
             <h4> <u>Weekly Updates:</u>
             </h4>
-              <div className="textbox">
+              <div className="box">
                 {this.state.updates.map(item =>
                   <div key={item.id}><b>{item.notes}</b><br/>
-                    <small><i>{item["DATE_FORMAT(date, '%b-%d-%Y')"]
-}
-                    </i></small>
+                    <small>
+                      <i>{item["DATE_FORMAT(date, '%b-%d-%Y')"]}
+                      </i>
+                    </small>
                     <hr />
                   </div>
                   )}

@@ -14,7 +14,6 @@ export default class Update extends React.Component {
     this.state = {
       displayName: null,
       craftName: null,
-      pattCt: 0,
       bio: null,
       profile: props.auth.getProfile(),
       authID: null,
@@ -65,7 +64,6 @@ export default class Update extends React.Component {
     fetch('/api/users/all', {method: 'GET'})
       .then((response) => response.json())
       .then((users) => {
-        console.log('FROM SERVER', users);
         for(var i = 0; i < users.length; i++){
           for(var key in users[i]){
             if(this.state.email === users[i].email){
@@ -108,7 +106,6 @@ export default class Update extends React.Component {
           users[holder].displayName = this.state.displayName;
           users[holder].craftName = this.state.craftName;
           users[holder].bio = this.state.bio;
-          users[holder].pattCt = this.state.pattCt;
           this.setState({allUsers: users});
           test = users[holder];
           console.log('TO SERVER modified', test);
@@ -138,7 +135,6 @@ export default class Update extends React.Component {
       body: JSON.stringify(param)
     });
     console.log('sending');
-    //this.getProfileData(function(val){console.log('SENT UPDATED TO DB:', val);}).bind(this);
   }
 
   handleUpdate(e) {
@@ -155,18 +151,23 @@ export default class Update extends React.Component {
   handlePic1() {
     this.setState({pic: '../img/lightGrey.JPG'});
   }
+
   handlePic2() {
     this.setState({pic: '../img/perfectPink.jpg'});
   }
+
   handlePic3() {
     this.setState({pic: '../img/lightBlue.JPG'});
   }
+
   handlePic4() {
     this.setState({pic: '../img/realTeal.JPG'});
   }
+
   handlePic5() {
     this.setState({pic: '../img/paleYellow.JPG'});
   }
+
   handlePic6() {
     this.setState({pic: '../img/defaultIcon.png'});
   }
@@ -197,6 +198,9 @@ export default class Update extends React.Component {
         <h3>Edit Profile
         </h3>
         <div className="container">
+        <h6>
+          <i>Leave fields blank where no changes are desired.</i>
+        </h6>
           <div className="row">
             <div className="col-sm-6">
               <div>

@@ -15,16 +15,7 @@ export default class AuthService extends EventEmitter {
       auth: {
         redirectUrl: '',
         responseType: 'token'
-      }/*,
-      additionalSignUpFields: [{
-        name: "address",                              // required
-        placeholder: "enter your address",            // required
-        icon: "https://example.com/address_icon.png", // optional
-        validator: function(value) {                  // optional
-          // only accept addresses with more than 10 chars
-          return value.length > 10;
-        }
-      }]*/
+      }
     });
 
      // Add callback for lock `authenticated` event
