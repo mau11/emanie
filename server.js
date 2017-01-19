@@ -19,16 +19,17 @@ app.get('/', function (req, res){
 // Pattern upload using multer
 var storage =   multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, './uploads');
+    cb(null, './public/uploads');
   },
   filename: function (req, file, cb) {
-    cb(null, file.fieldname + '-' + Date.now());
+    cb(null, file.fieldname + '-' + Date.now() + '.pdf');
   }
 });
 
 var upload = multer({ storage : storage }).array('userFile', 2);
 
-app.get('/',function(req,res){
+app.get('/image/:id',function(req,res){
+  console.log(req.params);
   res.sendFile(__dirname + "/index.html");
 });
 
@@ -42,6 +43,16 @@ app.post('/api/patterns/upload', function(req,res){
       res.end("File is uploaded");
     });
 });
+
+
+
+
+
+
+
+
+
+
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -93,6 +104,11 @@ app.delete('/api/patterns/:deletePatt', handler.deletePattern);
 // Adds yarn to yarn table
 app.post('/api/yarn/add', handler.addNewYarn);
 
+// Get yarn from table
+app.get('/api/yarn', handler.getYarn);
+
+// Delete yarn
+app.delete('/api/yarn/:deleteYarn', handler.deletingYarn);
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -102,6 +118,12 @@ app.post('/api/yarn/add', handler.addNewYarn);
 
 // Adds hooks/needles to tools table
 app.post('/api/tools/add', handler.addNewTool);
+
+// Get tools from table
+app.get('/api/tools', handler.getTools);
+
+// Delete tool
+app.delete('/api/tools/:deleteTool', handler.deletingTool);
 
 
 /*

@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { Router, Route, hashHistory, browserHistory, IndexRoute } from 'react-router';
 import AuthService from '../utils/AuthService';
 
-
 import About from '../pages/About.jsx';
 import AddPattern from '../pages/AddPattern.jsx';
 import AddSupplies from '../pages/AddSupplies.jsx';
@@ -11,7 +10,6 @@ import App from '../components/App.jsx';
 import Browse from '../pages/Browse.jsx';
 import Contact from '../pages/Contact.jsx';
 import Container from '../components/Container.js';
-import Layout from '../components/Layout.jsx';
 import Login from '../pages/Login.jsx';
 import Logout from '../pages/Logout.jsx';
 import Messages from '../pages/Messages.jsx';
@@ -48,7 +46,6 @@ ReactDOM.render(
       <Route path="profile" component={ Profile } onEnter={requireAuth}/>
       <Route path="update" component={ Update } onEnter={requireAuth}/>
       <Route path="browse" component={ Browse } onEnter={requireAuth}/>
-      <Route path="messages" component={ Messages } onEnter={requireAuth}/>
       <Route path="add" component={ AddPattern } onEnter={requireAuth}/>
       <Route path="patgen" component={ PatGen } onEnter={requireAuth}/>
       <Route path="view" component={ ViewPatt } onEnter={requireAuth}/>

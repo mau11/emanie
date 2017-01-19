@@ -180,6 +180,35 @@ exports.addNewYarn = function(req, res){
   res.send('Complete');
 };
 
+exports.getYarn = function(req, res){
+  var allYarn = "SELECT * FROM yarn";
+  db.connection.query(allYarn, function(err, rows){
+    if(err){
+      throw err;
+    }
+    res.send(rows);
+  });
+}
+
+exports.deletingYarn = function(req, res){
+  var skein = req.params.deleteYarn;
+  skein = skein.substr(1);
+  skein = Number(skein);
+  console.log('PARAMS', skein);
+  var remove = "DELETE FROM yarn WHERE id = "+skein+"";
+  db.connection.query(remove, function(err, row){
+    if(err){
+      throw err;
+    }
+  });
+}
+
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~ TOOLS ~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
 exports.addNewTool = function(req, res){
   if(req.body.length === 7){
     var addingTool = "INSERT IGNORE INTO tools (email, authId, craft, tool, size, material, notes) VALUES ('"+req.body[0]+"'"+","+"'"+req.body[1]+"'"+","+"'"+req.body[2]+"'"+","+"'"+req.body[3]+"'"+","+"'"+req.body[4]+"'"+","+"'"+req.body[5]+"'"+","+"'"+req.body[6]+"')";
@@ -192,6 +221,30 @@ exports.addNewTool = function(req, res){
   }
   res.send('Complete');
 };
+
+exports.getTools = function(req, res){
+  var allTools = "SELECT * FROM tools";
+  db.connection.query(allTools, function(err, rows){
+    if(err){
+      throw err;
+    }
+    res.send(rows);
+  });
+}
+
+exports.deletingTool = function(req, res){
+  var tool = req.params.deleteTool;
+  tool = tool.substr(1);
+  tool = Number(tool);
+  console.log('PARAMS', tool);
+  var remove = "DELETE FROM tools WHERE id = "+tool+"";
+  db.connection.query(remove, function(err, row){
+    if(err){
+      throw err;
+    }
+  });
+}
+
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
