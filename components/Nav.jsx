@@ -20,7 +20,6 @@ import ViewSupp from '../pages/ViewSupp.jsx';
 import { IndexLink, Link } from 'react-router';
 import AuthService from '../utils/AuthService';
 
-
 export default class Nav extends React.Component {
   static contextTypes() {
     return {
@@ -44,7 +43,7 @@ export default class Nav extends React.Component {
   }
 
   render() {
-    const { auth } = this.props;
+    const {auth} = this.props;
 
     // Google Analytics
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -53,70 +52,70 @@ export default class Nav extends React.Component {
     ga('create', 'UA-86318856-3', 'auto');
     ga('send', 'pageview');
 
-
     return (
       <div>
-      <nav role="navigation" className="navbar navbar-inverse">
-        <div className="navbar-header">
-          <button type="button" data-target="#navbarCollapse" data-toggle="collapse" className="navbar-toggle">
-            <span className="sr-only">Toggle navigation</span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-          </button>
-          <IndexLink to="/" className="navbar-brand">Home</IndexLink>
-        </div>
-        <div id="navbarCollapse" className="collapse navbar-collapse">
-          <ul className="nav navbar-nav">
-            <li className="dropdown">
-              <a data-toggle="dropdown" className="dropdown-toggle" href="#">myEmanie <b className="caret"></b></a>
-              <ul role="menu" className="dropdown-menu">
-                <li><Link to="profile">View Profile</Link></li>
-                <li><Link to="update">Update Profile</Link></li>
-              </ul>
-            </li>
-            <li><Link to="messages">Messages</Link></li>
-            <li className="dropdown">
-              <a data-toggle="dropdown" className="dropdown-toggle" href="#">Patterns <b className="caret"></b></a>
-              <ul role="menu" className="dropdown-menu">
-                <li><Link to="view">View All</Link></li>
-                <li><Link to="add">Add Patterns</Link></li>
-                <li><Link to="patgen">PatGen</Link></li>
-              </ul>
-            </li>
-            <li className="dropdown">
-              <a data-toggle="dropdown" className="dropdown-toggle" href="#">Supplies <b className="caret"></b></a>
-              <ul role="menu" className="dropdown-menu">
-                <li><Link to="supplies">View All</Link></li>
-                <li><Link to="addtools">Add Tools/Yarn</Link></li>
-              </ul>
-            </li>
-            <li><Link to="browse">Browse Users</Link></li>
-            <li className="dropdown">
-              <a data-toggle="dropdown" className="dropdown-toggle" href="#">More <b className="caret"></b></a>
-              <ul role="menu" className="dropdown-menu">
-                <li><Link to="about">About Emanie</Link></li>
-                <li><Link to="report">Report Issues</Link></li>
-                <li className="divider"></li>
-                <li><Link to="contact">Contact Us</Link></li>
-              </ul>
-            </li>
-          </ul>
-          <form role="search" className="navbar-form navbar-left">
-            <div className="form-group">
-              <input type="text" placeholder="Search Patterns" className="form-control" />
-              <button type="submit" className="btn btn-inverse">Search</button>
-            </div>
-          </form>
-          <ul className="nav navbar-nav navbar-right" id="togLogin" onClick={auth.login.bind(this)}>
-            <li><Link to="">Login</Link></li>
-          </ul>
-          <ul className="nav navbar-nav navbar-right" id="togLogout">
-            <li><Link to="logout" onClick={this.logout.bind(this)}>Logout</Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
+        <nav role="navigation" className="navbar navbar-inverse">
+          <div className="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" className="navbar-toggle">
+              <span className="sr-only">Toggle navigation</span>
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>
+            </button>
+            <IndexLink to="/" className="navbar-brand">Home
+            </IndexLink>
+          </div>
+          <div id="navbarCollapse" className="collapse navbar-collapse">
+            <ul className="nav navbar-nav">
+              <li className="dropdown">
+                <a data-toggle="dropdown" className="dropdown-toggle" href="#">myEmanie <b className="caret"></b></a>
+                <ul role="menu" className="dropdown-menu">
+                  <li><Link to="profile">View Profile</Link></li>
+                  <li><Link to="update">Update Profile</Link></li>
+                </ul>
+              </li>
+              <li className="dropdown">
+                <a data-toggle="dropdown" className="dropdown-toggle" href="#">Patterns <b className="caret"></b></a>
+                <ul role="menu" className="dropdown-menu">
+                  <li><Link to="view">View All</Link></li>
+                  <li><Link to="add">Add Patterns</Link></li>
+                  <li><Link to="patgen">PatGen</Link></li>
+                </ul>
+              </li>
+              <li className="dropdown">
+                <a data-toggle="dropdown" className="dropdown-toggle" href="#">Supplies <b className="caret"></b></a>
+                <ul role="menu" className="dropdown-menu">
+                  <li><Link to="supplies">View All</Link></li>
+                  <li><Link to="addtools">Add Tools/Yarn</Link></li>
+                </ul>
+              </li>
+              <li><Link to="browse">Browse Users</Link></li>
+              <li className="dropdown">
+                <a data-toggle="dropdown" className="dropdown-toggle" href="#">More <b className="caret"></b></a>
+                <ul role="menu" className="dropdown-menu">
+                  <li><Link to="about">About Emanie</Link></li>
+                  <li><Link to="report">Report Issues</Link></li>
+                  <li className="divider"></li>
+                  <li><Link to="contact">Contact Us</Link></li>
+                </ul>
+              </li>
+            </ul>
+            <form role="search" className="navbar-form navbar-left">
+              <div className="form-group">
+                <input type="text" placeholder="Search Patterns" className="form-control" />
+                <button type="submit" className="btn btn-inverse">Search</button>
+              </div>
+            </form>
+            { this.props.auth.loggedIn() ?
+            <ul className="nav navbar-nav navbar-right" id="togLogout">
+              <li><Link to="logout" onClick={this.logout.bind(this)}>Logout</Link>
+              </li>
+            </ul> :
+            <ul className="nav navbar-nav navbar-right" id="togLogin" onClick={auth.login.bind(this)}>
+              <li><Link to="">Login</Link></li>
+            </ul>}
+          </div>
+        </nav>
       </div>
     );
   }
