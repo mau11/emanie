@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { IndexLink, Link } from 'react-router';
 import AuthService from '../utils/AuthService';
-//import ViewPatt from './ViewPatt.jsx';
 
 export default class AddPattern extends React.Component {
   static propTypes() {
@@ -113,7 +112,7 @@ export default class AddPattern extends React.Component {
   }
 
   clearFields(){
-    this.setState({pattDetails: []});
+    this.setState({pattDetails: [this.state.email, this.state.authId]});
     $('#pattName').val('');
     $('#pattCraft').val('');
     $('#pattTools').val('');
@@ -174,6 +173,3 @@ export default class AddPattern extends React.Component {
     );
   }
 }
-
-
-/*<button className="btn btn-inverse"><Link to='/view' type="button">View All Patterns</Link></button>*/

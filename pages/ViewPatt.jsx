@@ -1,17 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { IndexLink, Link } from 'react-router';
-//import Patterns from '../components/Patterns.jsx';
 
 export default class ViewPatt extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       allPatts: [],
+      allUploads: [{id: 'test', src: './uploads/userFile-1484819658175.pdf', pName: 'Test Name', notes: 'my creation'}],
       email: null,
       authId: null,
       profile: props.auth.getProfile(),
-      prompt: null,
       ids: []
     };
   }
@@ -101,7 +100,7 @@ export default class ViewPatt extends React.Component {
     console.log('sending pattern edit');
   }
 
-  deletePatt(e){
+  deletingPatt(e){
     var deletePatt = e.target.id;
     var url = '/api/patterns/:'+ deletePatt;
     fetch(url, {method: 'DELETE'})
@@ -109,7 +108,7 @@ export default class ViewPatt extends React.Component {
   }
 
   render () {
-    let count = this.state.allPatts.length;
+    let count = this.state.allPatts.length + this.state.allUploads.length;
     return (
       <div >
         <div className="container">
@@ -125,12 +124,13 @@ export default class ViewPatt extends React.Component {
             <button className="btn btn-inverse" onClick={this.sortPattAZ.bind(this)}>Pattern Name </button>
             <button className="btn btn-inverse" onClick={this.sortCraftAZ.bind(this)}>Craft</button>
           </div>
+          <div className="col-sm-12">
           {this.state.allPatts.map(patt => {
             if(this.state.ids.indexOf(patt.id) === -1){
               this.state.ids.push(patt.id);
             }
           return [
-          <div className="col-sm-12">
+          <div>
             <div className="addBorder">
               <h4 id={patt.id}><b>Pattern Name:</b> {patt.pName}
               </h4>
@@ -144,11 +144,28 @@ export default class ViewPatt extends React.Component {
             <div className="mainTitle">
               <button type="button" className="btn btn-primary active">Edit
               </button>
-              <button type="button" className="btn btn-danger btn-xs btn-center active" id={patt.id} onClick={this.deletePatt.bind(this)}>Delete
+              <button type="button" className="btn btn-danger btn-xs btn-center active" id={patt.id} onClick={this.deletingPatt.bind(this)}>Delete
               </button>
               <hr />
             </div>
           </div>]})}
+          <div>
+            <h4>Uploaded Patterns
+            </h4>
+            {this.state.allUploads.map(file => {
+              return (
+                <div key={file.id}>
+              <h4 id={file.id}><b>Pattern Name:</b> {file.pName}
+              </h4>
+               <h4><b>Notes: </b> {file.notes}
+               </h4>
+              <iframe src={file.src +'#zoom=60'} className="pdfs" allowFullScreen > </iframe>
+              <hr />
+              </div>
+            )
+          })}
+          </div>
+          </div>
         </div>
       </div>
     );
