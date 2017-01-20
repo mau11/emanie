@@ -103,10 +103,6 @@
 
 	var _Logout2 = _interopRequireDefault(_Logout);
 
-	var _Messages = __webpack_require__(556);
-
-	var _Messages2 = _interopRequireDefault(_Messages);
-
 	var _Nav = __webpack_require__(553);
 
 	var _Nav2 = _interopRequireDefault(_Nav);
@@ -135,7 +131,7 @@
 
 	var _ViewPatt2 = _interopRequireDefault(_ViewPatt);
 
-	var _ViewSupp = __webpack_require__(572);
+	var _ViewSupp = __webpack_require__(563);
 
 	var _ViewSupp2 = _interopRequireDefault(_ViewSupp);
 
@@ -36710,7 +36706,7 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement("div", null, _react2.default.createElement("h3", null, "Patterns"), _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("div", { className: "row" }, _react2.default.createElement("div", { className: "col-sm-8" }, _react2.default.createElement("div", null, _react2.default.createElement("h4", null, "Upload a Pattern (PDF)"), _react2.default.createElement("form", { id: "uploadForm", encType: "multipart/form-data", action: "/api/patterns/upload", method: "post" }, _react2.default.createElement("input", { type: "file", name: "userFile" }), "Pattern Name: ", _react2.default.createElement("input", { type: "text", id: "random", name: "random" }), _react2.default.createElement("br", null), _react2.default.createElement("input", { className: "btn btn", type: "submit", value: "Upload PDF", name: "submit" }), _react2.default.createElement("span", { id: "status" })), _react2.default.createElement("hr", null), _react2.default.createElement("h4", null, " Or Enter Pattern Manually "), _react2.default.createElement("form", null, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "patt" }, "Pattern Name:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "pattName", placeholder: "Enter pattern name", name: "pattName" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "patCra" }, "Craft:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "pattCraft", placeholder: "Crochet, Knitting, Sewing, etc", name: "pattCraft" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "supp" }, "Supplies:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "pattTools", placeholder: "Hooks, Needles, Sizes, etc", name: "suppName" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "notes" }, "Notes/Details:"), _react2.default.createElement("textarea", { className: "form-control", id: "pattNotes", rows: "5", name: "notesDetails" })), _react2.default.createElement("div", { className: "form-check" }, _react2.default.createElement("label", { className: "form-check-label" }, _react2.default.createElement("input", { type: "checkbox", className: "form-check-input", onClick: this.handleCheckbox.bind(this) }), " I confirm that I have reviewed my changes.")), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse", onClick: this.handleAddPattern.bind(this) }, "Add Pattern")))))));
+	      return _react2.default.createElement("div", null, _react2.default.createElement("h3", null, "Patterns"), _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("div", { className: "row" }, _react2.default.createElement("div", { className: "col-sm-8" }, _react2.default.createElement("div", null, _react2.default.createElement("h4", null, "Upload a Pattern (PDF)"), _react2.default.createElement("form", { id: "uploadForm", encType: "multipart/form-data", action: "/api/patterns/upload", method: "post" }, _react2.default.createElement("input", { type: "file", name: "userFile" }), "Pattern Name: ", _react2.default.createElement("input", { type: "text", id: "random", name: "random" }), _react2.default.createElement("br", null), _react2.default.createElement("input", { className: "btn btn", type: "submit", value: "Upload PDF", name: "submit" }), _react2.default.createElement("span", { id: "status" })), _react2.default.createElement("hr", null), _react2.default.createElement("h4", null, " Or Enter Pattern Manually "), _react2.default.createElement("form", null, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "patt" }, "Pattern Name:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "pattName", placeholder: "Enter pattern name", name: "pattName" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "patCra" }, "Craft:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "pattCraft", placeholder: "Crochet, Knitting, Sewing, etc", name: "pattCraft" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "supp" }, "Supplies:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "pattTools", placeholder: "Hooks, Needles, Sizes, etc", name: "suppName" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "notes" }, "Notes/Details:"), _react2.default.createElement("textarea", { className: "form-control", id: "pattNotes", rows: "5", name: "notesDetails" })), _react2.default.createElement("div", { className: "form-check" }, _react2.default.createElement("label", { className: "form-check-label" }, _react2.default.createElement("input", { type: "checkbox", className: "form-check-input", onClick: this.handleCheckbox.bind(this) }), " Please be aware that all patterns are currently made public. I confirm that I have reviewed my changes and read this message.")), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse", onClick: this.handleAddPattern.bind(this) }, "Add Pattern")))))));
 	    }
 	  }]);
 
@@ -37159,25 +37155,21 @@
 	      });
 	    }
 
-	    // Render more user info on hover
+	    // Render more user info on click.
 
 	  }, {
-	    key: 'handleHover',
-	    value: function handleHover(e) {
-	      $('div.toggle').show();
-	    }
-	  }, {
-	    key: 'handleLeave',
-	    value: function handleLeave(e) {
-	      $('div.toggle').hide();
+	    key: 'handleClick',
+	    value: function handleClick(e) {
+	      var moreInfo = e.target.id + 'bio';
+	      $('#' + moreInfo).toggle();
 	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var _this3 = this;
 
-	      return _react2.default.createElement("div", null, _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("h3", null, "Browse Users"), _react2.default.createElement("div", { className: "row" }, this.state.allUsers.map(function (user) {
-	        return _react2.default.createElement("div", { className: "col-sm-3", key: user.displayName }, _react2.default.createElement("img", { className: "avatarPics", src: user.pic, id: user.id, onMouseOver: _this3.handleHover.bind(_this3), onMouseOut: _this3.handleLeave.bind(_this3) }), _react2.default.createElement("b", null, user.displayName), _react2.default.createElement("div", { id: user.id, className: "toggle" }, user.bio));
+	      return _react2.default.createElement("div", null, _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("h3", null, "Browse Users"), _react2.default.createElement("small", null, _react2.default.createElement("i", null, "Click on user's avatar see view more information.")), _react2.default.createElement("div", { className: "row" }, this.state.allUsers.map(function (user) {
+	        return _react2.default.createElement("div", { className: "col-sm-3", key: user.displayName }, _react2.default.createElement("hr", null), _react2.default.createElement("img", { className: "avatarPics", src: user.pic, id: user.id, onClick: _this3.handleClick.bind(_this3) }), _react2.default.createElement("br", null), _react2.default.createElement("b", null, user.displayName), _react2.default.createElement("div", { id: user.id + 'bio', className: "tog" }, user.bio));
 	      }))));
 	    }
 	  }]);
@@ -56044,10 +56036,6 @@
 
 	var _Logout2 = _interopRequireDefault(_Logout);
 
-	var _Messages = __webpack_require__(556);
-
-	var _Messages2 = _interopRequireDefault(_Messages);
-
 	var _PatGen = __webpack_require__(557);
 
 	var _PatGen2 = _interopRequireDefault(_PatGen);
@@ -56072,7 +56060,7 @@
 
 	var _ViewPatt2 = _interopRequireDefault(_ViewPatt);
 
-	var _ViewSupp = __webpack_require__(572);
+	var _ViewSupp = __webpack_require__(563);
 
 	var _ViewSupp2 = _interopRequireDefault(_ViewSupp);
 
@@ -56114,7 +56102,9 @@
 
 	    var _this = _possibleConstructorReturn(this, (Nav.__proto__ || Object.getPrototypeOf(Nav)).call(this, props, context));
 
-	    _this.state = {};
+	    _this.state = {
+	      searching: _this.ref
+	    };
 	    return _this;
 	  }
 
@@ -56122,6 +56112,12 @@
 	    key: 'logout',
 	    value: function logout() {
 	      this.props.auth.logout();
+	    }
+	  }, {
+	    key: 'handleSearch',
+	    value: function handleSearch(e) {
+	      e.preventDefault();
+	      window.location = '/#/search';
 	    }
 	  }, {
 	    key: 'render',
@@ -56138,7 +56134,7 @@
 	      ga('create', 'UA-86318856-3', 'auto');
 	      ga('send', 'pageview');
 
-	      return _react2.default.createElement("div", null, _react2.default.createElement("nav", { role: "navigation", className: "navbar navbar-inverse" }, _react2.default.createElement("div", { className: "navbar-header" }, _react2.default.createElement("button", { type: "button", "data-target": "#navbarCollapse", "data-toggle": "collapse", className: "navbar-toggle" }, _react2.default.createElement("span", { className: "sr-only" }, "Toggle navigation"), _react2.default.createElement("span", { className: "icon-bar" }), _react2.default.createElement("span", { className: "icon-bar" }), _react2.default.createElement("span", { className: "icon-bar" })), _react2.default.createElement(_reactRouter.IndexLink, { to: "/", className: "navbar-brand" }, "Home")), _react2.default.createElement("div", { id: "navbarCollapse", className: "collapse navbar-collapse" }, _react2.default.createElement("ul", { className: "nav navbar-nav" }, _react2.default.createElement("li", { className: "dropdown" }, _react2.default.createElement("a", { "data-toggle": "dropdown", className: "dropdown-toggle", href: "#" }, "myEmanie ", _react2.default.createElement("b", { className: "caret" })), _react2.default.createElement("ul", { role: "menu", className: "dropdown-menu" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "profile" }, "View Profile")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "update" }, "Update Profile")))), _react2.default.createElement("li", { className: "dropdown" }, _react2.default.createElement("a", { "data-toggle": "dropdown", className: "dropdown-toggle", href: "#" }, "Patterns ", _react2.default.createElement("b", { className: "caret" })), _react2.default.createElement("ul", { role: "menu", className: "dropdown-menu" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "view" }, "View All")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "add" }, "Add Patterns")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "patgen" }, "PatGen")))), _react2.default.createElement("li", { className: "dropdown" }, _react2.default.createElement("a", { "data-toggle": "dropdown", className: "dropdown-toggle", href: "#" }, "Supplies ", _react2.default.createElement("b", { className: "caret" })), _react2.default.createElement("ul", { role: "menu", className: "dropdown-menu" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "supplies" }, "View All")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "addtools" }, "Add Tools/Yarn")))), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "browse" }, "Browse Users")), _react2.default.createElement("li", { className: "dropdown" }, _react2.default.createElement("a", { "data-toggle": "dropdown", className: "dropdown-toggle", href: "#" }, "More ", _react2.default.createElement("b", { className: "caret" })), _react2.default.createElement("ul", { role: "menu", className: "dropdown-menu" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "about" }, "About Emanie")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "report" }, "Report Issues")), _react2.default.createElement("li", { className: "divider" }), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "contact" }, "Contact Us"))))), _react2.default.createElement("form", { role: "search", className: "navbar-form navbar-left" }, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("input", { type: "text", placeholder: "Search Patterns", className: "form-control" }), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse" }, "Search"))), this.props.auth.loggedIn() ? _react2.default.createElement("ul", { className: "nav navbar-nav navbar-right", id: "togLogout" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "logout", onClick: this.logout.bind(this) }, "Logout"))) : _react2.default.createElement("ul", { className: "nav navbar-nav navbar-right", id: "togLogin", onClick: auth.login.bind(this) }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "" }, "Login"))))));
+	      return _react2.default.createElement("div", null, _react2.default.createElement("nav", { role: "navigation", className: "navbar navbar-inverse" }, _react2.default.createElement("div", { className: "navbar-header" }, _react2.default.createElement("button", { type: "button", "data-target": "#navbarCollapse", "data-toggle": "collapse", className: "navbar-toggle" }, _react2.default.createElement("span", { className: "sr-only" }, "Toggle navigation"), _react2.default.createElement("span", { className: "icon-bar" }), _react2.default.createElement("span", { className: "icon-bar" }), _react2.default.createElement("span", { className: "icon-bar" })), _react2.default.createElement(_reactRouter.IndexLink, { to: "/", className: "navbar-brand" }, "Home")), _react2.default.createElement("div", { id: "navbarCollapse", className: "collapse navbar-collapse" }, _react2.default.createElement("ul", { className: "nav navbar-nav" }, _react2.default.createElement("li", { className: "dropdown" }, _react2.default.createElement("a", { "data-toggle": "dropdown", className: "dropdown-toggle", href: "#" }, "myEmanie ", _react2.default.createElement("b", { className: "caret" })), _react2.default.createElement("ul", { role: "menu", className: "dropdown-menu" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "profile" }, "View Profile")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "update" }, "Update Profile")))), _react2.default.createElement("li", { className: "dropdown" }, _react2.default.createElement("a", { "data-toggle": "dropdown", className: "dropdown-toggle", href: "#" }, "Patterns ", _react2.default.createElement("b", { className: "caret" })), _react2.default.createElement("ul", { role: "menu", className: "dropdown-menu" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "view" }, "View All")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "add" }, "Add Patterns")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "patgen" }, "PatGen")))), _react2.default.createElement("li", { className: "dropdown" }, _react2.default.createElement("a", { "data-toggle": "dropdown", className: "dropdown-toggle", href: "#" }, "Supplies ", _react2.default.createElement("b", { className: "caret" })), _react2.default.createElement("ul", { role: "menu", className: "dropdown-menu" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "supplies" }, "View All")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "addtools" }, "Add Tools/Yarn")))), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "browse" }, "Browse Users")), _react2.default.createElement("li", { className: "dropdown" }, _react2.default.createElement("a", { "data-toggle": "dropdown", className: "dropdown-toggle", href: "#" }, "More ", _react2.default.createElement("b", { className: "caret" })), _react2.default.createElement("ul", { role: "menu", className: "dropdown-menu" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "about" }, "About Emanie")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "report" }, "Report Issues")), _react2.default.createElement("li", { className: "divider" }), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "contact" }, "Contact Us"))))), _react2.default.createElement("form", { role: "search", className: "navbar-form navbar-left" }, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("input", { type: "text", placeholder: "Search Patterns", id: "searchInput", className: "form-control" }), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse", onClick: this.handleSearch.bind(this) }, "Search"))), this.props.auth.loggedIn() ? _react2.default.createElement("ul", { className: "nav navbar-nav navbar-right", id: "togLogout" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "logout", onClick: this.logout.bind(this) }, "Logout"))) : _react2.default.createElement("ul", { className: "nav navbar-nav navbar-right", id: "togLogin", onClick: auth.login.bind(this) }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "" }, "Login"))))));
 	    }
 	  }]);
 
@@ -56293,105 +56289,7 @@
 	exports.default = Logout;
 
 /***/ },
-/* 556 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(33);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Messages = function (_React$Component) {
-	  _inherits(Messages, _React$Component);
-
-	  _createClass(Messages, null, [{
-	    key: 'propTypes',
-	    value: function propTypes() {
-	      return {
-	        auth: T.instanceOf(AuthService),
-	        profile: T.object
-	      };
-	    }
-	  }]);
-
-	  function Messages(props) {
-	    _classCallCheck(this, Messages);
-
-	    var _this = _possibleConstructorReturn(this, (Messages.__proto__ || Object.getPrototypeOf(Messages)).call(this, props));
-
-	    _this.state = {
-	      displayName: null,
-	      profile: props.auth.getProfile(),
-	      authID: null,
-	      email: null,
-	      pic: '../img/defaultIcon.png',
-	      checked: false,
-	      allMessages: null
-	    };
-	    return _this;
-	  }
-
-	  _createClass(Messages, [{
-	    key: 'componentWillMount',
-	    value: function componentWillMount() {}
-	    //this.getMessages
-
-
-	    // Get auth0 ID & email from logged in user and add to state
-
-	  }, {
-	    key: 'getAuthInfo',
-	    value: function getAuthInfo() {
-	      var obj = this.state.profile;
-	      //var emailAndId = [];
-	      for (var key in obj) {
-	        if (key === 'email_verified' && obj[key] === true) {
-	          this.setState({ email: obj.email }, function () {});
-	        }
-	        if (key === 'identities') {
-	          this.setState({ authId: obj[key][0].user_id }, function () {});
-	        }
-	      }
-	      //this.getUserPatterns();
-	    }
-	  }, {
-	    key: 'getMessages',
-	    value: function getMessages() {}
-
-	    //$('id or class').val()
-
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("canvas", { className: "form-control" }), _react2.default.createElement("hr", null), _react2.default.createElement("input", null), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse" }, "Submit")));
-	    }
-	  }]);
-
-	  return Messages;
-	}(_react2.default.Component);
-
-	exports.default = Messages;
-
-/***/ },
+/* 556 */,
 /* 557 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -56761,24 +56659,61 @@
 
 	    var _this = _possibleConstructorReturn(this, (Search.__proto__ || Object.getPrototypeOf(Search)).call(this, props));
 
-	    _this.state = {};
+	    _this.state = {
+	      allResults: [],
+	      ids: [],
+	      prompt: null,
+	      word: null
+	    };
 	    return _this;
 	  }
 
 	  _createClass(Search, [{
-	    key: 'rendor',
-	    value: function rendor() {
-	      return _react2.default.createElement("div", null, _react2.default.createElement("form", { role: "search", className: "navbar-form navbar-left" }, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("input", { type: "text", placeholder: "Search Patterns", className: "form-control" }), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse" }, "Search"))));
+	    key: 'componentWillMount',
+	    value: function componentWillMount() {
+	      this.searchPatterns();
+	    }
+	  }, {
+	    key: 'searchPatterns',
+	    value: function searchPatterns() {
+	      var _this2 = this;
+
+	      var searching = $('#searchInput').val();
+	      $('#searchInput').val('');
+	      this.setState({ word: searching });
+	      if (searching) {
+	        return fetch('/api/patterns/:' + searching, { method: 'GET' }).then(function (response) {
+	          return response.json();
+	        }).then(function (searchResults) {
+	          for (var i = 0; i < searchResults.length; i++) {
+	            if (searchResults.length > 0) {
+	              _this2.setState({ allResults: searchResults });
+	            }
+	          }
+	        });
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this3 = this;
+
+	      var total = this.state.allResults.length;
+	      var prompt = null;
+	      if (total === 0) {
+	        prompt = 'No Matches Found';
+	      }
+	      return _react2.default.createElement("div", null, _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("h3", null, "Search Results for ", this.state.word, ":"), _react2.default.createElement("div", null, _react2.default.createElement("h4", { className: "col-sm-10" }, prompt), _react2.default.createElement("h4", { className: "col-sm-2" }, "Total: ", total)), _react2.default.createElement("div", { className: "col-sm-12" }, this.state.allResults.map(function (patt) {
+	        if (_this3.state.ids.indexOf(patt.id) === -1) {
+	          _this3.state.ids.push(patt.id);
+	        }
+	        return _react2.default.createElement("div", null, _react2.default.createElement("div", { className: "addBorder" }, _react2.default.createElement("h4", { id: patt.id }, _react2.default.createElement("b", null, "Pattern Name:"), " ", patt.pName), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Craft:"), " ", patt.craft), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Supplies:"), " ", patt.tools), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Notes: "), " ", patt.notes)), _react2.default.createElement("div", null, _react2.default.createElement("hr", null)));
+	      }))));
 	    }
 	  }]);
 
 	  return Search;
 	}(_react2.default.Component);
-
-	/*
-	This page will render after submitting content in the search bar.
-	*/
-
 
 	exports.default = Search;
 
@@ -56880,7 +56815,7 @@
 	  }, {
 	    key: 'sendFirstInfo',
 	    value: function sendFirstInfo(arr) {
-	      fetch('/api/users/new', {
+	      fetch('/api/users/add', {
 	        method: 'POST',
 	        mode: 'no-cors',
 	        body: JSON.stringify(arr)
@@ -57232,16 +57167,7 @@
 	exports.default = ViewPatt;
 
 /***/ },
-/* 563 */,
-/* 564 */,
-/* 565 */,
-/* 566 */,
-/* 567 */,
-/* 568 */,
-/* 569 */,
-/* 570 */,
-/* 571 */,
-/* 572 */
+/* 563 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

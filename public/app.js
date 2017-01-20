@@ -12,7 +12,6 @@ import Contact from '../pages/Contact.jsx';
 import Container from '../components/Container.js';
 import Login from '../pages/Login.jsx';
 import Logout from '../pages/Logout.jsx';
-import Messages from '../pages/Messages.jsx';
 import Nav from '../components/Nav.jsx';
 import PatGen from '../pages/PatGen.jsx';
 import Profile from '../pages/Profile.jsx';

@@ -35,11 +35,12 @@ $ npm install
 ```
 
 ### Setting up MySQL Database
+
 1. Create a database named 'emanie'.
 1. In 'emanie', use the following queries to create four tables:
 
 > Profiles Table:
-```sh
+```sql
 CREATE TABLE IF NOT EXISTS profiles (
   id int(11) NOT NULL AUTO_INCREMENT,
   email varchar(50) UNIQUE,
@@ -53,8 +54,8 @@ CREATE TABLE IF NOT EXISTS profiles (
  ```
 
 > Patterns Table:
- ```sh
- CREATE TABLE IF NOT EXISTS patterns (
+```sql
+CREATE TABLE IF NOT EXISTS patterns (
   id int(11) NOT NULL AUTO_INCREMENT,
   authId varchar(30),
   email varchar(50),
@@ -68,7 +69,7 @@ CREATE TABLE IF NOT EXISTS profiles (
 ```
 
 > Yarn Table:
-```sh
+```sql
 CREATE TABLE IF NOT EXISTS yarn (
   id int(11) NOT NULL AUTO_INCREMENT,
   email varchar(50),
@@ -82,8 +83,8 @@ CREATE TABLE IF NOT EXISTS yarn (
   ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 ```
 
-> Tools Table
-```sh
+> Tools Table:
+```sql
 CREATE TABLE IF NOT EXISTS tools (
   id int(11) NOT NULL AUTO_INCREMENT,
   email varchar(50),
@@ -95,6 +96,22 @@ CREATE TABLE IF NOT EXISTS tools (
   notes varchar(200),
   PRIMARY KEY (id)
   ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+```
+> Updates Table:
+
+```sql
+CREATE TABLE IF NOT EXISTS updates (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  date date NOT NULL,
+  notes varchar(30),
+  PRIMARY KEY (id)
+  ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+```
+- When inserting into the updates table, be sure to format date as follows:
+```sql
+INSERT INTO updates (date, notes) VALUES ('2017-01-17', 'Here is an example where the date can be entered manually (must be a string)');
+
+INSERT INTO updates (date, notes) VALUES (CURDATE(), 'Here is another example that will insert the current date.')
 ```
 
 ### Running Server

@@ -50,7 +50,7 @@ export default class Update extends React.Component {
 
   // Add user's email and id to DB
   sendFirstInfo(arr) {
-    fetch('/api/users/new', {
+    fetch('/api/users/add', {
       method: 'POST',
       mode: 'no-cors',
       body: JSON.stringify(arr)

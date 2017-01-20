@@ -160,7 +160,7 @@ export default class AddPattern extends React.Component {
                   </div>
                   <div className="form-check">
                     <label className="form-check-label">
-                      <input type="checkbox" className="form-check-input" onClick={this.handleCheckbox.bind(this)}/> I confirm that I have reviewed my changes.
+                      <input type="checkbox" className="form-check-input" onClick={this.handleCheckbox.bind(this)}/> Please be aware that all patterns are currently made public. I confirm that I have reviewed my changes and read this message.
                     </label>
                   </div>
                   <button type="submit" className="btn btn-inverse" onClick={this.handleAddPattern.bind(this)}>Add Pattern</button>

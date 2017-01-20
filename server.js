@@ -44,16 +44,6 @@ app.post('/api/patterns/upload', function(req,res){
     });
 });
 
-
-
-
-
-
-
-
-
-
-
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ~~~~~~~~~~~ PROFILES ~~~~~~~~~~~
@@ -90,10 +80,10 @@ app.get('/api/patterns/sorted/name', handler.sortPatternsByName);
 // Get all patterns sorted by craft
 app.get('/api/patterns/sorted/craft', handler.sortPatternsByCraft);
 
+app.get('/api/patterns/:searching', handler.searchPatterns);
+
 // Delete a pattern
 app.delete('/api/patterns/:deletePatt', handler.deletePattern);
-
-
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -124,7 +114,6 @@ app.get('/api/tools', handler.getTools);
 
 // Delete tool
 app.delete('/api/tools/:deleteTool', handler.deletingTool);
-
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

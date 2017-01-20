@@ -8,7 +8,6 @@ import Browse from '../pages/Browse.jsx';
 import Contact from '../pages/Contact.jsx';
 import Login from '../pages/Login.jsx';
 import Logout from '../pages/Logout.jsx';
-import Messages from '../pages/Messages.jsx';
 import PatGen from '../pages/PatGen.jsx';
 import Profile from '../pages/Profile.jsx';
 import Report from '../pages/Report.jsx';
@@ -35,11 +34,18 @@ export default class Nav extends React.Component {
 
   constructor(props, context) {
     super(props, context);
-    this.state = {};
+    this.state = {
+      searching: this.ref,
+    };
   }
 
   logout() {
     this.props.auth.logout();
+  }
+
+  handleSearch(e){
+    e.preventDefault();
+    window.location = '/#/search';
   }
 
   render() {
@@ -102,8 +108,8 @@ export default class Nav extends React.Component {
             </ul>
             <form role="search" className="navbar-form navbar-left">
               <div className="form-group">
-                <input type="text" placeholder="Search Patterns" className="form-control" />
-                <button type="submit" className="btn btn-inverse">Search</button>
+                <input type="text" placeholder="Search Patterns" id="searchInput" className="form-control"/>
+                <button type="submit" className="btn btn-inverse" onClick={this.handleSearch.bind(this)}>Search</button>
               </div>
             </form>
             { this.props.auth.loggedIn() ?

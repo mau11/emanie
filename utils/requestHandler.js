@@ -147,6 +147,22 @@ exports.sortPatternsByCraft = function(req, res){
   });
 };
 
+
+
+exports.searchPatterns = function(req, res){
+  var word = req.params.searching;
+  word = word.substr(1);
+  console.log('WORD', word);
+  var search = "SELECT * FROM patterns WHERE CONCAT(pName, craft, notes) LIKE '%"+word+"%'";
+  db.connection.query(search, function(err, rows){
+    if(err){
+      throw err;
+    }
+    console.log(rows);
+    res.send(rows);
+  });
+}
+
 // Delete a pattern
 exports.deletePattern = function(req, res){
   var item = req.params.deletePatt;
