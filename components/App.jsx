@@ -36,7 +36,7 @@ export default class App extends React.Component {
             <img className="mainPics" src="../img/home2.jpg" alt="Basket of Yarn"/>
           </div>
           <div className="col-sm-3">
-            <h4> <u>Emanie Updates:</u>
+            <h4><u><i>News & Updates:</i></u>
             </h4>
               <div className="box">
                 {this.state.updates.map(item =>

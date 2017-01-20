@@ -100,9 +100,9 @@ export default class Nav extends React.Component {
                 <a data-toggle="dropdown" className="dropdown-toggle" href="#">More <b className="caret"></b></a>
                 <ul role="menu" className="dropdown-menu">
                   <li><Link to="about">About Emanie</Link></li>
-                  <li><Link to="report">Report Issues</Link></li>
-                  <li className="divider"></li>
                   <li><Link to="contact">Contact Us</Link></li>
+                  <li className="divider"></li>
+                  <li><Link to="report">Report Issues</Link></li>
                 </ul>
               </li>
             </ul>

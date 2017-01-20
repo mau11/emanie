@@ -88,8 +88,8 @@ export default class PatGen extends React.Component {
                     <label>Craft</label>
                     <select className="form-control" id="craft">
                       <option disabled selected> -- Select a craft -- </option>
-                      <option id="knit">Knit</option>
                       <option id="crochet">Crochet</option>
+                      <option id="knit">Knit</option>
                     </select>
                   </div>
                   <div className="form-group">

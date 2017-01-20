@@ -127,7 +127,7 @@
 
 	var _Update2 = _interopRequireDefault(_Update);
 
-	var _ViewPatt = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../pages/ViewPatt.jsx\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _ViewPatt = __webpack_require__(561);
 
 	var _ViewPatt2 = _interopRequireDefault(_ViewPatt);
 
@@ -36519,7 +36519,7 @@
 	  _createClass(About, [{
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement("div", { className: "mainTitle" }, _react2.default.createElement("h3", null, "About Emanie"), _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("img", { className: "aboutPic", src: "../img/aboutPic.jpg" }), _react2.default.createElement("h4", null, "Emanie was created by crafter, designer and computer programmer, Maureen in January 2017. What began as a coding project blossomed into an interactive online community for those who love yarn crafts as much as she does. Here at Emanie, crafters have a place to store their patterns, track their supplies and meet other crafters."), _react2.default.createElement("h5", null, "Feel free to look around, simply sign up for access to more features, new patterns will be added frequently!"), _react2.default.createElement("h5", null, "Happy crafting!"), _react2.default.createElement("h5", null, "~Mau")));
+	      return _react2.default.createElement("div", { className: "mainTitle" }, _react2.default.createElement("h3", null, "About Emanie"), _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("img", { className: "aboutPic", src: "../img/aboutPic.jpg" }), _react2.default.createElement("h4", null, _react2.default.createElement("i", null, "Emanie was created by crafter, designer and computer programmer, Maureen in January 2017. What began as a coding project blossomed into an interactive online community for those who love yarn crafts as much as she does. Here at Emanie, crafters have a place to store their patterns, track their supplies and discover new designs.")), _react2.default.createElement("h5", null, "Feel free to look around, simply sign up for access to more features. New patterns will be added frequently (all updates will be posted on the homepage)."), _react2.default.createElement("h5", null, "Happy crafting!"), _react2.default.createElement("h5", null, "~Mau")));
 	    }
 	  }]);
 
@@ -36991,7 +36991,7 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement("div", null, _react2.default.createElement("h3", null, "Supplies"), _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("div", { className: "row" }, _react2.default.createElement("div", { className: "col-sm-6" }, _react2.default.createElement("div", null, _react2.default.createElement("h4", null, " Add Yarn:"), _react2.default.createElement("form", null, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", null, "Color:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "color", placeholder: "", name: "colorName" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", null, "Weight:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "weight", placeholder: "DROPDOWN", name: "weightName" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", null, "Brand:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "brand", placeholder: "Enter yarn's brand name", name: "brandName" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", null, "Amount:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "amount", placeholder: "", name: "amountName" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "notes" }, "Notes/Details:"), _react2.default.createElement("textarea", { className: "form-control", id: "notesY", rows: "3", name: "notesDetails" })), _react2.default.createElement("div", { className: "form-check" }, _react2.default.createElement("label", { className: "form-check-label" }, _react2.default.createElement("input", { type: "checkbox", id: "yarnBox", className: "form-check-input", onClick: this.handleCheckboxY.bind(this) }), " I confirm that I have reviewed my changes.")), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse", onClick: this.handleAddYarn.bind(this) }, "Add Yarn")))), _react2.default.createElement("div", { className: "col-sm-6" }, _react2.default.createElement("div", null, _react2.default.createElement("h4", null, " Add Tools:"), _react2.default.createElement("form", null, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", null, "Craft:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "craft", placeholder: "DROPDOWN", name: "craft" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", null, "Size:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "size", placeholder: "DROPDOWN", name: "size" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", null, "Material:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "material", placeholder: "DROPDOWN", name: "material" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", null, "Notes/Details:"), _react2.default.createElement("textarea", { className: "form-control", id: "notesT", rows: "", name: "notesT" })), _react2.default.createElement("div", { className: "form-check" }, _react2.default.createElement("label", { className: "form-check-label" }, _react2.default.createElement("input", { type: "checkbox", id: "toolBox", className: "form-check-input", onClick: this.handleCheckboxT.bind(this) }), " I confirm that I have reviewed my changes.")), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse", onClick: this.handleAddTools.bind(this) }, "Add Tool")))))));
+	      return _react2.default.createElement("div", null, _react2.default.createElement("h3", null, "Supplies"), _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("div", { className: "row" }, _react2.default.createElement("div", { className: "col-sm-6" }, _react2.default.createElement("div", null, _react2.default.createElement("h4", null, " Add Yarn:"), _react2.default.createElement("form", null, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", null, "Color:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "color", placeholder: "Enter Yarn Color", name: "colorName" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", null, "Weight:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "weight", placeholder: "Lace, Medium/Worsted, Bulky/Chunky etc", name: "weightName" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", null, "Brand:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "brand", placeholder: "Enter yarn's brand name", name: "brandName" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", null, "Amount:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "amount", placeholder: "1 Skein", name: "amountName" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "notes" }, "Notes/Details:"), _react2.default.createElement("textarea", { className: "form-control", id: "notesY", rows: "2", name: "notesDetails" })), _react2.default.createElement("div", { className: "form-check" }, _react2.default.createElement("label", { className: "form-check-label" }, _react2.default.createElement("input", { type: "checkbox", id: "yarnBox", className: "form-check-input", onClick: this.handleCheckboxY.bind(this) }), " I confirm that I have reviewed my changes.")), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse", onClick: this.handleAddYarn.bind(this) }, "Add Yarn")))), _react2.default.createElement("div", { className: "col-sm-6" }, _react2.default.createElement("div", null, _react2.default.createElement("h4", null, " Add Tools:"), _react2.default.createElement("form", null, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", null, "Craft:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "craft", placeholder: "Knit or Crochet", name: "craft" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", null, "Size:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "size", placeholder: "Needle or Hook Size", name: "size" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", null, "Material:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "material", placeholder: "Aluminum, Wooden, Bamboo etc", name: "material" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", null, "Notes/Details:"), _react2.default.createElement("textarea", { className: "form-control", id: "notesT", rows: "3", name: "notesT" })), _react2.default.createElement("div", { className: "form-check" }, _react2.default.createElement("label", { className: "form-check-label" }, _react2.default.createElement("input", { type: "checkbox", id: "toolBox", className: "form-check-input", onClick: this.handleCheckboxT.bind(this) }), " I confirm that I have reviewed my changes.")), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse", onClick: this.handleAddTools.bind(this) }, "Add Tool")))))));
 	    }
 	  }]);
 
@@ -37077,7 +37077,7 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("div", { className: "mainTitle" }, _react2.default.createElement("div", { className: "col-sm-9" }, _react2.default.createElement("h2", null, "Welcome to Emanie!"), _react2.default.createElement("h5", null, _react2.default.createElement("i", null, "A community for knitters and crocheters to store and share their crafts.")), _react2.default.createElement("img", { className: "mainPics", src: "../img/home2.jpg", alt: "Basket of Yarn" })), _react2.default.createElement("div", { className: "col-sm-3" }, _react2.default.createElement("h4", null, " ", _react2.default.createElement("u", null, "Emanie Updates:")), _react2.default.createElement("div", { className: "box" }, this.state.updates.map(function (item) {
+	      return _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("div", { className: "mainTitle" }, _react2.default.createElement("div", { className: "col-sm-9" }, _react2.default.createElement("h2", null, "Welcome to Emanie!"), _react2.default.createElement("h5", null, _react2.default.createElement("i", null, "A community for knitters and crocheters to store and share their crafts.")), _react2.default.createElement("img", { className: "mainPics", src: "../img/home2.jpg", alt: "Basket of Yarn" })), _react2.default.createElement("div", { className: "col-sm-3" }, _react2.default.createElement("h4", null, _react2.default.createElement("u", null, _react2.default.createElement("i", null, "News & Updates:"))), _react2.default.createElement("div", { className: "box" }, this.state.updates.map(function (item) {
 	        return _react2.default.createElement("div", { className: "news", key: item.id }, _react2.default.createElement("b", null, '"' + item.notes + '"'), _react2.default.createElement("br", null), _react2.default.createElement("small", null, _react2.default.createElement("i", null, item["DATE_FORMAT(date, '%b %d, %Y')"])));
 	      })))));
 	    }
@@ -37261,6 +37261,8 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
+	var _reactRouter = __webpack_require__(179);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -37284,7 +37286,14 @@
 	  _createClass(Contact, [{
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement("div", null, "CONTACT INFO");
+	      (function (d, t) {
+	        var g = d.createElement(t),
+	            s = d.getElementsByTagName(t)[0];
+	        g.src = "http://www.foxyform.com/js.php?id=845120&sec_hash=1d3572990c1&width=500px";
+	        s.parentNode.insertBefore(g, s);
+	      })(document, "script");
+
+	      return _react2.default.createElement("div", null, _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("h3", null, "Contact Emanie"), _react2.default.createElement("div", { className: "mainTitle" }, _react2.default.createElement("h4", null, "Questions, Comments, Suggestions?"), _react2.default.createElement("h5", null, "Please use the form below to contact Emanie.", _react2.default.createElement("br", null), "If you like to report a concern or bug, please head over to the", _react2.default.createElement(_reactRouter.Link, { to: "report" }, " Report Issues"), " page."), _react2.default.createElement("a", { id: "foxyform_embed_link_845120", href: "http://www.foxyform.com/" }, "foxyform"))));
 	    }
 	  }]);
 
@@ -37341,7 +37350,7 @@
 	          auth: this.props.route.auth //sends auth instance from route to children
 	        });
 	      }
-	      return _react2.default.createElement("div", null, _react2.default.createElement("h1", null, "Emanie"), _react2.default.createElement(_Nav2.default, { auth: this.props.route.auth, location: this.props }), children);
+	      return _react2.default.createElement("div", null, _react2.default.createElement("h1", null, _react2.default.createElement("i", null, "Emanie")), _react2.default.createElement(_Nav2.default, { auth: this.props.route.auth, location: this.props }), children);
 	    }
 	  }]);
 
@@ -56118,7 +56127,7 @@
 
 	var _Update2 = _interopRequireDefault(_Update);
 
-	var _ViewPatt = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../pages/ViewPatt.jsx\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _ViewPatt = __webpack_require__(561);
 
 	var _ViewPatt2 = _interopRequireDefault(_ViewPatt);
 
@@ -56196,7 +56205,7 @@
 	      ga('create', 'UA-86318856-3', 'auto');
 	      ga('send', 'pageview');
 
-	      return _react2.default.createElement("div", null, _react2.default.createElement("nav", { role: "navigation", className: "navbar navbar-inverse" }, _react2.default.createElement("div", { className: "navbar-header" }, _react2.default.createElement("button", { type: "button", "data-target": "#navbarCollapse", "data-toggle": "collapse", className: "navbar-toggle" }, _react2.default.createElement("span", { className: "sr-only" }, "Toggle navigation"), _react2.default.createElement("span", { className: "icon-bar" }), _react2.default.createElement("span", { className: "icon-bar" }), _react2.default.createElement("span", { className: "icon-bar" })), _react2.default.createElement(_reactRouter.IndexLink, { to: "/", className: "navbar-brand" }, "Home")), _react2.default.createElement("div", { id: "navbarCollapse", className: "collapse navbar-collapse" }, _react2.default.createElement("ul", { className: "nav navbar-nav" }, _react2.default.createElement("li", { className: "dropdown" }, _react2.default.createElement("a", { "data-toggle": "dropdown", className: "dropdown-toggle", href: "#" }, "myEmanie ", _react2.default.createElement("b", { className: "caret" })), _react2.default.createElement("ul", { role: "menu", className: "dropdown-menu" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "profile" }, "View Profile")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "update" }, "Update Profile")))), _react2.default.createElement("li", { className: "dropdown" }, _react2.default.createElement("a", { "data-toggle": "dropdown", className: "dropdown-toggle", href: "#" }, "Patterns ", _react2.default.createElement("b", { className: "caret" })), _react2.default.createElement("ul", { role: "menu", className: "dropdown-menu" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "view" }, "View All")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "add" }, "Add Patterns")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "patgen" }, "PatGen")))), _react2.default.createElement("li", { className: "dropdown" }, _react2.default.createElement("a", { "data-toggle": "dropdown", className: "dropdown-toggle", href: "#" }, "Supplies ", _react2.default.createElement("b", { className: "caret" })), _react2.default.createElement("ul", { role: "menu", className: "dropdown-menu" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "supplies" }, "View All")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "addtools" }, "Add Tools/Yarn")))), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "browse" }, "Browse Users")), _react2.default.createElement("li", { className: "dropdown" }, _react2.default.createElement("a", { "data-toggle": "dropdown", className: "dropdown-toggle", href: "#" }, "More ", _react2.default.createElement("b", { className: "caret" })), _react2.default.createElement("ul", { role: "menu", className: "dropdown-menu" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "about" }, "About Emanie")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "report" }, "Report Issues")), _react2.default.createElement("li", { className: "divider" }), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "contact" }, "Contact Us"))))), _react2.default.createElement("form", { role: "search", className: "navbar-form navbar-left" }, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("input", { type: "text", placeholder: "Search Patterns", id: "searchInput", className: "form-control" }), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse", onClick: this.handleSearch.bind(this) }, "Search"))), this.props.auth.loggedIn() ? _react2.default.createElement("ul", { className: "nav navbar-nav navbar-right", id: "togLogout" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "logout", onClick: this.logout.bind(this) }, "Logout"))) : _react2.default.createElement("ul", { className: "nav navbar-nav navbar-right", id: "togLogin", onClick: auth.login.bind(this) }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "" }, "Login"))))));
+	      return _react2.default.createElement("div", null, _react2.default.createElement("nav", { role: "navigation", className: "navbar navbar-inverse" }, _react2.default.createElement("div", { className: "navbar-header" }, _react2.default.createElement("button", { type: "button", "data-target": "#navbarCollapse", "data-toggle": "collapse", className: "navbar-toggle" }, _react2.default.createElement("span", { className: "sr-only" }, "Toggle navigation"), _react2.default.createElement("span", { className: "icon-bar" }), _react2.default.createElement("span", { className: "icon-bar" }), _react2.default.createElement("span", { className: "icon-bar" })), _react2.default.createElement(_reactRouter.IndexLink, { to: "/", className: "navbar-brand" }, "Home")), _react2.default.createElement("div", { id: "navbarCollapse", className: "collapse navbar-collapse" }, _react2.default.createElement("ul", { className: "nav navbar-nav" }, _react2.default.createElement("li", { className: "dropdown" }, _react2.default.createElement("a", { "data-toggle": "dropdown", className: "dropdown-toggle", href: "#" }, "myEmanie ", _react2.default.createElement("b", { className: "caret" })), _react2.default.createElement("ul", { role: "menu", className: "dropdown-menu" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "profile" }, "View Profile")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "update" }, "Update Profile")))), _react2.default.createElement("li", { className: "dropdown" }, _react2.default.createElement("a", { "data-toggle": "dropdown", className: "dropdown-toggle", href: "#" }, "Patterns ", _react2.default.createElement("b", { className: "caret" })), _react2.default.createElement("ul", { role: "menu", className: "dropdown-menu" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "view" }, "View All")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "add" }, "Add Patterns")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "patgen" }, "PatGen")))), _react2.default.createElement("li", { className: "dropdown" }, _react2.default.createElement("a", { "data-toggle": "dropdown", className: "dropdown-toggle", href: "#" }, "Supplies ", _react2.default.createElement("b", { className: "caret" })), _react2.default.createElement("ul", { role: "menu", className: "dropdown-menu" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "supplies" }, "View All")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "addtools" }, "Add Tools/Yarn")))), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "browse" }, "Browse Users")), _react2.default.createElement("li", { className: "dropdown" }, _react2.default.createElement("a", { "data-toggle": "dropdown", className: "dropdown-toggle", href: "#" }, "More ", _react2.default.createElement("b", { className: "caret" })), _react2.default.createElement("ul", { role: "menu", className: "dropdown-menu" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "about" }, "About Emanie")), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "contact" }, "Contact Us")), _react2.default.createElement("li", { className: "divider" }), _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "report" }, "Report Issues"))))), _react2.default.createElement("form", { role: "search", className: "navbar-form navbar-left" }, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("input", { type: "text", placeholder: "Search Patterns", id: "searchInput", className: "form-control" }), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse", onClick: this.handleSearch.bind(this) }, "Search"))), this.props.auth.loggedIn() ? _react2.default.createElement("ul", { className: "nav navbar-nav navbar-right", id: "togLogout" }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "logout", onClick: this.logout.bind(this) }, "Logout"))) : _react2.default.createElement("ul", { className: "nav navbar-nav navbar-right", id: "togLogin", onClick: auth.login.bind(this) }, _react2.default.createElement("li", null, _react2.default.createElement(_reactRouter.Link, { to: "" }, "Login"))))));
 	    }
 	  }]);
 
@@ -56464,7 +56473,7 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement("div", null, _react2.default.createElement("h3", null, "Pattern Generator"), _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("div", { className: "row" }, _react2.default.createElement("div", { className: "col-sm-6" }, _react2.default.createElement("div", null, _react2.default.createElement("h4", null, _react2.default.createElement("small", null, "*All fields required")), _react2.default.createElement("form", null, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", null, "Craft"), _react2.default.createElement("select", { className: "form-control", id: "craft" }, _react2.default.createElement("option", { disabled: true, selected: true }, " -- Select a craft -- "), _react2.default.createElement("option", { id: "knit" }, "Knit"), _react2.default.createElement("option", { id: "crochet" }, "Crochet"))), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", null, "Product"), _react2.default.createElement("select", { className: "form-control", id: "product" }, _react2.default.createElement("option", { disabled: true, selected: true }, " -- Select a product -- "), _react2.default.createElement("option", { id: "beanie" }, "Beanie"), _react2.default.createElement("option", { id: "scarf" }, "Scarf"))), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", null, "Size"), _react2.default.createElement("select", { className: "form-control", id: "size" }, _react2.default.createElement("option", { disabled: true, selected: true }, " -- Select a size -- "), _react2.default.createElement("option", { id: "baby36" }, "Baby 3-6 months"), _react2.default.createElement("option", { id: "toddler" }, "Toddler"))), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse", onClick: this.handleGenerate.bind(this) }, "Generate")))), _react2.default.createElement("div", { className: "col-sm-6" }, _react2.default.createElement("h5", null, _react2.default.createElement("i", null, "Generated Pattern:")), _react2.default.createElement("div", null, _react2.default.createElement("div", { className: "mainTitle" }, _react2.default.createElement("img", { className: "avatarPics", src: this.state.pic })), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Craft: "), " ", this.state.craft), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Tools: "), " ", this.state.tools), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Yarn: "), " ", this.state.yarn), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Instructions: "), this.state.pattern))))));
+	      return _react2.default.createElement("div", null, _react2.default.createElement("h3", null, "Pattern Generator"), _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("div", { className: "row" }, _react2.default.createElement("div", { className: "col-sm-6" }, _react2.default.createElement("div", null, _react2.default.createElement("h4", null, _react2.default.createElement("small", null, "*All fields required")), _react2.default.createElement("form", null, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", null, "Craft"), _react2.default.createElement("select", { className: "form-control", id: "craft" }, _react2.default.createElement("option", { disabled: true, selected: true }, " -- Select a craft -- "), _react2.default.createElement("option", { id: "crochet" }, "Crochet"), _react2.default.createElement("option", { id: "knit" }, "Knit"))), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", null, "Product"), _react2.default.createElement("select", { className: "form-control", id: "product" }, _react2.default.createElement("option", { disabled: true, selected: true }, " -- Select a product -- "), _react2.default.createElement("option", { id: "beanie" }, "Beanie"), _react2.default.createElement("option", { id: "scarf" }, "Scarf"))), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", null, "Size"), _react2.default.createElement("select", { className: "form-control", id: "size" }, _react2.default.createElement("option", { disabled: true, selected: true }, " -- Select a size -- "), _react2.default.createElement("option", { id: "baby36" }, "Baby 3-6 months"), _react2.default.createElement("option", { id: "toddler" }, "Toddler"))), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse", onClick: this.handleGenerate.bind(this) }, "Generate")))), _react2.default.createElement("div", { className: "col-sm-6" }, _react2.default.createElement("h5", null, _react2.default.createElement("i", null, "Generated Pattern:")), _react2.default.createElement("div", null, _react2.default.createElement("div", { className: "mainTitle" }, _react2.default.createElement("img", { className: "avatarPics", src: this.state.pic })), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Craft: "), " ", this.state.craft), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Tools: "), " ", this.state.tools), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Yarn: "), " ", this.state.yarn), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Instructions: "), this.state.pattern))))));
 	    }
 	  }]);
 
@@ -56675,7 +56684,7 @@
 	  _createClass(Report, [{
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement("div", null, _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("h3", null, "Report Issues"), _react2.default.createElement("h5", null, "Please report any issues with Emanie below"), _react2.default.createElement("h5", null, "Web developers looking to contribute or have a bug fix? Please visit the git repository here: ", _react2.default.createElement("a", { href: "https://github.com/mau11/emanie" }, "Emanie on GitHub"))));
+	      return _react2.default.createElement("div", null, _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("h3", null, "Report Issues"), _react2.default.createElement("div", { className: "mainTitle" }, _react2.default.createElement("img", { className: "aboutPic", src: "../img/home3.JPG" }), _react2.default.createElement("h4", null, "Developers, looking for a way to contribute or have a bug fix?", _react2.default.createElement("br", null), "Please visit the Emanie github repository at: ", _react2.default.createElement("a", { href: "https://github.com/mau11/emanie" }, "https://github.com/mau11/emanie"), " and create an issue."))));
 	    }
 	  }]);
 
@@ -56768,7 +56777,7 @@
 	        if (_this3.state.ids.indexOf(patt.id) === -1) {
 	          _this3.state.ids.push(patt.id);
 	        }
-	        return _react2.default.createElement("div", null, _react2.default.createElement("div", { className: "addBorder" }, _react2.default.createElement("h4", { key: patt.id, id: patt.id }, _react2.default.createElement("b", null, "Pattern Name:"), " ", patt.pName), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Craft:"), " ", patt.craft), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Supplies:"), " ", patt.tools), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Notes: "), " ", patt.notes)), _react2.default.createElement("div", null, _react2.default.createElement("hr", null)));
+	        return _react2.default.createElement("div", { key: patt.id }, _react2.default.createElement("div", { className: "addBorder" }, _react2.default.createElement("h4", { id: patt.id }, _react2.default.createElement("b", null, "Pattern Name:"), " ", patt.pName), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Craft:"), " ", patt.craft), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Supplies:"), " ", patt.tools), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Notes: "), " ", patt.notes)), _react2.default.createElement("div", null, _react2.default.createElement("hr", null)));
 	      }))));
 	    }
 	  }]);
@@ -57056,7 +57065,166 @@
 	exports.default = Update;
 
 /***/ },
-/* 561 */,
+/* 561 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(33);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _reactRouter = __webpack_require__(179);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ViewPatt = function (_React$Component) {
+	  _inherits(ViewPatt, _React$Component);
+
+	  function ViewPatt(props) {
+	    _classCallCheck(this, ViewPatt);
+
+	    var _this = _possibleConstructorReturn(this, (ViewPatt.__proto__ || Object.getPrototypeOf(ViewPatt)).call(this, props));
+
+	    _this.state = {
+	      allPatts: [],
+	      email: null,
+	      authId: null,
+	      profile: props.auth.getProfile(),
+	      ids: []
+	    };
+	    return _this;
+	  }
+
+	  _createClass(ViewPatt, [{
+	    key: 'componentWillMount',
+	    value: function componentWillMount() {
+	      this.getAuthInfo();
+	    }
+
+	    // Get auth0 ID & email from logged in user and add to state
+
+	  }, {
+	    key: 'getAuthInfo',
+	    value: function getAuthInfo() {
+	      var obj = this.state.profile;
+	      var emailAndId = [];
+	      for (var key in obj) {
+	        if (key === 'email_verified' && obj[key] === true) {
+	          this.setState({ email: obj.email }, function () {});
+	        }
+	        if (key === 'identities') {
+	          this.setState({ authId: obj[key][0].user_id }, function () {});
+	        }
+	      }
+	      this.getUserPatterns();
+	    }
+
+	    // Get all users' avatar and display name.
+
+	  }, {
+	    key: 'getUserPatterns',
+	    value: function getUserPatterns() {
+	      var _this2 = this;
+
+	      return fetch('/api/patterns', { method: 'GET' }).then(function (response) {
+	        return response.json();
+	      }).then(function (allPatterns) {
+	        for (var i = 0; i < allPatterns.length; i++) {
+	          for (var key in allPatterns[i]) {
+	            if (allPatterns[i].email === _this2.state.email && allPatterns[i].authId === _this2.state.authId) {
+	              _this2.setState({ allPatts: allPatterns });
+	            }
+	          }
+	        }
+	      });
+	    }
+
+	    // Sort patterns A-Z
+
+	  }, {
+	    key: 'sortPattAZ',
+	    value: function sortPattAZ(e) {
+	      var _this3 = this;
+
+	      e.preventDefault();
+	      return fetch('/api/patterns/sorted/name', { method: 'GET' }).then(function (response) {
+	        return response.json();
+	      }).then(function (sorted) {
+	        for (var i = 0; i < sorted.length; i++) {
+	          for (var key in sorted[i]) {
+	            if (sorted[i].email === _this3.state.email && sorted[i].authId === _this3.state.authId) {
+	              _this3.setState({ allPatts: sorted });
+	            }
+	          }
+	        }
+	      });
+	    }
+
+	    // Sort by craft, then by pattern name for the same crafts
+
+	  }, {
+	    key: 'sortCraftAZ',
+	    value: function sortCraftAZ(e) {
+	      var _this4 = this;
+
+	      e.preventDefault();
+	      return fetch('/api/patterns/sorted/craft', { method: 'GET' }).then(function (response) {
+	        return response.json();
+	      }).then(function (sortedCrafts) {
+	        for (var i = 0; i < sortedCrafts.length; i++) {
+	          for (var key in sortedCrafts[i]) {
+	            if (sortedCrafts[i].email === _this4.state.email && sortedCrafts[i].authId === _this4.state.authId) {
+	              _this4.setState({ allPatts: sortedCrafts });
+	            }
+	          }
+	        }
+	      });
+	    }
+	  }, {
+	    key: 'deletingPatt',
+	    value: function deletingPatt(e) {
+	      var deletePatt = e.target.id;
+	      var url = '/api/patterns/:' + deletePatt;
+	      fetch(url, { method: 'DELETE' }).then(window.location.reload());
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this5 = this;
+
+	      var count = this.state.allPatts.length;
+	      return _react2.default.createElement("div", null, _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("h3", null, "Patterns"), _react2.default.createElement("div", null, _react2.default.createElement("h4", { className: "col-sm-10" }, "Sort by:"), _react2.default.createElement("h4", { className: "col-sm-2" }, "Total: ", count)), _react2.default.createElement("div", { className: "btn-toolbar" }, _react2.default.createElement("button", { className: "btn btn-inverse", onClick: this.sortPattAZ.bind(this) }, "Pattern Name "), _react2.default.createElement("button", { className: "btn btn-inverse", onClick: this.sortCraftAZ.bind(this) }, "Craft")), _react2.default.createElement("div", { className: "col-sm-12" }, this.state.allPatts.map(function (patt) {
+	        if (_this5.state.ids.indexOf(patt.id) === -1) {
+	          _this5.state.ids.push(patt.id);
+	        }
+	        return _react2.default.createElement("div", { key: patt.id }, _react2.default.createElement("div", { className: "addBorder" }, _react2.default.createElement("h4", { id: patt.id }, _react2.default.createElement("b", null, "Pattern Name:"), " ", patt.pName), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Craft:"), " ", patt.craft), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Supplies:"), " ", patt.tools), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Notes: "), " ", patt.notes)), _react2.default.createElement("div", { className: "mainTitle" }, _react2.default.createElement("button", { type: "button", className: "btn btn-danger btn-center active", id: patt.id, onClick: _this5.deletingPatt.bind(_this5) }, "Delete"), _react2.default.createElement("hr", null)));
+	      }))));
+	    }
+	  }]);
+
+	  return ViewPatt;
+	}(_react2.default.Component);
+
+	exports.default = ViewPatt;
+
+/***/ },
 /* 562 */
 /***/ function(module, exports, __webpack_require__) {
 

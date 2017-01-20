@@ -13,7 +13,7 @@ export default class Container extends React.Component {
     }
     return (
       <div>
-        <h1>Emanie</h1>
+        <h1><i>Emanie</i></h1>
           <Nav auth={this.props.route.auth} location={this.props}/>
           {children}
       </div>

@@ -11,11 +11,14 @@ export default class Report extends React.Component {
     return (
       <div>
         <div className="container">
-        <h3>Report Issues</h3>
-        <h5>Please report any issues with Emanie below
-        </h5>
-        <h5>Web developers looking to contribute or have a bug fix? Please visit the git repository here: <a href="https://github.com/mau11/emanie">Emanie on GitHub</a>
-        </h5>
+        <h3>Report Issues
+        </h3>
+          <div className="mainTitle">
+            <img className="aboutPic" src="../img/home3.JPG"/>
+            <h4>Developers, looking for a way to contribute or have a bug fix?
+              <br />Please visit the Emanie github repository at: <a href="https://github.com/mau11/emanie">https://github.com/mau11/emanie</a> and create an issue.
+            </h4>
+          </div>
         </div>
       </div>
     );

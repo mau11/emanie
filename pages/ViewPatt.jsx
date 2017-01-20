@@ -113,7 +113,7 @@ export default class ViewPatt extends React.Component {
               this.state.ids.push(patt.id);
             }
           return (
-          <div>
+          <div key={patt.id}>
             <div className="addBorder">
               <h4 id={patt.id}><b>Pattern Name:</b> {patt.pName}
               </h4>
@@ -132,6 +132,7 @@ export default class ViewPatt extends React.Component {
           </div>)})}
         </div>
       </div>
+    </div>
     );
   }
 }

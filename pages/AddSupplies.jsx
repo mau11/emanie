@@ -134,10 +134,6 @@ export default class AddSupplies extends React.Component {
     document.getElementById('yarnBox').checked = false;
   }
 
-
-
-
-
   // Handle adding tools
   handleCheckboxT() {
     if(this.state.checkT){
@@ -231,11 +227,11 @@ export default class AddSupplies extends React.Component {
                 <form>
                   <div className="form-group">
                     <label>Color:</label>
-                    <input type="text" className="form-control" id="color" placeholder=""  name="colorName"/>
+                    <input type="text" className="form-control" id="color" placeholder="Enter Yarn Color"  name="colorName"/>
                   </div>
                   <div className="form-group">
                     <label>Weight:</label>
-                    <input type="text" className="form-control" id="weight" placeholder="DROPDOWN" name="weightName"  />
+                    <input type="text" className="form-control" id="weight" placeholder="Lace, Medium/Worsted, Bulky/Chunky etc" name="weightName"  />
                   </div>
                   <div className="form-group">
                     <label>Brand:</label>
@@ -243,11 +239,11 @@ export default class AddSupplies extends React.Component {
                   </div>
                   <div className="form-group">
                     <label>Amount:</label>
-                    <input type="text" className="form-control" id="amount" placeholder="" name="amountName" />
+                    <input type="text" className="form-control" id="amount" placeholder="1 Skein" name="amountName" />
                   </div>
                   <div className="form-group">
                     <label htmlFor="notes">Notes/Details:</label>
-                    <textarea className="form-control" id="notesY" rows="3" name="notesDetails" ></textarea>
+                    <textarea className="form-control" id="notesY" rows="2" name="notesDetails" ></textarea>
                   </div>
                   <div className="form-check">
                     <label className="form-check-label">
@@ -265,19 +261,19 @@ export default class AddSupplies extends React.Component {
                 <form>
                   <div className="form-group">
                     <label>Craft:</label>
-                    <input type="text" className="form-control" id="craft" placeholder="DROPDOWN"  name="craft"/>
+                    <input type="text" className="form-control" id="craft" placeholder="Knit or Crochet"  name="craft"/>
                   </div>
                   <div className="form-group">
                     <label>Size:</label>
-                    <input type="text" className="form-control" id="size" placeholder="DROPDOWN" name="size"  />
+                    <input type="text" className="form-control" id="size" placeholder="Needle or Hook Size" name="size"  />
                   </div>
                   <div className="form-group">
                     <label>Material:</label>
-                    <input type="text" className="form-control" id="material" placeholder="DROPDOWN" name="material"  />
+                    <input type="text" className="form-control" id="material" placeholder="Aluminum, Wooden, Bamboo etc" name="material"  />
                   </div>
                   <div className="form-group">
                     <label>Notes/Details:</label>
-                    <textarea className="form-control" id="notesT" rows="" name="notesT" ></textarea>
+                    <textarea className="form-control" id="notesT" rows="3" name="notesT" ></textarea>
                   </div>
                   <div className="form-check">
                     <label className="form-check-label">
