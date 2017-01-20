@@ -84,22 +84,6 @@ export default class ViewPatt extends React.Component {
       });
   }
 
-  edit(){
-
-  }
-
-  editPatt(edits){
-    fetch('/updatePatt', {
-      method: 'PUT',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(edits)
-    });
-    console.log('sending pattern edit');
-  }
-
   deletingPatt(e){
     var deletePatt = e.target.id;
     var url = '/api/patterns/:'+ deletePatt;
@@ -129,7 +113,7 @@ export default class ViewPatt extends React.Component {
             if(this.state.ids.indexOf(patt.id) === -1){
               this.state.ids.push(patt.id);
             }
-          return [
+          return (
           <div>
             <div className="addBorder">
               <h4 id={patt.id}><b>Pattern Name:</b> {patt.pName}
@@ -142,13 +126,11 @@ export default class ViewPatt extends React.Component {
               </h4>
             </div>
             <div className="mainTitle">
-              <button type="button" className="btn btn-primary active">Edit
-              </button>
-              <button type="button" className="btn btn-danger btn-xs btn-center active" id={patt.id} onClick={this.deletingPatt.bind(this)}>Delete
+              <button type="button" className="btn btn-danger btn-center active" id={patt.id} onClick={this.deletingPatt.bind(this)}>Delete
               </button>
               <hr />
             </div>
-          </div>]})}
+          </div>)})}
           <div>
             <h3>Uploaded Patterns
             </h3>{this.state.allUploads.map(file => {

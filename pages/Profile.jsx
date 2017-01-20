@@ -47,7 +47,9 @@ export default class Profile extends React.Component {
       if(key === 'identities'){
         this.setState({authID: obj[key][0].user_id}, function(){
           emailAndId.push(this.state.authID);
-          this.sendFirstInfo(emailAndId);
+          if(emailAndId.length === 2){
+            this.sendFirstInfo(emailAndId);
+          }
         });
       }
     }
@@ -62,18 +64,18 @@ export default class Profile extends React.Component {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(arr)
-    }).catch(function(err){
+    })
+    .then(this.getProfileData())
+    .catch(function(err){
       if(err){
         throw err;
       }
     });
-    this.getProfileData();
   }
 
   // Get user's info from DB and render to page
-  getProfileData(cb) {
-    var holder;
-    fetch('/api/users/all', {method: 'GET'})
+  getProfileData() {
+    return fetch('/api/users/all', {method: 'GET'})
       .then((response) => response.json())
       .then((users) => {
         for(var i = 0; i < users.length; i++){

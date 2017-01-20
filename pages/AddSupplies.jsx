@@ -277,7 +277,7 @@ export default class AddSupplies extends React.Component {
                   </div>
                   <div className="form-group">
                     <label>Notes/Details:</label>
-                    <textarea className="form-control" id="notesT" rows="5" name="notesT" ></textarea>
+                    <textarea className="form-control" id="notesT" rows="" name="notesT" ></textarea>
                   </div>
                   <div className="form-check">
                     <label className="form-check-label">

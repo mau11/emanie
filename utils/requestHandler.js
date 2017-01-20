@@ -15,9 +15,9 @@ exports.addNewUser = function(req, res){
       if(err){
         throw err;
       }
-      console.log(req.body);
     });
   }
+  res.send('Success');
 };
 
 // Get all users' public information for browsing
@@ -38,7 +38,6 @@ exports.getAllUserInfo = function (req, res){
       throw err;
     }
     for(var i = 0; i < rows.length; i++) {
-      console.log('SERVER', rows[i]);
       allUsers.push(rows[i]);
     }
     res.send(allUsers);

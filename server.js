@@ -4,7 +4,7 @@ var app = express();
 var path = require('path');
 var multer = require('multer');
 var handler = require('./utils/requestHandler.js');
-var port = process.env.PORT || 8080;
+var port = process.env.RDS_PORT || 8080;
 
 // Middleware
 app.use(express.static('./public'));

@@ -42,7 +42,9 @@ export default class Update extends React.Component {
       if(key === 'identities'){
         this.setState({authID: obj[key][0].user_id}, function(){
           emailAndId.push(this.state.authID);
-          this.sendFirstInfo(emailAndId);
+          if(emailAndId.length === 2){
+            this.sendFirstInfo(emailAndId);
+          }
         });
       }
     }
@@ -52,16 +54,22 @@ export default class Update extends React.Component {
   sendFirstInfo(arr) {
     fetch('/api/users/add', {
       method: 'POST',
-      mode: 'no-cors',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify(arr)
+    }).catch(function(err){
+      if(err){
+        throw err;
+      }
     });
   }
 
   // Get user's info from DB
   getProfileData(cb) {
-    var test;
     var holder;
-    fetch('/api/users/all', {method: 'GET'})
+    return fetch('/api/users/all', {method: 'GET'})
       .then((response) => response.json())
       .then((users) => {
         for(var i = 0; i < users.length; i++){
@@ -107,9 +115,8 @@ export default class Update extends React.Component {
           users[holder].craftName = this.state.craftName;
           users[holder].bio = this.state.bio;
           this.setState({allUsers: users});
-          test = users[holder];
-          console.log('TO SERVER modified', test);
-          cb(test);
+          console.log('TO SERVER modified', users[holder]);
+          cb(users[holder]);
         }
       });
   }
@@ -142,7 +149,7 @@ export default class Update extends React.Component {
     if(this.state.checked === true){
       this.getProfileData(this.updateProfileData);
       console.log('CLICK');
-      //this.updateProfileData();
+      document.getElementById('submitBox').checked = false;
     } else {
       alert('Please confirm changes.');
     }
@@ -246,7 +253,7 @@ export default class Update extends React.Component {
                 </div>
                 <div className="form-check">
                   <label className="form-check-label">
-                    <input type="checkbox" className="form-check-input" onClick={this.handleCheckbox.bind(this)}/> I confirm that I have reviewed my changes.
+                    <input type="checkbox" className="form-check-input" onClick={this.handleCheckbox.bind(this)} id="submitBox"/> I confirm that I have reviewed my changes.
                   </label>
                 </div>
                 <button type="submit" className="btn btn-inverse" onClick={this.handleUpdate.bind(this)}>Update Profile</button>
