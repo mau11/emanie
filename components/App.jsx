@@ -18,10 +18,8 @@ export default class App extends React.Component {
       .then((response) => response.json())
       .then(weeklyUpdates => {
         this.setState({updates: weeklyUpdates});
-        console.log('UPDATES', this.state.updates);
     });
   }
-
 
   render () {
     return (
@@ -38,13 +36,13 @@ export default class App extends React.Component {
             <img className="mainPics" src="../img/home2.jpg" alt="Basket of Yarn"/>
           </div>
           <div className="col-sm-3">
-            <h4> <u>Emanie News:</u>
+            <h4> <u>Emanie Updates:</u>
             </h4>
               <div className="box">
                 {this.state.updates.map(item =>
                   <div className="news" key={item.id}><b>{'"'+item.notes+'"'}</b><br/>
                     <small >
-                      <i>{item["DATE_FORMAT(date, '%b-%d-%Y')"]}
+                      <i>{item["DATE_FORMAT(date, '%b %d, %Y')"]}
                       </i>
                     </small>
                   </div>

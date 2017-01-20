@@ -150,21 +150,21 @@ export default class ViewPatt extends React.Component {
             </div>
           </div>]})}
           <div>
-            <h4>Uploaded Patterns
-            </h4>
-            {this.state.allUploads.map(file => {
+            <h3>Uploaded Patterns
+            </h3>{this.state.allUploads.map(file => {
               return (
                 <div key={file.id}>
-              <h4 id={file.id}><b>Pattern Name:</b> {file.pName}
-              </h4>
-               <h4><b>Notes: </b> {file.notes}
-               </h4>
-              <iframe src={file.src +'#zoom=60'} className="pdfs" allowFullScreen > </iframe>
-              <hr />
-              </div>
-            )
-          })}
-          </div>
+                  <h4 id={file.id}><b>Pattern Name:</b> {file.pName}
+                  </h4>
+                  <h4><b>Notes: </b> {file.notes}
+                  </h4>
+                    <iframe src={file.src +'#zoom=60'} className="pdfs" allowFullScreen >
+                    </iframe>
+                    <hr />
+                </div>
+              )
+            })}
+            </div>
           </div>
         </div>
       </div>

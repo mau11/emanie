@@ -19,8 +19,8 @@ export default class Search extends React.Component {
   searchPatterns() {
     var searching = $('#searchInput').val();
     $('#searchInput').val('');
-    this.setState({word: searching});
     if(searching){
+      this.setState({word: '"'+searching+'"'});
       return fetch('/api/patterns/:' + searching, {method: 'GET'})
       .then((response) => response.json())
       .then(searchResults => {
@@ -58,7 +58,7 @@ export default class Search extends React.Component {
           return (
           <div>
             <div className="addBorder">
-              <h4 id={patt.id}><b>Pattern Name:</b> {patt.pName}
+              <h4 key={patt.id} id={patt.id}><b>Pattern Name:</b> {patt.pName}
               </h4>
               <h4><b>Craft:</b> {patt.craft}
               </h4>

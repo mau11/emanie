@@ -37073,14 +37073,13 @@
 	        return response.json();
 	      }).then(function (weeklyUpdates) {
 	        _this2.setState({ updates: weeklyUpdates });
-	        console.log('UPDATES', _this2.state.updates);
 	      });
 	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("div", { className: "mainTitle" }, _react2.default.createElement("div", { className: "col-sm-9" }, _react2.default.createElement("h2", null, "Welcome to Emanie!"), _react2.default.createElement("h5", null, _react2.default.createElement("i", null, "A community for knitters and crocheters to store and share their crafts.")), _react2.default.createElement("img", { className: "mainPics", src: "../img/home2.jpg", alt: "Basket of Yarn" })), _react2.default.createElement("div", { className: "col-sm-3" }, _react2.default.createElement("h4", null, " ", _react2.default.createElement("u", null, "Emanie News:")), _react2.default.createElement("div", { className: "box" }, this.state.updates.map(function (item) {
-	        return _react2.default.createElement("div", { className: "news", key: item.id }, _react2.default.createElement("b", null, '"' + item.notes + '"'), _react2.default.createElement("br", null), _react2.default.createElement("small", null, _react2.default.createElement("i", null, item["DATE_FORMAT(date, '%b-%d-%Y')"])));
+	      return _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("div", { className: "mainTitle" }, _react2.default.createElement("div", { className: "col-sm-9" }, _react2.default.createElement("h2", null, "Welcome to Emanie!"), _react2.default.createElement("h5", null, _react2.default.createElement("i", null, "A community for knitters and crocheters to store and share their crafts.")), _react2.default.createElement("img", { className: "mainPics", src: "../img/home2.jpg", alt: "Basket of Yarn" })), _react2.default.createElement("div", { className: "col-sm-3" }, _react2.default.createElement("h4", null, " ", _react2.default.createElement("u", null, "Emanie Updates:")), _react2.default.createElement("div", { className: "box" }, this.state.updates.map(function (item) {
+	        return _react2.default.createElement("div", { className: "news", key: item.id }, _react2.default.createElement("b", null, '"' + item.notes + '"'), _react2.default.createElement("br", null), _react2.default.createElement("small", null, _react2.default.createElement("i", null, item["DATE_FORMAT(date, '%b %d, %Y')"])));
 	      })))));
 	    }
 	  }]);
@@ -37168,7 +37167,7 @@
 	    value: function render() {
 	      var _this3 = this;
 
-	      return _react2.default.createElement("div", null, _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("h3", null, "Browse Users"), _react2.default.createElement("small", null, _react2.default.createElement("i", null, "Click on user's avatar see view more information.")), _react2.default.createElement("div", { className: "row" }, this.state.allUsers.map(function (user) {
+	      return _react2.default.createElement("div", null, _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("h3", null, "Browse Users"), _react2.default.createElement("small", null, _react2.default.createElement("i", null, "Click on user's image to view more information.")), _react2.default.createElement("div", { className: "row" }, this.state.allUsers.map(function (user) {
 	        return _react2.default.createElement("div", { className: "col-sm-3", key: user.displayName }, _react2.default.createElement("hr", null), _react2.default.createElement("img", { className: "avatarPics", src: user.pic, id: user.id, onClick: _this3.handleClick.bind(_this3) }), _react2.default.createElement("br", null), _react2.default.createElement("b", null, user.displayName), _react2.default.createElement("div", { id: user.id + 'bio', className: "tog" }, user.bio));
 	      }))));
 	    }
@@ -56680,8 +56679,8 @@
 
 	      var searching = $('#searchInput').val();
 	      $('#searchInput').val('');
-	      this.setState({ word: searching });
 	      if (searching) {
+	        this.setState({ word: '"' + searching + '"' });
 	        return fetch('/api/patterns/:' + searching, { method: 'GET' }).then(function (response) {
 	          return response.json();
 	        }).then(function (searchResults) {
@@ -56707,7 +56706,7 @@
 	        if (_this3.state.ids.indexOf(patt.id) === -1) {
 	          _this3.state.ids.push(patt.id);
 	        }
-	        return _react2.default.createElement("div", null, _react2.default.createElement("div", { className: "addBorder" }, _react2.default.createElement("h4", { id: patt.id }, _react2.default.createElement("b", null, "Pattern Name:"), " ", patt.pName), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Craft:"), " ", patt.craft), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Supplies:"), " ", patt.tools), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Notes: "), " ", patt.notes)), _react2.default.createElement("div", null, _react2.default.createElement("hr", null)));
+	        return _react2.default.createElement("div", null, _react2.default.createElement("div", { className: "addBorder" }, _react2.default.createElement("h4", { key: patt.id, id: patt.id }, _react2.default.createElement("b", null, "Pattern Name:"), " ", patt.pName), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Craft:"), " ", patt.craft), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Supplies:"), " ", patt.tools), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Notes: "), " ", patt.notes)), _react2.default.createElement("div", null, _react2.default.createElement("hr", null)));
 	      }))));
 	    }
 	  }]);
@@ -57155,8 +57154,8 @@
 	          _this5.state.ids.push(patt.id);
 	        }
 	        return [_react2.default.createElement("div", null, _react2.default.createElement("div", { className: "addBorder" }, _react2.default.createElement("h4", { id: patt.id }, _react2.default.createElement("b", null, "Pattern Name:"), " ", patt.pName), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Craft:"), " ", patt.craft), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Supplies:"), " ", patt.tools), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Notes: "), " ", patt.notes)), _react2.default.createElement("div", { className: "mainTitle" }, _react2.default.createElement("button", { type: "button", className: "btn btn-primary active" }, "Edit"), _react2.default.createElement("button", { type: "button", className: "btn btn-danger btn-xs btn-center active", id: patt.id, onClick: _this5.deletingPatt.bind(_this5) }, "Delete"), _react2.default.createElement("hr", null)))];
-	      }), _react2.default.createElement("div", null, _react2.default.createElement("h4", null, "Uploaded Patterns"), this.state.allUploads.map(function (file) {
-	        return _react2.default.createElement("div", { key: file.id }, _react2.default.createElement("h4", { id: file.id }, _react2.default.createElement("b", null, "Pattern Name:"), " ", file.pName), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Notes: "), " ", file.notes), _react2.default.createElement("iframe", { src: file.src + '#zoom=60', className: "pdfs", allowFullScreen: true }, " "), _react2.default.createElement("hr", null));
+	      }), _react2.default.createElement("div", null, _react2.default.createElement("h3", null, "Uploaded Patterns"), this.state.allUploads.map(function (file) {
+	        return _react2.default.createElement("div", { key: file.id }, _react2.default.createElement("h4", { id: file.id }, _react2.default.createElement("b", null, "Pattern Name:"), " ", file.pName), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Notes: "), " ", file.notes), _react2.default.createElement("iframe", { src: file.src + '#zoom=60', className: "pdfs", allowFullScreen: true }), _react2.default.createElement("hr", null));
 	      })))));
 	    }
 	  }]);

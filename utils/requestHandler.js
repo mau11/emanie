@@ -147,8 +147,7 @@ exports.sortPatternsByCraft = function(req, res){
   });
 };
 
-
-
+// Search for patterns by keyword
 exports.searchPatterns = function(req, res){
   var word = req.params.searching;
   word = word.substr(1);
@@ -261,7 +260,6 @@ exports.deletingTool = function(req, res){
   });
 }
 
-
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ~~~~~~~~ WEEKLY UPDATES ~~~~~~~~
@@ -269,7 +267,7 @@ exports.deletingTool = function(req, res){
 */
 
 exports.getWeeklyUpdates = function(req, res){
-  var updated = "SELECT DATE_FORMAT(date, '%b-%d-%Y'), notes, id FROM updates ORDER BY date DESC";
+  var updated = "SELECT DATE_FORMAT(date, '%b %d, %Y'), notes, id FROM updates ORDER BY date DESC";
   db.connection.query(updated, function(err, rows){
     if(err){
       throw err;

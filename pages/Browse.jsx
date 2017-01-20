@@ -37,7 +37,7 @@ export default class Browse extends React.Component {
           <h3>Browse Users
           </h3>
           <small>
-            <i>Click on user's avatar see view more information.</i>
+            <i>Click on user's image to view more information.</i>
           </small>
           <div className="row">{this.state.allUsers.map(user =>
             <div className="col-sm-3" key={user.displayName}>
