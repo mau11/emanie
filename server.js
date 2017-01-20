@@ -2,7 +2,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 var path = require('path');
-var multer = require('multer');
 var handler = require('./utils/requestHandler.js');
 var port = process.env.RDS_PORT || 8080;
 
@@ -14,34 +13,6 @@ app.use(bodyParser.json());
 // Default express route for app
 app.get('/', function (req, res){
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
-// Pattern upload using multer
-var storage =   multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, './public/uploads');
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.fieldname + '-' + Date.now() + '.pdf');
-  }
-});
-
-var upload = multer({ storage : storage }).array('userFile', 2);
-
-app.get('/image/:id',function(req,res){
-  console.log(req.params);
-  res.sendFile(__dirname + "/index.html");
-});
-
-app.post('/api/patterns/upload', function(req,res){
-  upload(req,res,function(err) {
-    console.log(req.body);
-    console.log(req.files);
-    if(err) {
-      return res.end("Error uploading file.");
-    }
-      res.end("File is uploaded");
-    });
 });
 
 /*

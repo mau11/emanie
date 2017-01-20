@@ -7,7 +7,6 @@ export default class ViewPatt extends React.Component {
     super(props);
     this.state = {
       allPatts: [],
-      allUploads: [{id: 'test', src: './uploads/userFile-1484819658175.pdf', pName: 'Test Name', notes: 'my creation'}],
       email: null,
       authId: null,
       profile: props.auth.getProfile(),
@@ -92,7 +91,7 @@ export default class ViewPatt extends React.Component {
   }
 
   render () {
-    let count = this.state.allPatts.length + this.state.allUploads.length;
+    let count = this.state.allPatts.length;
     return (
       <div >
         <div className="container">
@@ -131,23 +130,6 @@ export default class ViewPatt extends React.Component {
               <hr />
             </div>
           </div>)})}
-          <div>
-            <h3>Uploaded Patterns
-            </h3>{this.state.allUploads.map(file => {
-              return (
-                <div key={file.id}>
-                  <h4 id={file.id}><b>Pattern Name:</b> {file.pName}
-                  </h4>
-                  <h4><b>Notes: </b> {file.notes}
-                  </h4>
-                    <iframe src={file.src +'#zoom=60'} className="pdfs" allowFullScreen >
-                    </iframe>
-                    <hr />
-                </div>
-              )
-            })}
-            </div>
-          </div>
         </div>
       </div>
     );

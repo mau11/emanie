@@ -127,7 +127,7 @@
 
 	var _Update2 = _interopRequireDefault(_Update);
 
-	var _ViewPatt = __webpack_require__(561);
+	var _ViewPatt = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../pages/ViewPatt.jsx\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 	var _ViewPatt2 = _interopRequireDefault(_ViewPatt);
 
@@ -36705,7 +36705,7 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement("div", null, _react2.default.createElement("h3", null, "Patterns"), _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("div", { className: "row" }, _react2.default.createElement("div", { className: "col-sm-8" }, _react2.default.createElement("div", null, _react2.default.createElement("h4", null, "Upload a Pattern (PDF)"), _react2.default.createElement("form", { id: "uploadForm", encType: "multipart/form-data", action: "/api/patterns/upload", method: "post" }, _react2.default.createElement("input", { type: "file", name: "userFile" }), "Pattern Name: ", _react2.default.createElement("input", { type: "text", id: "random", name: "random" }), _react2.default.createElement("br", null), _react2.default.createElement("input", { className: "btn btn", type: "submit", value: "Upload PDF", name: "submit" }), _react2.default.createElement("span", { id: "status" })), _react2.default.createElement("hr", null), _react2.default.createElement("h4", null, " Or Enter Pattern Manually "), _react2.default.createElement("form", null, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "patt" }, "Pattern Name:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "pattName", placeholder: "Enter pattern name", name: "pattName" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "patCra" }, "Craft:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "pattCraft", placeholder: "Crochet, Knitting, Sewing, etc", name: "pattCraft" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "supp" }, "Supplies:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "pattTools", placeholder: "Hooks, Needles, Sizes, etc", name: "suppName" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "notes" }, "Notes/Details:"), _react2.default.createElement("textarea", { className: "form-control", id: "pattNotes", rows: "5", name: "notesDetails" })), _react2.default.createElement("div", { className: "form-check" }, _react2.default.createElement("label", { className: "form-check-label" }, _react2.default.createElement("input", { type: "checkbox", className: "form-check-input", onClick: this.handleCheckbox.bind(this) }), " Please be aware that all patterns are currently made public. I confirm that I have reviewed my changes and read this message.")), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse", onClick: this.handleAddPattern.bind(this) }, "Add Pattern")))))));
+	      return _react2.default.createElement("div", null, _react2.default.createElement("h3", null, "Patterns"), _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("div", { className: "row" }, _react2.default.createElement("div", { className: "col-sm-8" }, _react2.default.createElement("div", null, _react2.default.createElement("h4", null, " Enter Pattern Details Below "), _react2.default.createElement("form", null, _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "patt" }, "Pattern Name:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "pattName", placeholder: "Enter pattern name", name: "pattName" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "patCra" }, "Craft:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "pattCraft", placeholder: "Crochet, Knitting, Sewing, etc", name: "pattCraft" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "supp" }, "Supplies:"), _react2.default.createElement("input", { type: "text", className: "form-control", id: "pattTools", placeholder: "Hooks, Needles, Sizes, etc", name: "suppName" })), _react2.default.createElement("div", { className: "form-group" }, _react2.default.createElement("label", { htmlFor: "notes" }, "Notes/Details:"), _react2.default.createElement("textarea", { className: "form-control", id: "pattNotes", rows: "5", name: "notesDetails" })), _react2.default.createElement("div", { className: "form-check" }, _react2.default.createElement("label", { className: "form-check-label" }, _react2.default.createElement("input", { type: "checkbox", className: "form-check-input", onClick: this.handleCheckbox.bind(this) }), " Please be aware that all patterns are currently made public. I confirm that I have reviewed my changes and read this message.")), _react2.default.createElement("button", { type: "submit", className: "btn btn-inverse", onClick: this.handleAddPattern.bind(this) }, "Add Pattern")))))));
 	    }
 	  }]);
 
@@ -56118,7 +56118,7 @@
 
 	var _Update2 = _interopRequireDefault(_Update);
 
-	var _ViewPatt = __webpack_require__(561);
+	var _ViewPatt = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../pages/ViewPatt.jsx\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 	var _ViewPatt2 = _interopRequireDefault(_ViewPatt);
 
@@ -57056,169 +57056,7 @@
 	exports.default = Update;
 
 /***/ },
-/* 561 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(33);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	var _reactRouter = __webpack_require__(179);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var ViewPatt = function (_React$Component) {
-	  _inherits(ViewPatt, _React$Component);
-
-	  function ViewPatt(props) {
-	    _classCallCheck(this, ViewPatt);
-
-	    var _this = _possibleConstructorReturn(this, (ViewPatt.__proto__ || Object.getPrototypeOf(ViewPatt)).call(this, props));
-
-	    _this.state = {
-	      allPatts: [],
-	      allUploads: [{ id: 'test', src: './uploads/userFile-1484819658175.pdf', pName: 'Test Name', notes: 'my creation' }],
-	      email: null,
-	      authId: null,
-	      profile: props.auth.getProfile(),
-	      ids: []
-	    };
-	    return _this;
-	  }
-
-	  _createClass(ViewPatt, [{
-	    key: 'componentWillMount',
-	    value: function componentWillMount() {
-	      this.getAuthInfo();
-	    }
-
-	    // Get auth0 ID & email from logged in user and add to state
-
-	  }, {
-	    key: 'getAuthInfo',
-	    value: function getAuthInfo() {
-	      var obj = this.state.profile;
-	      var emailAndId = [];
-	      for (var key in obj) {
-	        if (key === 'email_verified' && obj[key] === true) {
-	          this.setState({ email: obj.email }, function () {});
-	        }
-	        if (key === 'identities') {
-	          this.setState({ authId: obj[key][0].user_id }, function () {});
-	        }
-	      }
-	      this.getUserPatterns();
-	    }
-
-	    // Get all users' avatar and display name.
-
-	  }, {
-	    key: 'getUserPatterns',
-	    value: function getUserPatterns() {
-	      var _this2 = this;
-
-	      return fetch('/api/patterns', { method: 'GET' }).then(function (response) {
-	        return response.json();
-	      }).then(function (allPatterns) {
-	        for (var i = 0; i < allPatterns.length; i++) {
-	          for (var key in allPatterns[i]) {
-	            if (allPatterns[i].email === _this2.state.email && allPatterns[i].authId === _this2.state.authId) {
-	              _this2.setState({ allPatts: allPatterns });
-	            }
-	          }
-	        }
-	      });
-	    }
-
-	    // Sort patterns A-Z
-
-	  }, {
-	    key: 'sortPattAZ',
-	    value: function sortPattAZ(e) {
-	      var _this3 = this;
-
-	      e.preventDefault();
-	      return fetch('/api/patterns/sorted/name', { method: 'GET' }).then(function (response) {
-	        return response.json();
-	      }).then(function (sorted) {
-	        for (var i = 0; i < sorted.length; i++) {
-	          for (var key in sorted[i]) {
-	            if (sorted[i].email === _this3.state.email && sorted[i].authId === _this3.state.authId) {
-	              _this3.setState({ allPatts: sorted });
-	            }
-	          }
-	        }
-	      });
-	    }
-
-	    // Sort by craft, then by pattern name for the same crafts
-
-	  }, {
-	    key: 'sortCraftAZ',
-	    value: function sortCraftAZ(e) {
-	      var _this4 = this;
-
-	      e.preventDefault();
-	      return fetch('/api/patterns/sorted/craft', { method: 'GET' }).then(function (response) {
-	        return response.json();
-	      }).then(function (sortedCrafts) {
-	        for (var i = 0; i < sortedCrafts.length; i++) {
-	          for (var key in sortedCrafts[i]) {
-	            if (sortedCrafts[i].email === _this4.state.email && sortedCrafts[i].authId === _this4.state.authId) {
-	              _this4.setState({ allPatts: sortedCrafts });
-	            }
-	          }
-	        }
-	      });
-	    }
-	  }, {
-	    key: 'deletingPatt',
-	    value: function deletingPatt(e) {
-	      var deletePatt = e.target.id;
-	      var url = '/api/patterns/:' + deletePatt;
-	      fetch(url, { method: 'DELETE' }).then(window.location.reload());
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var _this5 = this;
-
-	      var count = this.state.allPatts.length + this.state.allUploads.length;
-	      return _react2.default.createElement("div", null, _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("h3", null, "Patterns"), _react2.default.createElement("div", null, _react2.default.createElement("h4", { className: "col-sm-10" }, "Sort by:"), _react2.default.createElement("h4", { className: "col-sm-2" }, "Total: ", count)), _react2.default.createElement("div", { className: "btn-toolbar" }, _react2.default.createElement("button", { className: "btn btn-inverse", onClick: this.sortPattAZ.bind(this) }, "Pattern Name "), _react2.default.createElement("button", { className: "btn btn-inverse", onClick: this.sortCraftAZ.bind(this) }, "Craft")), _react2.default.createElement("div", { className: "col-sm-12" }, this.state.allPatts.map(function (patt) {
-	        if (_this5.state.ids.indexOf(patt.id) === -1) {
-	          _this5.state.ids.push(patt.id);
-	        }
-	        return _react2.default.createElement("div", null, _react2.default.createElement("div", { className: "addBorder" }, _react2.default.createElement("h4", { id: patt.id }, _react2.default.createElement("b", null, "Pattern Name:"), " ", patt.pName), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Craft:"), " ", patt.craft), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Supplies:"), " ", patt.tools), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Notes: "), " ", patt.notes)), _react2.default.createElement("div", { className: "mainTitle" }, _react2.default.createElement("button", { type: "button", className: "btn btn-danger btn-center active", id: patt.id, onClick: _this5.deletingPatt.bind(_this5) }, "Delete"), _react2.default.createElement("hr", null)));
-	      }), _react2.default.createElement("div", null, _react2.default.createElement("h3", null, "Uploaded Patterns"), this.state.allUploads.map(function (file) {
-	        return _react2.default.createElement("div", { key: file.id }, _react2.default.createElement("h4", { id: file.id }, _react2.default.createElement("b", null, "Pattern Name:"), " ", file.pName), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Notes: "), " ", file.notes), _react2.default.createElement("iframe", { src: file.src + '#zoom=60', className: "pdfs", allowFullScreen: true }), _react2.default.createElement("hr", null));
-	      })))));
-	    }
-	  }]);
-
-	  return ViewPatt;
-	}(_react2.default.Component);
-
-	exports.default = ViewPatt;
-
-/***/ },
+/* 561 */,
 /* 562 */
 /***/ function(module, exports, __webpack_require__) {
 

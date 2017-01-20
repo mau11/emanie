@@ -131,15 +131,7 @@ export default class AddPattern extends React.Component {
           <div className="row">
             <div className="col-sm-8">
               <div>
-                <h4>Upload a Pattern (PDF)
-                </h4>
-                <form id="uploadForm" encType="multipart/form-data" action="/api/patterns/upload" method="post">
-                  <input type="file" name="userFile" />
-                  Pattern Name: <input type='text' id='random' name='random'/><br />
-                  <input className="btn btn" type="submit" value="Upload PDF" name="submit"/>
-                  <span id = "status"></span>
-                </form><hr />
-                <h4> Or Enter Pattern Manually </h4>
+                <h4> Enter Pattern Details Below </h4>
                 <form>
                   <div className="form-group">
                     <label htmlFor="patt">Pattern Name:</label>
