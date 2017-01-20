@@ -36636,7 +36636,6 @@
 	      e.preventDefault();
 	      if (this.state.checked === true) {
 	        this.addPartsToPatt(this.submitPatt);
-	        console.log('CLICK');
 	      } else {
 	        alert('Please confirm changes.');
 	      }
@@ -36670,7 +36669,6 @@
 	        } else {
 	          this.state.pattDetails.push('');
 	        }
-	        console.log(this.state.pattDetails);
 	        cb(this.state.pattDetails);
 	        this.clearFields();
 	      }
@@ -36678,7 +36676,6 @@
 	  }, {
 	    key: 'submitPatt',
 	    value: function submitPatt(arr) {
-	      console.log('sending', JSON.stringify(arr));
 	      fetch('/api/patterns/new', {
 	        method: 'POST',
 	        headers: {
@@ -36687,6 +36684,7 @@
 	        },
 	        body: JSON.stringify(arr)
 	      });
+	      alert('Pattern added');
 	    }
 	  }, {
 	    key: 'clearFields',
@@ -36831,7 +36829,6 @@
 	      e.preventDefault();
 	      if (this.state.checkY === true) {
 	        this.addYarn(this.submitYarn);
-	        console.log('CLICK');
 	      } else {
 	        alert('Please confirm changes.');
 	      }
@@ -36870,7 +36867,6 @@
 	        } else {
 	          this.state.yarnDetails.push('');
 	        }
-	        console.log(this.state.yarnDetails);
 	        cb(this.state.yarnDetails);
 	        this.clearFieldsY();
 	      }
@@ -36878,7 +36874,6 @@
 	  }, {
 	    key: 'submitYarn',
 	    value: function submitYarn(arr) {
-	      console.log('sending', JSON.stringify(arr));
 	      fetch('/api/yarn/add', {
 	        method: 'POST',
 	        headers: {
@@ -36887,6 +36882,7 @@
 	        },
 	        body: JSON.stringify(arr)
 	      });
+	      alert('Yarn added!');
 	    }
 	  }, {
 	    key: 'clearFieldsY',
@@ -36919,7 +36915,6 @@
 	      e.preventDefault();
 	      if (this.state.checkT === true) {
 	        this.addTools(this.submitTools);
-	        console.log('CLICK');
 	      } else {
 	        alert('Please confirm changes.');
 	      }
@@ -36960,7 +36955,6 @@
 	        } else {
 	          this.state.toolDetails.push('');
 	        }
-	        console.log(this.state.toolDetails);
 	        cb(this.state.toolDetails);
 	        this.clearFieldsT();
 	      }
@@ -36968,7 +36962,6 @@
 	  }, {
 	    key: 'submitTools',
 	    value: function submitTools(arr) {
-	      console.log('sending', JSON.stringify(arr));
 	      fetch('/api/tools/add', {
 	        method: 'POST',
 	        headers: {
@@ -36977,6 +36970,7 @@
 	        },
 	        body: JSON.stringify(arr)
 	      });
+	      alert('Tool added');
 	    }
 	  }, {
 	    key: 'clearFieldsT',
@@ -37162,7 +37156,6 @@
 	  }, {
 	    key: 'getAuthData',
 	    value: function getAuthData() {
-	      console.log('1');
 	      var obj = this.state.profile;
 	      var emailAndId = [];
 	      for (var key in obj) {
@@ -37187,7 +37180,6 @@
 	  }, {
 	    key: 'sendFirstInfo',
 	    value: function sendFirstInfo(arr) {
-	      console.log('2');
 	      fetch('/api/users/add', {
 	        method: 'POST',
 	        headers: {
@@ -37209,7 +37201,6 @@
 	    value: function getAllProfiles() {
 	      var _this2 = this;
 
-	      console.log('3');
 	      return fetch('/api/users', { method: 'GET', mode: 'no-cors' }).then(function (response) {
 	        return response.json();
 	      }).then(function (allProfiles) {
@@ -56955,7 +56946,6 @@
 	          users[holder].craftName = _this2.state.craftName;
 	          users[holder].bio = _this2.state.bio;
 	          _this2.setState({ allUsers: users });
-	          console.log('TO SERVER modified', users[holder]);
 	          cb(users[holder]);
 	        }
 	      });
@@ -56974,7 +56964,6 @@
 	  }, {
 	    key: 'updateProfileData',
 	    value: function updateProfileData(param) {
-	      console.log('PARAM', param);
 	      fetch('/api/user/update', {
 	        method: 'PUT',
 	        headers: {
@@ -56983,7 +56972,7 @@
 	        },
 	        body: JSON.stringify(param)
 	      });
-	      console.log('sending');
+	      alert('Profile Updated');
 	    }
 	  }, {
 	    key: 'handleUpdate',
@@ -56991,7 +56980,6 @@
 	      e.preventDefault();
 	      if (this.state.checked === true) {
 	        this.getProfileData(this.updateProfileData);
-	        console.log('CLICK');
 	        document.getElementById('submitBox').checked = false;
 	      } else {
 	        alert('Please confirm changes.');

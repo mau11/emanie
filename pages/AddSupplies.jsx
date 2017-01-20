@@ -70,7 +70,6 @@ export default class AddSupplies extends React.Component {
     e.preventDefault();
     if(this.state.checkY === true){
       this.addYarn(this.submitYarn);
-      console.log('CLICK');
     } else {
       alert('Please confirm changes.');
     }
@@ -106,14 +105,12 @@ export default class AddSupplies extends React.Component {
       } else {
         this.state.yarnDetails.push('');
       }
-      console.log(this.state.yarnDetails);
       cb(this.state.yarnDetails);
       this.clearFieldsY();
     }
   }
 
   submitYarn(arr) {
-    console.log('sending', JSON.stringify(arr));
     fetch('/api/yarn/add', {
       method: 'POST',
       headers: {
@@ -122,6 +119,7 @@ export default class AddSupplies extends React.Component {
       },
       body: JSON.stringify(arr)
     });
+    alert('Yarn added!');
   }
 
   clearFieldsY(){
@@ -149,7 +147,6 @@ export default class AddSupplies extends React.Component {
     e.preventDefault();
     if(this.state.checkT === true){
       this.addTools(this.submitTools);
-      console.log('CLICK');
     } else {
       alert('Please confirm changes.');
     }
@@ -187,14 +184,12 @@ export default class AddSupplies extends React.Component {
       } else {
         this.state.toolDetails.push('');
       }
-      console.log(this.state.toolDetails);
       cb(this.state.toolDetails);
       this.clearFieldsT();
     }
   }
 
   submitTools(arr) {
-    console.log('sending', JSON.stringify(arr));
     fetch('/api/tools/add', {
       method: 'POST',
       headers: {
@@ -203,6 +198,7 @@ export default class AddSupplies extends React.Component {
       },
       body: JSON.stringify(arr)
     });
+    alert('Tool added');
   }
 
   clearFieldsT(){

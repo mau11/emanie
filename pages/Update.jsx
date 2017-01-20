@@ -115,7 +115,6 @@ export default class Update extends React.Component {
           users[holder].craftName = this.state.craftName;
           users[holder].bio = this.state.bio;
           this.setState({allUsers: users});
-          console.log('TO SERVER modified', users[holder]);
           cb(users[holder]);
         }
       });
@@ -132,7 +131,6 @@ export default class Update extends React.Component {
   }
 
   updateProfileData(param) {
-    console.log('PARAM', param);
     fetch('/api/user/update', {
       method: 'PUT',
       headers: {
@@ -141,14 +139,13 @@ export default class Update extends React.Component {
       },
       body: JSON.stringify(param)
     });
-    console.log('sending');
+    alert('Profile Updated');
   }
 
   handleUpdate(e) {
     e.preventDefault();
     if(this.state.checked === true){
       this.getProfileData(this.updateProfileData);
-      console.log('CLICK');
       document.getElementById('submitBox').checked = false;
     } else {
       alert('Please confirm changes.');

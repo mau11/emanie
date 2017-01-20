@@ -60,7 +60,6 @@ export default class AddPattern extends React.Component {
     e.preventDefault();
     if(this.state.checked === true){
       this.addPartsToPatt(this.submitPatt);
-      console.log('CLICK');
     } else {
       alert('Please confirm changes.');
     }
@@ -91,7 +90,6 @@ export default class AddPattern extends React.Component {
       } else {
         this.state.pattDetails.push('');
       }
-      console.log(this.state.pattDetails);
       cb(this.state.pattDetails);
       this.clearFields();
     }
@@ -99,7 +97,6 @@ export default class AddPattern extends React.Component {
 
 
   submitPatt(arr) {
-    console.log('sending', JSON.stringify(arr));
     fetch('/api/patterns/new', {
       method: 'POST',
       headers: {
@@ -108,6 +105,7 @@ export default class AddPattern extends React.Component {
       },
       body: JSON.stringify(arr)
     });
+    alert('Pattern added');
   }
 
   clearFields(){

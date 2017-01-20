@@ -29,7 +29,6 @@ export default class Browse extends React.Component {
 
   // Get auth0 ID from logged in user and add to state
   getAuthData() {
-    console.log('1');
     var obj = this.state.profile;
     var emailAndId = [];
     for(var key in obj){
@@ -50,7 +49,6 @@ export default class Browse extends React.Component {
 
   // Add user's email and id from Auth0 login to DB
   sendFirstInfo(arr) {
-    console.log('2');
     fetch('/api/users/add', {
       method: 'POST',
       headers: {
@@ -69,7 +67,6 @@ export default class Browse extends React.Component {
 
   // Get all users' avatar and display name.
   getAllProfiles() {
-    console.log('3');
     return fetch('/api/users', {method: 'GET', mode: 'no-cors'})
       .then((response) => response.json())
       .then(allProfiles => {

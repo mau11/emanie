@@ -8,7 +8,6 @@ var db = require('./db.js');
 
 // Adds new users' email & unique auth0 id to profiles table
 exports.addNewUser = function(req, res){
-  console.log('FROM CLIENT ADD NEW', req.body);
   if(req.body.length === 2){
     var addInitialInfo = "INSERT IGNORE INTO profiles (email, authId) VALUES ('"+req.body[0]+"'"+","+"'"+req.body[1]+"')";
     db.connection.query(addInitialInfo, function(err, rows){
@@ -41,17 +40,14 @@ exports.getAllUserInfo = function (req, res){
       allUsers.push(rows[i]);
     }
     res.send(allUsers);
-    console.log('***Data from DB sent!***');
   });
 }
 
 // Update user's info in DB based on client input
 exports.updateProfile = function(req, res){
-  console.log('FROM CLIENT INPUT', req.body);
   var add1, add2, add3, add4;
   var sql1, sql2, sql3, sql4;
   var bod = req.body;
-  console.log('ALL---->\n', bod);
   if(bod.pic !== null){
     add1 = (bod.pic);
     sql1 = "UPDATE profiles SET pic = '"+add1+"' WHERE email = '"+req.body.email+"'";
@@ -105,7 +101,6 @@ exports.addNewPattern = function(req, res){
       if(err){
         throw err;
       }
-      console.log(req.body);
     });
   }
   res.send('Complete');
@@ -129,7 +124,6 @@ exports.sortPatternsByName = function(req, res){
     if(err){
       throw err;
     }
-    console.log(rows);
     res.send(rows);
   });
 }
@@ -141,7 +135,6 @@ exports.sortPatternsByCraft = function(req, res){
     if(err){
       throw err;
     }
-    console.log(rows);
     res.send(rows);
   });
 };
@@ -150,13 +143,11 @@ exports.sortPatternsByCraft = function(req, res){
 exports.searchPatterns = function(req, res){
   var word = req.params.searching;
   word = word.substr(1);
-  console.log('WORD', word);
   var search = "SELECT * FROM patterns WHERE CONCAT(pName, craft, notes) LIKE '%"+word+"%'";
   db.connection.query(search, function(err, rows){
     if(err){
       throw err;
     }
-    console.log(rows);
     res.send(rows);
   });
 }
@@ -166,7 +157,6 @@ exports.deletePattern = function(req, res){
   var item = req.params.deletePatt;
   var item = item.substr(1);
   var item = Number(item);
-  console.log('PARAMS', item);
   var removal = "DELETE FROM patterns WHERE id = "+item+"";
   db.connection.query(removal, function(err, row){
     if(err){
@@ -188,7 +178,6 @@ exports.addNewYarn = function(req, res){
       if(err){
         throw err;
       }
-      console.log(req.body);
     });
   }
   res.send('Complete');
@@ -208,7 +197,6 @@ exports.deletingYarn = function(req, res){
   var skein = req.params.deleteYarn;
   skein = skein.substr(1);
   skein = Number(skein);
-  console.log('PARAMS', skein);
   var remove = "DELETE FROM yarn WHERE id = "+skein+"";
   db.connection.query(remove, function(err, row){
     if(err){
@@ -230,7 +218,6 @@ exports.addNewTool = function(req, res){
       if(err){
         throw err;
       }
-      console.log(req.body);
     });
   }
   res.send('Complete');
@@ -250,7 +237,6 @@ exports.deletingTool = function(req, res){
   var tool = req.params.deleteTool;
   tool = tool.substr(1);
   tool = Number(tool);
-  console.log('PARAMS', tool);
   var remove = "DELETE FROM tools WHERE id = "+tool+"";
   db.connection.query(remove, function(err, row){
     if(err){
@@ -271,7 +257,6 @@ exports.getWeeklyUpdates = function(req, res){
     if(err){
       throw err;
     }
-    console.log(rows);
     res.send(rows);
   });
 }
