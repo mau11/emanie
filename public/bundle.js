@@ -36582,7 +36582,6 @@
 
 	    _this.state = {
 	      checked: false,
-	      pattCt: 0,
 	      pName: null,
 	      pCraft: null,
 	      pTools: null,
