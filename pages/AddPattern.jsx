@@ -14,7 +14,6 @@ export default class AddPattern extends React.Component {
     super(props);
     this.state = {
       checked: false,
-      pattCt: 0,
       pName: null,
       pCraft: null,
       pTools: null,

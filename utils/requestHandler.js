@@ -33,7 +33,7 @@ exports.getUserPublicInfo = function(req, res){
 // Get user's profile information
 exports.getAllUserInfo = function (req, res){
   var allUsers = [];
-  db.connection.query("SELECT email, displayName, pic, craftName, pattCt, bio FROM profiles", function(err, rows){
+  db.connection.query("SELECT email, displayName, pic, craftName, bio FROM profiles", function(err, rows){
     if(err){
       throw err;
     }
