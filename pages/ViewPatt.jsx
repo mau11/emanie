@@ -36,18 +36,18 @@ export default class ViewPatt extends React.Component {
     this.getUserPatterns();
   }
 
-  // Get all users' avatar and display name.
+  // Get all users' patterns
   getUserPatterns(){
+    var holder = []
     return fetch('/api/patterns', {method: 'GET'})
       .then((response) => response.json())
       .then(allPatterns => {
         for(var i = 0; i < allPatterns.length; i++){
-          for(var key in allPatterns[i]){
-            if(allPatterns[i].email === this.state.email && allPatterns[i].authId === this.state.authId){
-              this.setState({allPatts: allPatterns});
-            }
+          if(allPatterns[i].email === this.state.email && allPatterns[i].authId === this.state.authId){
+            holder.push(allPatterns[i]);
           }
         }
+        this.setState({allPatts: holder});
       });
   }
 

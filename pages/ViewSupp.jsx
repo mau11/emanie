@@ -40,31 +40,31 @@ export default class ViewSupp extends React.Component {
 
   // Get user's yarn.
   getUserYarn(){
+    var basket = [];
     return fetch('/api/yarn', {method: 'GET'})
       .then((response) => response.json())
       .then(yarn => {
         for(var i = 0; i < yarn.length; i++){
-          for(var key in yarn[i]){
-            if(yarn[i].email === this.state.email && yarn[i].authId === this.state.authId){
-              this.setState({allYarn: yarn});
-            }
+          if(yarn[i].email === this.state.email && yarn[i].authId === this.state.authId){
+            basket.push(yarn[i]);
           }
         }
-      })
+        this.setState({allYarn: basket});
+      });
   }
 
   // Get user's tools.
   getUserTools(){
+    var bin = [];
     return fetch('/api/tools', {method: 'GET'})
       .then((response) => response.json())
       .then(tools => {
         for(var i = 0; i < tools.length; i++){
-          for(var key in tools[i]){
-            if(tools[i].email === this.state.email && tools[i].authId === this.state.authId){
-              this.setState({allTools: tools});
-            }
+          if(tools[i].email === this.state.email && tools[i].authId === this.state.authId){
+            bin.push(tools[i]);
           }
         }
+        this.setState({allTools: bin});
       });
   }
 
@@ -110,9 +110,7 @@ export default class ViewSupp extends React.Component {
               </h4>
             </div>
             <div className="mainTitle">
-              <button type="button" className="btn btn-primary active">Edit
-              </button>
-              <button type="button" className="btn btn-danger btn-xs btn-center active" id={skein.id} onClick={this.deletingYarn.bind(this)}>Delete
+              <button type="button" className="btn btn-danger btn-center active" id={skein.id} onClick={this.deletingYarn.bind(this)}>Delete
               </button>
               <hr />
             </div>
@@ -140,9 +138,7 @@ export default class ViewSupp extends React.Component {
               </h4>
             </div>
             <div className="mainTitle">
-              <button type="button" className="btn btn-primary active">Edit
-              </button>
-              <button type="button" className="btn btn-danger btn-xs btn-center active" id={item.id} onClick={this.deletingTool.bind(this)}>Delete
+              <button type="button" className="btn btn-danger btn-center active" id={item.id} onClick={this.deletingTool.bind(this)}>Delete
               </button>
               <hr />
             </div>

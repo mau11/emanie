@@ -72,40 +72,38 @@ export default class Update extends React.Component {
     return fetch('/api/users/all', {method: 'GET'})
       .then((response) => response.json())
       .then((users) => {
-        for(var i = 0; i < users.length; i++){
-          for(var key in users[i]){
-            if(this.state.email === users[i].email){
-              holder = i;
-              this.setState({displayName: users[i].displayName});
-              if($('#display').val()){
-                var dis = $('#display').val();
-                this.setState({displayName: dis});
-              }
-              this.setState({craftName: users[i].craftName});
-              if($('#craft').val()){
-                var newCraftName = $('#craft').val();
-                this.setState({craftName:newCraftName});
-              }
-              this.setState({bio: users[i].bio});
-              if($('#blurb').val()){
-                var newBio = $('#blurb').val();
-                this.setState({bio: newBio});
-              }
-              this.setState({pic: users[i].pic});
-              var selected = $("input[name='pics']:checked").val();
-              if(selected === 'pic1'){
-                this.setState({pic: '../img/lightGrey.JPG'});
-              } else if(selected === 'pic2'){
-                this.setState({pic: '../img/perfectPink.jpg'});
-              } else if(selected === 'pic3'){
-                this.setState({pic: '../img/lightBlue.JPG'});
-              } else if(selected === 'pic4'){
-                this.setState({pic: '../img/realTeal.JPG'});
-              } else if(selected === 'pic5'){
-                this.setState({pic: '../img/paleYellow.JPG'});
-              } else if(selected === 'pic6'){
-                this.setState({pic: '../img/defaultIcon.png'});
-              }
+      for(var i = 0; i < users.length; i++){
+          if(this.state.email === users[i].email){
+            holder = i;
+            this.setState({displayName: users[i].displayName});
+            if($('#display').val()){
+              var dis = $('#display').val();
+              this.setState({displayName: dis});
+            }
+            this.setState({craftName: users[i].craftName});
+            if($('#craft').val()){
+              var newCraftName = $('#craft').val();
+              this.setState({craftName:newCraftName});
+            }
+            this.setState({bio: users[i].bio});
+            if($('#blurb').val()){
+              var newBio = $('#blurb').val();
+              this.setState({bio: newBio});
+            }
+            this.setState({pic: users[i].pic});
+            var selected = $("input[name='pics']:checked").val();
+            if(selected === 'pic1'){
+              this.setState({pic: '../img/lightGrey.JPG'});
+            } else if(selected === 'pic2'){
+              this.setState({pic: '../img/perfectPink.jpg'});
+            } else if(selected === 'pic3'){
+              this.setState({pic: '../img/lightBlue.JPG'});
+            } else if(selected === 'pic4'){
+              this.setState({pic: '../img/realTeal.JPG'});
+            } else if(selected === 'pic5'){
+              this.setState({pic: '../img/paleYellow.JPG'});
+            } else if(selected === 'pic6'){
+              this.setState({pic: '../img/defaultIcon.png'});
             }
           }
         }

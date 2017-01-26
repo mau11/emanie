@@ -37038,6 +37038,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	// This is the homepage of the application.
 	var App = function (_React$Component) {
 	  _inherits(App, _React$Component);
 
@@ -37057,6 +37058,9 @@
 	    value: function componentWillMount() {
 	      this.getUpdates();
 	    }
+
+	    // Gets data from db to be displayed under new & updates.
+
 	  }, {
 	    key: 'getUpdates',
 	    value: function getUpdates() {
@@ -37071,8 +37075,8 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("div", { className: "mainTitle" }, _react2.default.createElement("div", { className: "col-sm-9" }, _react2.default.createElement("h2", null, "Welcome to Emanie!"), _react2.default.createElement("h5", null, _react2.default.createElement("i", null, "A community for knitters and crocheters to store and share their crafts.")), _react2.default.createElement("img", { className: "mainPics", src: "../img/home2.jpg", alt: "Basket of Yarn" })), _react2.default.createElement("div", { className: "col-sm-3" }, _react2.default.createElement("h4", null, _react2.default.createElement("u", null, _react2.default.createElement("i", null, "News & Updates:"))), _react2.default.createElement("div", { className: "box" }, this.state.updates.map(function (item) {
-	        return _react2.default.createElement("div", { className: "news", key: item.id }, _react2.default.createElement("b", null, '"' + item.notes + '"'), _react2.default.createElement("br", null), _react2.default.createElement("small", null, _react2.default.createElement("i", null, item["DATE_FORMAT(date, '%b %d, %Y')"])));
+	      return _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("div", { className: "mainTitle" }, _react2.default.createElement("div", { className: "col-sm-9" }, _react2.default.createElement("h2", null, "Welcome to Emanie!"), _react2.default.createElement("h5", null, _react2.default.createElement("em", null, "A community for knitters and crocheters to store and share their crafts.")), _react2.default.createElement("img", { className: "mainPics", src: "../img/home2.jpg", alt: "Basket of Yarn" })), _react2.default.createElement("div", { className: "col-sm-3" }, _react2.default.createElement("h4", null, _react2.default.createElement("u", null, _react2.default.createElement("em", null, "News & Updates:"))), _react2.default.createElement("div", { className: "box" }, this.state.updates.map(function (item) {
+	        return _react2.default.createElement("div", { className: "news", key: item.id }, _react2.default.createElement("strong", null, '"' + item.notes + '"'), _react2.default.createElement("br", null), _react2.default.createElement("small", null, _react2.default.createElement("em", null, item["DATE_FORMAT(date, '%b %d, %Y')"])));
 	      })))));
 	    }
 	  }]);
@@ -37277,6 +37281,7 @@
 	  _createClass(Contact, [{
 	    key: 'render',
 	    value: function render() {
+	      // There is a bug here, function renders multiple forms, each time page is visited
 	      (function (d, t) {
 	        var g = d.createElement(t),
 	            s = d.getElementsByTagName(t)[0];
@@ -37284,7 +37289,7 @@
 	        s.parentNode.insertBefore(g, s);
 	      })(document, "script");
 
-	      return _react2.default.createElement("div", null, _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("h3", null, "Contact Emanie"), _react2.default.createElement("div", { className: "mainTitle" }, _react2.default.createElement("h4", null, "Questions, Comments, Suggestions?"), _react2.default.createElement("h5", null, "Please use the form below to contact Emanie.", _react2.default.createElement("br", null), "If you like to report a concern or bug, please head over to the", _react2.default.createElement(_reactRouter.Link, { to: "report" }, " Report Issues"), " page."), _react2.default.createElement("a", { id: "foxyform_embed_link_845120", href: "http://www.foxyform.com/" }, "foxyform"))));
+	      return _react2.default.createElement("div", null, _react2.default.createElement("div", { className: "container" }, _react2.default.createElement("h3", null, "Contact Emanie"), _react2.default.createElement("div", { className: "mainTitle" }, _react2.default.createElement("h4", null, "Questions, Comments, Suggestions?"), _react2.default.createElement("h5", null, "Please use the form below to contact Emanie.", _react2.default.createElement("br", null), "If you'd like to report a concern or bug, please head over to the", _react2.default.createElement(_reactRouter.Link, { to: "report" }, " Report Issues"), " page."), _react2.default.createElement("a", { id: "foxyform_embed_link_845120", href: "http://www.foxyform.com/" }, "foxyform"))));
 	    }
 	  }]);
 
@@ -56904,39 +56909,37 @@
 	        return response.json();
 	      }).then(function (users) {
 	        for (var i = 0; i < users.length; i++) {
-	          for (var key in users[i]) {
-	            if (_this2.state.email === users[i].email) {
-	              holder = i;
-	              _this2.setState({ displayName: users[i].displayName });
-	              if ($('#display').val()) {
-	                var dis = $('#display').val();
-	                _this2.setState({ displayName: dis });
-	              }
-	              _this2.setState({ craftName: users[i].craftName });
-	              if ($('#craft').val()) {
-	                var newCraftName = $('#craft').val();
-	                _this2.setState({ craftName: newCraftName });
-	              }
-	              _this2.setState({ bio: users[i].bio });
-	              if ($('#blurb').val()) {
-	                var newBio = $('#blurb').val();
-	                _this2.setState({ bio: newBio });
-	              }
-	              _this2.setState({ pic: users[i].pic });
-	              var selected = $("input[name='pics']:checked").val();
-	              if (selected === 'pic1') {
-	                _this2.setState({ pic: '../img/lightGrey.JPG' });
-	              } else if (selected === 'pic2') {
-	                _this2.setState({ pic: '../img/perfectPink.jpg' });
-	              } else if (selected === 'pic3') {
-	                _this2.setState({ pic: '../img/lightBlue.JPG' });
-	              } else if (selected === 'pic4') {
-	                _this2.setState({ pic: '../img/realTeal.JPG' });
-	              } else if (selected === 'pic5') {
-	                _this2.setState({ pic: '../img/paleYellow.JPG' });
-	              } else if (selected === 'pic6') {
-	                _this2.setState({ pic: '../img/defaultIcon.png' });
-	              }
+	          if (_this2.state.email === users[i].email) {
+	            holder = i;
+	            _this2.setState({ displayName: users[i].displayName });
+	            if ($('#display').val()) {
+	              var dis = $('#display').val();
+	              _this2.setState({ displayName: dis });
+	            }
+	            _this2.setState({ craftName: users[i].craftName });
+	            if ($('#craft').val()) {
+	              var newCraftName = $('#craft').val();
+	              _this2.setState({ craftName: newCraftName });
+	            }
+	            _this2.setState({ bio: users[i].bio });
+	            if ($('#blurb').val()) {
+	              var newBio = $('#blurb').val();
+	              _this2.setState({ bio: newBio });
+	            }
+	            _this2.setState({ pic: users[i].pic });
+	            var selected = $("input[name='pics']:checked").val();
+	            if (selected === 'pic1') {
+	              _this2.setState({ pic: '../img/lightGrey.JPG' });
+	            } else if (selected === 'pic2') {
+	              _this2.setState({ pic: '../img/perfectPink.jpg' });
+	            } else if (selected === 'pic3') {
+	              _this2.setState({ pic: '../img/lightBlue.JPG' });
+	            } else if (selected === 'pic4') {
+	              _this2.setState({ pic: '../img/realTeal.JPG' });
+	            } else if (selected === 'pic5') {
+	              _this2.setState({ pic: '../img/paleYellow.JPG' });
+	            } else if (selected === 'pic6') {
+	              _this2.setState({ pic: '../img/defaultIcon.png' });
 	            }
 	          }
 	        }
@@ -57124,23 +57127,23 @@
 	      this.getUserPatterns();
 	    }
 
-	    // Get all users' avatar and display name.
+	    // Get all users' patterns
 
 	  }, {
 	    key: 'getUserPatterns',
 	    value: function getUserPatterns() {
 	      var _this2 = this;
 
+	      var holder = [];
 	      return fetch('/api/patterns', { method: 'GET' }).then(function (response) {
 	        return response.json();
 	      }).then(function (allPatterns) {
 	        for (var i = 0; i < allPatterns.length; i++) {
-	          for (var key in allPatterns[i]) {
-	            if (allPatterns[i].email === _this2.state.email && allPatterns[i].authId === _this2.state.authId) {
-	              _this2.setState({ allPatts: allPatterns });
-	            }
+	          if (allPatterns[i].email === _this2.state.email && allPatterns[i].authId === _this2.state.authId) {
+	            holder.push(allPatterns[i]);
 	          }
 	        }
+	        _this2.setState({ allPatts: holder });
 	      });
 	    }
 
@@ -57292,16 +57295,16 @@
 	    value: function getUserYarn() {
 	      var _this2 = this;
 
+	      var basket = [];
 	      return fetch('/api/yarn', { method: 'GET' }).then(function (response) {
 	        return response.json();
 	      }).then(function (yarn) {
 	        for (var i = 0; i < yarn.length; i++) {
-	          for (var key in yarn[i]) {
-	            if (yarn[i].email === _this2.state.email && yarn[i].authId === _this2.state.authId) {
-	              _this2.setState({ allYarn: yarn });
-	            }
+	          if (yarn[i].email === _this2.state.email && yarn[i].authId === _this2.state.authId) {
+	            basket.push(yarn[i]);
 	          }
 	        }
+	        _this2.setState({ allYarn: basket });
 	      });
 	    }
 
@@ -57312,16 +57315,16 @@
 	    value: function getUserTools() {
 	      var _this3 = this;
 
+	      var bin = [];
 	      return fetch('/api/tools', { method: 'GET' }).then(function (response) {
 	        return response.json();
 	      }).then(function (tools) {
 	        for (var i = 0; i < tools.length; i++) {
-	          for (var key in tools[i]) {
-	            if (tools[i].email === _this3.state.email && tools[i].authId === _this3.state.authId) {
-	              _this3.setState({ allTools: tools });
-	            }
+	          if (tools[i].email === _this3.state.email && tools[i].authId === _this3.state.authId) {
+	            bin.push(tools[i]);
 	          }
 	        }
+	        _this3.setState({ allTools: bin });
 	      });
 	    }
 	  }, {
@@ -57347,12 +57350,12 @@
 	        if (_this4.state.yIds.indexOf(skein.id) === -1) {
 	          _this4.state.yIds.push(skein.id);
 	        }
-	        return [_react2.default.createElement("div", null, _react2.default.createElement("div", { className: "addBorder" }, _react2.default.createElement("h4", { id: skein.id }, _react2.default.createElement("b", null, "Color:"), " ", skein.color), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Weight:"), " ", skein.weight), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Brand:"), " ", skein.brand), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Amount: "), " ", skein.amount), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Notes: "), " ", skein.notes)), _react2.default.createElement("div", { className: "mainTitle" }, _react2.default.createElement("button", { type: "button", className: "btn btn-primary active" }, "Edit"), _react2.default.createElement("button", { type: "button", className: "btn btn-danger btn-xs btn-center active", id: skein.id, onClick: _this4.deletingYarn.bind(_this4) }, "Delete"), _react2.default.createElement("hr", null)))];
+	        return [_react2.default.createElement("div", null, _react2.default.createElement("div", { className: "addBorder" }, _react2.default.createElement("h4", { id: skein.id }, _react2.default.createElement("b", null, "Color:"), " ", skein.color), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Weight:"), " ", skein.weight), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Brand:"), " ", skein.brand), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Amount: "), " ", skein.amount), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Notes: "), " ", skein.notes)), _react2.default.createElement("div", { className: "mainTitle" }, _react2.default.createElement("button", { type: "button", className: "btn btn-danger btn-center active", id: skein.id, onClick: _this4.deletingYarn.bind(_this4) }, "Delete"), _react2.default.createElement("hr", null)))];
 	      })), _react2.default.createElement("div", { className: "col-sm-6" }, _react2.default.createElement("h4", null, " Tools:"), this.state.allTools.map(function (item) {
 	        if (_this4.state.tIds.indexOf(item.id) === -1) {
 	          _this4.state.tIds.push(item.id);
 	        }
-	        return [_react2.default.createElement("div", null, _react2.default.createElement("div", { className: "addBorder" }, _react2.default.createElement("h4", { id: item.id }, _react2.default.createElement("b", null, "Craft:"), " ", item.craft), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "item:"), " ", item.tool), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Size:"), " ", item.size), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Material: "), " ", item.material), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Notes: "), " ", item.notes)), _react2.default.createElement("div", { className: "mainTitle" }, _react2.default.createElement("button", { type: "button", className: "btn btn-primary active" }, "Edit"), _react2.default.createElement("button", { type: "button", className: "btn btn-danger btn-xs btn-center active", id: item.id, onClick: _this4.deletingTool.bind(_this4) }, "Delete"), _react2.default.createElement("hr", null)))];
+	        return [_react2.default.createElement("div", null, _react2.default.createElement("div", { className: "addBorder" }, _react2.default.createElement("h4", { id: item.id }, _react2.default.createElement("b", null, "Craft:"), " ", item.craft), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "item:"), " ", item.tool), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Size:"), " ", item.size), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Material: "), " ", item.material), _react2.default.createElement("h4", null, _react2.default.createElement("b", null, "Notes: "), " ", item.notes)), _react2.default.createElement("div", { className: "mainTitle" }, _react2.default.createElement("button", { type: "button", className: "btn btn-danger btn-center active", id: item.id, onClick: _this4.deletingTool.bind(_this4) }, "Delete"), _react2.default.createElement("hr", null)))];
 	      }))));
 	    }
 	  }]);
