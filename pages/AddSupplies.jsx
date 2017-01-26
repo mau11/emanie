@@ -36,7 +36,7 @@ export default class AddSupplies extends React.Component {
     this.getAuthInfo();
   }
 
-  // Get auth0 ID & email from logged in user and add to state
+  // Gets auth0 ID & email from logged in user and adds to state.
   getAuthInfo() {
     var obj = this.state.profile;
     for(var key in obj){
@@ -55,7 +55,7 @@ export default class AddSupplies extends React.Component {
     }
   }
 
-  // Handle adding yarn
+  // Handle adding yarn checkbox.
   handleCheckboxY() {
     if(this.state.checkY){
       this.setState({checkY: false});
@@ -110,6 +110,7 @@ export default class AddSupplies extends React.Component {
     }
   }
 
+  // Sends POST request to server to save user input in db.
   submitYarn(arr) {
     fetch('/api/yarn/add', {
       method: 'POST',
@@ -132,7 +133,7 @@ export default class AddSupplies extends React.Component {
     document.getElementById('yarnBox').checked = false;
   }
 
-  // Handle adding tools
+  // Handle adding tools checkbox.
   handleCheckboxT() {
     if(this.state.checkT){
       this.setState({checkT: false});
@@ -189,6 +190,7 @@ export default class AddSupplies extends React.Component {
     }
   }
 
+  // Sends POST request to server to save user input in db.
   submitTools(arr) {
     fetch('/api/tools/add', {
       method: 'POST',
@@ -235,7 +237,7 @@ export default class AddSupplies extends React.Component {
                   </div>
                   <div className="form-group">
                     <label>Amount:</label>
-                    <input type="text" className="form-control" id="amount" placeholder="1 Skein" name="amountName" />
+                    <input type="text" className="form-control" id="amount" placeholder="2 Skeins etc" name="amountName" />
                   </div>
                   <div className="form-group">
                     <label htmlFor="notes">Notes/Details:</label>
@@ -286,19 +288,3 @@ export default class AddSupplies extends React.Component {
     );
   }
 }
-
-
-/*
-
-$scope.listOfSizesC = ['2.00mm', '2.25mm  B/1', '2.50mm', '2.75mm  C/2', '3.00mm', '3.25mm  D/3', '3.50mm  E/4', '3.75mm  F/5', '4.0mm  G/6', '4.50mm  7','5.00mm  H/8', '5.50mm  I/9','6.00mm  J/10', '6.5mm  K/10.5','7.00mm', '8.00mm  L/11', '9.00mm  M/13','10.00mm  N/15'];
-
-$scope.listOfSizesK = ['2.00mm  0', '2.25mm  1', '2.75mm  2', '3.00mm', '3.25mm  3', '3.50mm  4', '3.75mm  5', '4.00mm  6', '4.50mm  7', '5.00mm  8', '5.5mm  9', '6.00mm  10', '6.50mm  10.5', '7.00mm', '7.50mm', '8.00mm  11', '9.00mm  13', '10.00mm  15', '12.00mm  17', '16.00mm  19', '19.00mm  35', '25.00mm  50'];
-
-
-YARN
-
-$scope.listOfWeights = ['Lace', 'Super Fine/Baby', 'Fine/Sport', 'Light-Worsted', 'Medium/Worsted', 'Bulky/Chunky', 'Super Bulky', 'Jumbo', 'Other'];
-
-
-
-*/

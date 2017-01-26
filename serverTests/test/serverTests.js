@@ -14,15 +14,3 @@ describe('server',function(){
     });
   });
 });
-
-describe('database',function(){
-  xit('should pull all users from profiles table', function(done){
-    request
-    .get('/update')
-    .expect(200)
-    .end(function(err,res){
-      res.status.should.equal(200);
-      done();
-    });
-  });
-});

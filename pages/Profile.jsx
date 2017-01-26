@@ -30,12 +30,11 @@ export default class Profile extends React.Component {
     });
   }
 
-  // Get user's initial data from DB
   componentDidMount() {
     this.getAuthData();
   }
 
-  // Get auth0 ID from logged in user and add to state
+  // Get auth0 ID from logged in user and add to state.
   getAuthData() {
     var obj = this.state.profile;
     var emailAndId = [];
@@ -55,7 +54,7 @@ export default class Profile extends React.Component {
     }
   }
 
-  // Add user's email and id from Auth0 login to DB
+  // Add user's email and id from Auth0 login to DB.
   sendFirstInfo(arr) {
     fetch('/api/users/add', {
       method: 'POST',

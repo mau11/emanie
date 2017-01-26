@@ -1,5 +1,4 @@
 import React, { PropTypes as T } from 'react';
-import ReactDOM from 'react-dom';
 import AuthService from '../utils/AuthService';
 
 export default class Update extends React.Component {
@@ -193,6 +192,11 @@ export default class Update extends React.Component {
     });
   }
 
+  handleSearch(e){
+    e.preventDefault();
+    window.location = '/#/search';
+  }
+
   render () {
 
     return (
@@ -201,7 +205,7 @@ export default class Update extends React.Component {
         </h3>
         <div className="container">
         <h6>
-          <i>Leave fields blank where no changes are desired.</i>
+          <i>Leave field blank when no changes are desired.</i>
         </h6>
           <div className="row">
             <div className="col-sm-6">

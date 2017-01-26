@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { IndexLink, Link } from 'react-router';
 
 export default class Contact extends React.Component {

@@ -2,7 +2,6 @@ import React, { PropTypes as T } from 'react';
 import {ButtonToolbar, Button} from 'react-bootstrap';
 import AuthService from '../utils/AuthService';
 
-
 export default class Logout extends React.Component {
   static propTypes() {
     return {

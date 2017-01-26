@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 export default class ViewSupp extends React.Component {
   constructor(props) {
@@ -19,7 +18,7 @@ export default class ViewSupp extends React.Component {
     this.getAuthInfo();
   }
 
-  // Get auth0 ID & email from logged in user and add to state
+  // Get auth0 ID & email from logged in user and add to state.
   getAuthInfo() {
     var obj = this.state.profile;
     var emailAndId = [];
@@ -89,32 +88,32 @@ export default class ViewSupp extends React.Component {
           <h3>Supplies
           </h3>
           <div className="col-sm-6">
-          <h4> Yarn:
-          </h4>
-          {this.state.allYarn.map(skein => {
-            if(this.state.yIds.indexOf(skein.id) === -1){
-              this.state.yIds.push(skein.id);
-            }
-          return [
-          <div>
-            <div className="addBorder">
-              <h4 id={skein.id}><b>Color:</b> {skein.color}
-              </h4>
-              <h4><b>Weight:</b> {skein.weight}
-              </h4>
-              <h4><b>Brand:</b> {skein.brand}
-              </h4>
-              <h4><b>Amount: </b> {skein.amount}
-              </h4>
-              <h4><b>Notes: </b> {skein.notes}
-              </h4>
-            </div>
-            <div className="mainTitle">
-              <button type="button" className="btn btn-danger btn-center active" id={skein.id} onClick={this.deletingYarn.bind(this)}>Delete
-              </button>
-              <hr />
-            </div>
-          </div>]})}
+            <h4> Yarn:
+            </h4>
+            {this.state.allYarn.map(skein => {
+              if(this.state.yIds.indexOf(skein.id) === -1){
+                this.state.yIds.push(skein.id);
+              }
+            return (
+            <div key={skein.id}>
+              <div className="addBorder">
+                <h4 id={skein.id}><b>Color:</b> {skein.color}
+                </h4>
+                <h4><b>Weight:</b> {skein.weight}
+                </h4>
+                <h4><b>Brand:</b> {skein.brand}
+                </h4>
+                <h4><b>Amount: </b> {skein.amount}
+                </h4>
+                <h4><b>Notes: </b> {skein.notes}
+                </h4>
+              </div>
+              <div className="mainTitle">
+                <button type="button" className="btn btn-danger btn-center active" id={skein.id} onClick={this.deletingYarn.bind(this)}>Delete
+                </button>
+                <hr />
+              </div>
+            </div>)})}
           </div>
           <div className="col-sm-6">
           <h4> Tools:
@@ -123,7 +122,7 @@ export default class ViewSupp extends React.Component {
             if(this.state.tIds.indexOf(item.id) === -1){
               this.state.tIds.push(item.id);
             }
-          return [
+          return (
           <div>
             <div className="addBorder">
               <h4 id={item.id}><b>Craft:</b> {item.craft}
@@ -142,7 +141,7 @@ export default class ViewSupp extends React.Component {
               </button>
               <hr />
             </div>
-          </div>]})}
+          </div>)})}
           </div>
         </div>
       </div>

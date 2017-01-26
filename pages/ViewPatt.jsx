@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { IndexLink, Link } from 'react-router';
 
 export default class ViewPatt extends React.Component {
@@ -18,7 +17,7 @@ export default class ViewPatt extends React.Component {
     this.getAuthInfo();
   }
 
-  // Get auth0 ID & email from logged in user and add to state
+  // Get auth0 ID & email from logged in user and add to state.
   getAuthInfo() {
     var obj = this.state.profile;
     var emailAndId = [];
@@ -36,9 +35,9 @@ export default class ViewPatt extends React.Component {
     this.getUserPatterns();
   }
 
-  // Get all users' patterns
+  // Get user's patterns from db.
   getUserPatterns(){
-    var holder = []
+    var holder = [];
     return fetch('/api/patterns', {method: 'GET'})
       .then((response) => response.json())
       .then(allPatterns => {
@@ -51,35 +50,35 @@ export default class ViewPatt extends React.Component {
       });
   }
 
-  // Sort patterns A-Z
+  // Sort patterns by name, A-Z.
   sortPattAZ(e){
     e.preventDefault();
+    var storage = [];
     return fetch('/api/patterns/sorted/name', {method: 'GET'})
       .then((response) => response.json())
       .then(sorted => {
         for(var i = 0; i < sorted.length; i++){
-          for(var key in sorted[i]){
-            if(sorted[i].email === this.state.email && sorted[i].authId === this.state.authId){
-              this.setState({allPatts: sorted});
-            }
+          if(sorted[i].email === this.state.email && sorted[i].authId === this.state.authId){
+            storage.push(sorted[i]);
           }
         }
+        this.setState({allPatts: storage});
       });
   }
 
-  // Sort by craft, then by pattern name for the same crafts
+  // Sort by craft, then by pattern name for the same crafts.
   sortCraftAZ(e){
     e.preventDefault();
+    var temp = [];
     return fetch('/api/patterns/sorted/craft', {method: 'GET'})
       .then((response) => response.json())
       .then(sortedCrafts => {
         for(var i = 0; i < sortedCrafts.length; i++){
-          for(var key in sortedCrafts[i]){
-            if(sortedCrafts[i].email === this.state.email && sortedCrafts[i].authId === this.state.authId){
-              this.setState({allPatts: sortedCrafts});
-            }
+          if(sortedCrafts[i].email === this.state.email && sortedCrafts[i].authId === this.state.authId){
+            temp.push(sortedCrafts[i]);
           }
         }
+        this.setState({allPatts: temp});
       });
   }
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 export default class Report extends React.Component {
   constructor(props) {
@@ -11,8 +10,8 @@ export default class Report extends React.Component {
     return (
       <div>
         <div className="container">
-        <h3>Report Issues
-        </h3>
+          <h3>Report Issues
+          </h3>
           <div className="mainTitle">
             <img className="aboutPic" src="../img/home3.JPG"/>
             <h4>Developers, looking for a way to contribute or have a bug fix?

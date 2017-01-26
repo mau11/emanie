@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { IndexLink, Link } from 'react-router';
 
 export default class PatGen extends React.Component {
@@ -16,14 +15,17 @@ export default class PatGen extends React.Component {
     };
   }
 
+  // Informs user when no patterns are available.
   noPatterns() {
     alert('No patterns currently available in this size, check back soon.');
   }
 
+  // Generates knit patterns, to be updated.
   generateKnit() {
     this.noPatterns();
   }
 
+  // Generates crochet patterns.
   generateCrochet() {
     this.setState({craft: 'Crochet'}, function(){
       if(this.state.product === 'Scarf'){
@@ -39,7 +41,7 @@ export default class PatGen extends React.Component {
       if(this.state.product === 'Beanie'){
         if(this.state.size === 'Baby 3-6 months'){
           this.setState({tools: 'I/9 (5.50mm) hook'}, function(){
-            this.setState({pic: './img/babyBeanie.jpg'})
+            this.setState({pic: './img/babyBeanie.jpg'});
             this.setState({yarn: 'worsted weight yarn'});
             this.setState({pattern: 'Baby beanie size 3-6months. Ch 2 (you will be working in the round). Rnd 1: 5hdc (5sts). Rnd 2-4: 2hdc in each st (40sts). Rnd 5-13: hdc around (40sts). Rnd 14-15: * bpdc, fpdc, repeat from * around (40sts). Rnd 16: sc around (40sts). Fasten off.' });
           });
@@ -67,6 +69,7 @@ export default class PatGen extends React.Component {
   }
 
   clearFields() {
+    this.setState({pic: './img/defaultPattPic.jpg'});
     $('#craft').val('-- Select a craft --');
     $('#product').val('-- Select a product --');
     $('#size').val('-- Select a size --');

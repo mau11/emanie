@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { IndexLink, Link } from 'react-router';
 import AuthService from '../utils/AuthService';
 
@@ -29,7 +28,7 @@ export default class AddPattern extends React.Component {
     this.getAuthInfo();
   }
 
-  // Get auth0 ID & email from logged in user and add to state
+  // Get auth0 ID & email from logged in user and add to state.
   getAuthInfo() {
     var obj = this.state.profile;
     for(var key in obj){
@@ -46,6 +45,7 @@ export default class AddPattern extends React.Component {
     }
   }
 
+  // Ensures pattern will not save unless user checks box.
   handleCheckbox() {
     if(this.state.checked){
       this.setState({checked: false});
@@ -65,7 +65,7 @@ export default class AddPattern extends React.Component {
     }
   }
 
-  // Add user input to state
+  // Add user's input to the state.
   addPartsToPatt(cb) {
     if(!$('#pattName').val() && !$('#pattCraft').val() && !$('#pattTools').val() && !$('#pattNotes').val()){
       alert('One field must be filled to submit.');
@@ -95,7 +95,7 @@ export default class AddPattern extends React.Component {
     }
   }
 
-
+  // Sends POST request to server to save user input to db.
   submitPatt(arr) {
     fetch('/api/patterns/new', {
       method: 'POST',
@@ -114,11 +114,6 @@ export default class AddPattern extends React.Component {
     $('#pattCraft').val('');
     $('#pattTools').val('');
     $('#pattNotes').val('');
-  }
-
-  handleUpload(e) {
-    e.preventDefault();
-
   }
 
   render () {
@@ -145,11 +140,11 @@ export default class AddPattern extends React.Component {
                   </div>
                   <div className="form-group">
                     <label htmlFor="notes">Notes/Details:</label>
-                    <textarea className="form-control" id="pattNotes" rows="5" name="notesDetails" ></textarea>
+                    <textarea className="form-control" id="pattNotes" rows="5" name="notesDetails" />
                   </div>
                   <div className="form-check">
                     <label className="form-check-label">
-                      <input type="checkbox" className="form-check-input" onClick={this.handleCheckbox.bind(this)}/> Please be aware that all patterns are currently made public. I confirm that I have reviewed my changes and read this message.
+                      <input type="checkbox" className="form-check-input" onClick={this.handleCheckbox.bind(this)}/> Please be aware that all patterns are currently made public. By checking this box, I confirm that I have reviewed my changes and read this message.
                     </label>
                   </div>
                   <button type="submit" className="btn btn-inverse" onClick={this.handleAddPattern.bind(this)}>Add Pattern</button>

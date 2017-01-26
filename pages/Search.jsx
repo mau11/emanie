@@ -16,6 +16,7 @@ export default class Search extends React.Component {
     this.searchPatterns();
   }
 
+  // Sends GET request to server, searches pattern name, craft and notes.
   searchPatterns() {
     var searching = $('#searchInput').val();
     $('#searchInput').val('');
@@ -51,24 +52,26 @@ export default class Search extends React.Component {
             </h4>
           </div>
           <div className="col-sm-12">
-          {this.state.allResults.map(patt => {
-            if(this.state.ids.indexOf(patt.id) === -1){
-              this.state.ids.push(patt.id);
-            }
-          return (
-          <div key={patt.id}>
-            <div className="addBorder">
-              <h4 id={patt.id}><b>Pattern Name:</b> {patt.pName}
-              </h4>
-              <h4><b>Craft:</b> {patt.craft}
-              </h4>
-              <h4><b>Supplies:</b> {patt.tools}
-              </h4>
-              <h4><b>Notes: </b> {patt.notes}
-              </h4>
-            </div>
-            <div><hr /></div>
-          </div>)})}
+            {this.state.allResults.map(patt => {
+              if(this.state.ids.indexOf(patt.id) === -1){
+                this.state.ids.push(patt.id);
+              }
+            return (
+            <div key={patt.id}>
+              <div className="addBorder">
+                <h4 id={patt.id}><b>Pattern Name:</b> {patt.pName}
+                </h4>
+                <h4><b>Craft:</b> {patt.craft}
+                </h4>
+                <h4><b>Supplies:</b> {patt.tools}
+                </h4>
+                <h4><b>Notes: </b> {patt.notes}
+                </h4>
+              </div>
+              <div>
+                <hr />
+              </div>
+            </div>)})}
           </div>
         </div>
       </div>

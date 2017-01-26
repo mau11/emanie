@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { IndexLink, Link } from 'react-router';
 
 export default class Browse extends React.Component {
@@ -27,7 +26,7 @@ export default class Browse extends React.Component {
     this.getAuthData();
   }
 
-  // Get auth0 ID from logged in user and add to state
+  // Get auth0 ID from logged in user and add to state.
   getAuthData() {
     var obj = this.state.profile;
     var emailAndId = [];
@@ -47,7 +46,7 @@ export default class Browse extends React.Component {
     }
   }
 
-  // Add user's email and id from Auth0 login to DB
+  // Add user's email and id from Auth0 login to DB.
   sendFirstInfo(arr) {
     fetch('/api/users/add', {
       method: 'POST',
@@ -65,12 +64,12 @@ export default class Browse extends React.Component {
     });
   }
 
-  // Get all users' avatar and display name.
+  // Get all users' avatar, display name and bio from db.
   getAllProfiles() {
     return fetch('/api/users', {method: 'GET', mode: 'no-cors'})
       .then((response) => response.json())
       .then(allProfiles => {
-        this.setState({allUsers: allProfiles})
+        this.setState({allUsers: allProfiles});
       });
   }
 
