@@ -10,7 +10,7 @@
     1. [Installing Dependencies](#installing-dependencies)
     1. [Setting up MySQL Database](#setting-up-mysql-database)
 1. [Contributing](#contributing)
-1. [View Application](#view-application)
+1. [Run Application](#run-application)
 
 ## Usage
 
@@ -122,9 +122,8 @@ $ node server.js
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
 
-## View Application
+## Run Application
 For development, in your browser, navigate to
 ```sh
 http://localhost:8080
 ```
-Visit the deployed Emanie at: http://emanie.us-east-1.elasticbeanstalk.com/
